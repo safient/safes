@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  ClaimDetailsScreen,
+  ClaimsScreen,
+  CreateSafeScreen,
+  HomeScreen,
+  LoginScreen,
+  RegisterScreen,
+  ProfileScreen,
+} from './screens';
+
+import { GlobalStyle } from './utils/Global';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route path='/' exact component={HomeScreen} />
+          <Route path='/login' exact component={LoginScreen} />
+          <Route path='/register' exact component={RegisterScreen} />
+          <Route path='/createsafe' exact component={CreateSafeScreen} />
+          <Route path='/claims' exact component={ClaimsScreen} />
+          <Route path='/claims/:id' exact component={ClaimDetailsScreen} />
+          <Route path='/profile' exact component={ProfileScreen} />
+        </Switch>
+        <GlobalStyle />
+      </Router>
+    </>
   );
 }
 
