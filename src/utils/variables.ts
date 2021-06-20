@@ -1,6 +1,8 @@
-import styled from 'styled-components';
+
 
 export const primaryFont = '"Inter", sans-serif';
+
+
 
 export const FONT_SIZE = {
   NORMAL: '1.6rem',

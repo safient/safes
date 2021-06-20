@@ -4,7 +4,6 @@ import getStyle from './style';
 import { getConfiguration } from '../../../utils/config';
 import { GutterWidthContext } from '../Row/Row';
 import { ScreenClassResolver } from '../../../contexts/ScreenClassResolver/ScreenClassResolver';
-// import { Div } from '../../Primitives';
 
 const Div = 'div';
 

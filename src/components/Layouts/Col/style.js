@@ -45,14 +45,6 @@ export default ({
     styles.lineHeight = '32px';
   }
 
-  // styles.flexBasis = '100%';
-  // styles.flexGrow = 0;
-  // styles.flexShrink = 0;
-  // styles.maxWidth = '100%';
-  // styles.marginLeft = '0%';
-  // styles.right = 'auto';
-  // styles.left = 'auto';
-
   screenClasses.forEach((size, index) => {
     if (screenClasses.indexOf(screenClass) >= index) {
       const currentWidth = getWidth(width[size], gridColumns);

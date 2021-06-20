@@ -1,8 +1,5 @@
-/* global window */
-
 import { useState, useEffect } from 'react';
 import { getConfiguration } from './config';
-// import { Window } from '../components/Primitives/';
 
 const Window = typeof window !== 'undefined' ? window : undefined;
 const getViewPort = (source) => {

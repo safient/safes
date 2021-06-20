@@ -10,15 +10,26 @@ const Box = styled.div`
   color: white;
   width: 100%;
   padding: 20px;
+  margin: 10px 0px;
+`;
+const HomeContainer = styled.section`
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Text = styled.h2`
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
 `;
 
 export function HomeScreen() {
   return (
-    <>
-      <h2>
+    <HomeContainer>
+      <Text>
         Stack the columns on mobile by making one full-width and the other
         half-width
-      </h2>
+      </Text>
       <Row>
         <Col xs={12} md={8}>
           <Box>xs=12 md=8</Box>
@@ -27,7 +38,11 @@ export function HomeScreen() {
           <Box>xs=6 md=4</Box>
         </Col>
       </Row>
-      {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
+
+      <Text>
+        {' '}
+        Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop
+      </Text>
       <Row>
         <Col xs={6} md={4}>
           <Box>xs=6 md=4</Box>
@@ -39,7 +54,7 @@ export function HomeScreen() {
           <Box>xs=6 md=4</Box>
         </Col>
       </Row>
-      {/* Columns are always 50% wide, on mobile and desktop */}
+      <Text> Columns are always 50% wide, on mobile and desktop</Text>
       <Row>
         <Col xs={6}>
           <Box>xs=6</Box>
@@ -49,6 +64,56 @@ export function HomeScreen() {
         </Col>
       </Row>
 
+      <h3>Verticle alignment</h3>
+
+      <div>
+        <Text>Start</Text>
+        <Row align='start' style={{ height: '75px' }} debug>
+          <Col debug> 1 of 3</Col>
+          <Col debug> 2 of 3</Col>
+          <Col debug> 3 of 3</Col>
+        </Row>
+        <br />
+
+        <Text>Center</Text>
+        <Row align='center' style={{ height: '75px' }} debug>
+          <Col>
+            {' '}
+            <Box>2 of 3 </Box>{' '}
+          </Col>
+          <Col>
+            {' '}
+            <Box> 3 of 3</Box>
+          </Col>
+          <Col>
+            {' '}
+            <Box>1 of 3 </Box>
+          </Col>
+        </Row>
+        <br />
+
+        <Text>End</Text>
+        <Row align='end' style={{ height: '75px' }} debug>
+          <Col debug>1 of 3</Col>
+          <Col debug>2 of 3</Col>
+          <Col debug>3 of 3</Col>
+        </Row>
+        <br />
+
+        <Text>Stretch</Text>
+        <Row align='stretch' style={{ height: '75px' }}>
+          <Col>
+            <Box> 1 of 3</Box>{' '}
+          </Col>
+          <Col>
+            <Box>2 of 3 </Box>
+          </Col>
+          <Col>
+            <Box> 3 of 3 </Box>
+          </Col>
+        </Row>
+      </div>
+      <Text>Horizontal Aignment </Text>
       <div>
         <Row justify='start' debug>
           <Col xs={3} debug>
@@ -134,6 +199,6 @@ export function HomeScreen() {
           </Col>
         </Row>
       </div>
-    </>
+    </HomeContainer>
   );
 }

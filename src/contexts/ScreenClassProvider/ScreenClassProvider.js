@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useScreenClass } from '../../utils/gridUtils';
 import { getConfiguration } from '../../utils/config';
-import { Div } from '../../components/Primitives';
+
+const Div = 'div';
 
 export const NO_PROVIDER_FLAG = 'NO_PROVIDER_FLAG';
 
