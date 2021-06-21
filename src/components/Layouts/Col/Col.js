@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
 import getStyle from './style';
-import { getConfiguration } from '../../../utils/config';
+import { getConfiguration } from '../../../utils/gridConfig';
 import { GutterWidthContext } from '../Row/Row';
 import { ScreenClassResolver } from '../../../contexts/ScreenClassResolver/ScreenClassResolver';
 

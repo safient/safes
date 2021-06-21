@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useScreenClass } from '../../utils/gridUtils';
-import { getConfiguration } from '../../utils/config';
+import { getConfiguration } from '../../utils/gridConfig';
 
 const Div = 'div';
 
@@ -42,7 +42,7 @@ const ScreenClassProvider = ({
 ScreenClassProvider.propTypes = {
   /**
    * Children of the ScreenClassProvider.
-   * This should be all your child React nodes that are using `react-grid-system`.
+   *
    */
   children: PropTypes.node.isRequired,
   /**

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getConfiguration } from './config';
+import { getConfiguration } from './gridConfig';
 
 const Window = typeof window !== 'undefined' ? window : undefined;
 const getViewPort = (source) => {
