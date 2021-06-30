@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {Preview} from './components/UI/preview';
 import {
   ClaimDetailsScreen,
   ClaimsScreen,
@@ -8,12 +9,13 @@ import {
   RegisterScreen,
   ProfileScreen,
 } from './screens';
-
+import { ThemeProvider } from 'styled-components';
+import {defaultTheme, darkTheme} from './utils/themes'
 import { GlobalStyle } from './utils/Global';
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={defaultTheme}>
       <Router>
         <Switch>
           <Route path='/' exact component={HomeScreen} />
@@ -23,10 +25,11 @@ function App() {
           <Route path='/claims' exact component={ClaimsScreen} />
           <Route path='/claims/:id' exact component={ClaimDetailsScreen} />
           <Route path='/profile' exact component={ProfileScreen} />
+          <Route path='/preview' exact component={Preview} />
         </Switch>
         <GlobalStyle />
       </Router>
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Col } from '../components/layouts/Col/Col';
-import { Row } from '../components/layouts/row/Row';
+import { Row } from '../components/layouts/row/row.component';
 
 const Box = styled.div`
   background-color: tomato;
