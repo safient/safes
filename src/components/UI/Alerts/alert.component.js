@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
@@ -14,7 +13,7 @@ export const ALERT_MODIFIERS = {
     background-color: #d4edda;
     border-color: #c3e6cb;
   `,
-  error: () => `
+  error: ({ theme }) => `
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
@@ -25,9 +24,9 @@ export const BASE = styled.div`
   max-width: 55rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-  padding: 1.8rem;
+  font-size: ${({ theme }) => theme.FONT.normal};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT.regular};
+  padding: ${({ theme }) => theme.SPACES[18]};
 `;
 
 export const Alert = styled(BASE)`

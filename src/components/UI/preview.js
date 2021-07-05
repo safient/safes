@@ -3,8 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Heading, SubHeading, Text } from './Typography/text.component.styles';
-import { PrimaryButton, SecondaryButton } from './Buttons/buttons.component';
+import { Heading, SubHeading, Text } from './Typography/text.component';
+import { Button } from './Buttons/buttons.component';
 
 import { Alert } from './Alerts/alert.component';
 
@@ -58,12 +58,12 @@ export const Preview = () => {
           </SubHeading>
         </HeadingContainer>
         <ButtonContainer>
-          <PrimaryButton>Hello</PrimaryButton>
-          <PrimaryButton modifiers='success'>Success</PrimaryButton>
-          <PrimaryButton modifiers='warning'>Warning</PrimaryButton>
-          <PrimaryButton modifiers='error'> Error</PrimaryButton>
-          <PrimaryButton disabled>Disabled</PrimaryButton>
-          <SecondaryButton>Cancel</SecondaryButton>
+          <Button>Hello</Button>
+          <Button modifiers='success'>Success</Button>
+          <Button modifiers='warning'>Warning</Button>
+          <Button modifiers='error'> Error</Button>
+          <Button disabled>Disabled</Button>
+          <Button modifiers='secondary'>Cancel</Button>
         </ButtonContainer>{' '}
         <br />
         <Alert>This is a primary alert</Alert> <br />
