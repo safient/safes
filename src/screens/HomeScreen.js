@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { Col } from '../components/layouts/Col/Col';
-import { Row } from '../components/layouts/row/row.component';
+import { Col } from '../components/layouts';
+import { Row } from '../components/layouts';
 
 const Box = styled.div`
   background-color: tomato;

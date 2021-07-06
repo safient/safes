@@ -1,8 +1,8 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import getStyle from './style';
-import { getConfiguration } from '../../../utils/gridConfig';
-import { GutterWidthContext } from '../row/Row';
+import getStyle from './col.style';
+import { getConfiguration } from '../layoutUtils/gridConfig';
+import { GutterWidthContext } from '../row/row.component';
 import { ScreenClassResolver } from '../../../contexts/ScreenClassResolver/ScreenClassResolver';
 
 const Div = 'div';

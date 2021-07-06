@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useScreenClass } from '../../utils/gridUtils';
-import { getConfiguration } from '../../utils/gridConfig';
+import { useScreenClass } from '../../components/layouts/layoutUtils/gridUtils';
+import { getConfiguration } from '../../components/layouts/layoutUtils/gridConfig';
 
 const Div = 'div';
 

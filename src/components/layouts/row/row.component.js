@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getConfiguration } from '../../../utils/gridConfig';
-import getStyle from './style';
+import { getConfiguration } from '../layoutUtils/gridConfig';
+import getStyle from './row.style';
 
 const Div = 'div';
 

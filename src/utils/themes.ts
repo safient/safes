@@ -55,23 +55,58 @@ export const defaultTheme = {
   // BUTTONS
 
   BUTTON: {
-    secondary: {},
-    hover: {},
-    disabled: {},
-    warning: {},
-    warnningHover: {},
-    warningActive: {},
+    secondary: {
+      backgroundColor: '#fff',
+      color: 'rgba(142, 144, 166, 1)',
+      border: '1px solid rgba(142, 144, 166, 1)',
+    },
+    secondaryHover: {
+      backgroundColor: '#fff',
+      border: '1px solid #422ed1',
+      color: '#422ed1',
+    },
+    secondaryDisabled: {
+      backgroundColor: 'rgba(66, 46, 209, 0.45)',
+      color: '#fff',
+    },
+
+    warning: {
+      backgroundColor: '#CAB23F',
+      color: ' #fff',
+    },
+    warningHover: {
+      backgroundColor: '#cab23f',
+    },
+    warningActive: {
+      backgroundColor: '#b49e35',
+    },
+    error: {
+      backgroundColor: '#DB2A30',
+      color: ' #fff',
+    },
+    errorHover: {
+      backgroundColor: '#b54248',
+    },
+    errorActive: {
+      backgroundColor: ' #95353a',
+    },
+
     success: {
       backgroundColor: ' #0B7247',
+      active: '#276738',
+      hover: '#367b48',
     },
-    successHover: {},
-    successActive: {},
-    BASE: {},
+
+    successActive: '#276738',
     primaryButton: {
       backgroundColor: '#422ed1',
       color: '#fff',
       disabled: 'rgba(66, 46, 209, 0.45)',
     },
+
+    padding: '0.8rem 1.2rem',
+    borderRadius: '0.2rem',
+    baseActive: '#3d24f1',
   },
 
   // BOX SHADOW

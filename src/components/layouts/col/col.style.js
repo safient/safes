@@ -1,4 +1,4 @@
-import { screenClasses } from '../../../utils/gridUtils';
+import { screenClasses } from '../layoutUtils/gridUtils';
 
 const hasWidth = (widths) =>
   Object.keys(widths).reduce((acc, cur) => acc || widths[cur], false);

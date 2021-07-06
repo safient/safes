@@ -4,51 +4,51 @@ import { applyStyleModifiers } from 'styled-components-modifiers';
 // modifiers allows us to pass the array of different varients, note: this should be applied at the end of all styled components. coz it may override the inherited styles from base component.
 
 export const BUTTON_MODIFIERS = {
-  secondary: () => `
-  background-color: #fff;
-  color: rgba(142, 144, 166, 1);
-  border: 1px solid rgba(142, 144, 166, 1);
+  secondary: ({ theme }) => `
+  background-color: ${theme.BUTTON.secondary.backgroundColor};
+  color:${theme.BUTTON.secondary.color};
+  border: ${theme.BUTTON.secondary.border};
   &:hover {
-    background-color: #fff;
-    border: 1px solid #422ed1;
-    color: #422ed1;
+    background-color:${theme.BUTTON.secondaryHover.backgroundColor};
+    border:  ${theme.BUTTON.secondaryHover.border};
+    color:  ${theme.BUTTON.secondaryHover.color};
   }
   &:disabled {
-    background-color: rgba(66, 46, 209, 0.45);
-    color: #fff;
+    background-color:  ${theme.BUTTON.secondaryDisabled.backgroundColor};
+    color:  ${theme.BUTTON.secondaryDisabled.color};
     cursor: not-allowed;
   }
 
 `,
 
-  warning: () => `
-    background-color: #CAB23F;
-    color: #fff;
+  warning: ({ theme }) => `
+    background-color:${theme.BUTTON.warning.backgroundColor} ;
+    color:${theme.BUTTON.warning.color} ;
     &:hover, &:focus {
-      background-color: #cab23f;
+      background-color: ${theme.BUTTON.warningHover.backgroundColor};
     }
     &:active {
-      background-color: #b49e35; 
+      background-color: ${theme.BUTTON.warningActive.backgroundColor}; 
     }
   `,
-  error: () => `
-  background-color:#DB2A30;
-  color: #fff;
+  error: ({ theme }) => `
+  background-color:${theme.BUTTON.error.backgroundColor}; 
+  color:${theme.BUTTON.error.color}; 
   &:hover {
-    background-color: #b54248;
+    background-color:${theme.BUTTON.errorHover.backgroundColor};  ;
   }
   &:active {
-    background-color: #95353a;
+    background-color:${theme.BUTTON.errorActive.backgroundColor}; ;
   }
   `,
   success: ({ theme }) => `
   background-color:${theme.BUTTON.success.backgroundColor};
   color:#fff;
   &:hover {
-    background-color: #367b48;
+    background-color:${theme.BUTTON.success.hover}
   }
   &:active {
-    background-color: #276738;
+    background-color: ${theme.BUTTON.successActive};
   }
   `,
 };
@@ -56,24 +56,18 @@ export const BUTTON_MODIFIERS = {
 // Reusable button- create a base button and make it to inherit
 
 export const BASE = styled.button`
-  padding: 0.8rem 1.2rem;
-  border-radius: 0.2rem;
+  padding: ${({ theme }) => theme.BUTTON.padding};
+  border-radius: ${({ theme }) => theme.BUTTON.borderRadius};
   cursor: pointer;
-
-  font-size: 1.6rem;
+  font-size: ${({ theme }) => theme.FONT.normal};
   transition: background-color 0.2s linear, color 0.2s linear;
-  &:hover {
-    background-color: #3d24f1;
-    color: #fff;
-  }
-
+  &:hover,
   &:active {
-    background-color: #3d24f1;
-    border-color: #fff;
+    background-color: ${({ theme }) => theme.BUTTON.baseActive};
   }
 `;
 
-// inherit from above base button
+// inherit from base button
 
 export const Button = styled(BASE)`
   background-color: ${({ theme }) =>
