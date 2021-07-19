@@ -73,9 +73,34 @@ export const Preview: React.FC = () => {
             <Avatar text='W' stacked size='medium' />
             <Avatar text='Ana' stacked size='medium' />
           </Avatar.Group>
-        </div>{' '}
+        </div>
         <div>
-          <Button>Hello</Button>
+          <br />
+          <div>
+            {' '}
+            <Button variant='primary'>Test </Button>
+          </div>
+          <br />
+          <div>
+            <Button variant='secondary'>Test</Button>
+          </div>
+          <br />
+          <div>
+            <Button variant='success'>Success</Button>
+          </div>
+          <br />
+          <div>
+            <Button variant='warning'>Warning</Button>
+          </div>
+          <br />
+          <div>
+            <Button variant='error'>Error</Button>
+          </div>
+          <br />
+          <div>
+            <Button variant='ghost'>Ghost</Button>
+          </div>
+          <br />
         </div>
         <br />
         <div>

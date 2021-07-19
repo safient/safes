@@ -45,11 +45,17 @@ export const theme: DefaultTheme = {
     // BUTTONS -background
 
     buttonPrimary: palette.buttonPrimary,
+
     buttonPrimaryDisabled: palette.buttonPrimaryDisabled,
     buttonSecondary: palette.buttonSecondary,
     buttonSecondaryBorder: palette.buttonSecondaryBorder,
+    // sec-active
     buttonSecondaryHover: palette.buttonSecondaryHover,
     buttonSecondaryDisabled: palette.buttonSecondaryDisabled,
+    buttonGhost: palette.buttonGhost,
+    buttonGhostHover: palette.buttonGhostHover,
+    buttonGhostText: palette.buttonGhostText,
+    buttonGhostBorder: palette.buttonGhostBorder,
     buttonSuccess: palette.buttonSuccess,
     buttonSuccessActive: palette.buttonSuccessActive,
     buttonSuccessHover: palette.buttonSuccessHover,

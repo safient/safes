@@ -4,7 +4,7 @@ import { Variants, FontSizes, Align, StyledTextProps } from './text.props';
 
 // styled component doesn't support varients natively- so we are using switch here.
 
-const handelColor = (variant: string, theme: any) => {
+const handleColor = (variant: string, theme: any) => {
   switch (variant) {
     case Variants.PRIMARY:
       return `${theme.colors.textPrimary}`;
@@ -21,7 +21,7 @@ const handelColor = (variant: string, theme: any) => {
   }
 };
 // handel custom sizes later
-export const handelSize = (size: string, theme: any) => {
+export const handleSize = (size: string, theme: any) => {
   switch (size) {
     case FontSizes.REGULAR:
       return `${FONT_SIZE.regular}`;
@@ -32,7 +32,7 @@ export const handelSize = (size: string, theme: any) => {
   }
 };
 
-export const handelTextAlign = (align: string, theme: any) => {
+export const handleTextAlign = (align: string, theme: any) => {
   switch (align) {
     case Align.CENTER:
       return `${ALIGNMENTS.center}`;
@@ -48,9 +48,9 @@ export const handelTextAlign = (align: string, theme: any) => {
 };
 
 export const Typography = styled.h1<StyledTextProps>`
-  color: ${({ theme, variant }) => handelColor(variant, theme)};
-  font-size: ${({ theme, size }) => handelSize(size, theme)};
+  color: ${({ theme, variant }) => handleColor(variant, theme)};
+  font-size: ${({ theme, size }) => handleSize(size, theme)};
   font-weight: ${({ bold }) => (bold ? 600 : 500)};
-  text-align: ${({ align, theme }) => handelTextAlign(align, theme)};
+  text-align: ${({ align, theme }) => handleTextAlign(align, theme)};
   line-height: 1;
 `;

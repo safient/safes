@@ -46,6 +46,12 @@ export const palette = {
   buttonSecondaryBorder: 'rgba(142, 144, 166, 1)',
   buttonSecondaryHover: '#fff',
   buttonSecondaryDisabled: 'rgba(66, 46, 209, 0.45)',
+  buttonGhost: '#fff',
+  buttonGhostHover: '#422ed1',
+  buttonGhostText: '#8E90A6',
+  buttonGhostBorder: '#8E90A6',
+  ghostHoverText: '#422ed1',
+
   buttonSuccess: '#0B7247',
   buttonSuccessActive: '#276738',
   buttonSuccessHover: '#367b48',
