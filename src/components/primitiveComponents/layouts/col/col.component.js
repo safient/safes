@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import getStyle from './col.style';
 import { getConfiguration } from '../layoutUtils/gridConfig';
 import { GutterWidthContext } from '../row/row.component';
-import { ScreenClassResolver } from '../../../contexts/ScreenClassResolver/ScreenClassResolver';
+import { ScreenClassResolver } from '../../../../contexts/ScreenClassResolver/ScreenClassResolver';
 
 const Div = 'div';
 

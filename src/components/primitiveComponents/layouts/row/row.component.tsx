@@ -1,8 +1,8 @@
-import React from "react";
-import { RowComponentProps } from "./row.component.props";
-import { Spacing } from "../types";
+import React from 'react';
+import { RowComponentProps } from './row.component.props';
+import { Spacing } from '../types';
 
-const Div = "div";
+const Div = 'div';
 
 export const Row: React.FC<RowComponentProps> = ({
   align: alignItems,

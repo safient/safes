@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Col } from '../components/layouts';
-import { Row } from '../components/layouts';
+import { Col } from '../components/primitiveComponents/layouts';
+import { Row } from '../components/primitiveComponents/layouts';
 
 const Box = styled.div`
   background-color: tomato;
@@ -22,14 +22,11 @@ const Text = styled.h2`
   font-weight: 500;
 `;
 
-export function HomeScreen() {
+export const HomeScreen: React.FC = () => {
   return (
     <HomeContainer>
-      <Text>
-        Stack the columns on mobile by making one full-width and the other
-        half-width
-      </Text>
-      <Row>
+      <Text>Stack the columns on mobile by making one full-width and the other half-width</Text>
+      {/* <Row>
         <Col xs={12} md={8}>
           <Box>xs=12 md=8</Box>
         </Col>
@@ -197,7 +194,7 @@ export function HomeScreen() {
             3 of 3
           </Col>
         </Row>
-      </div>
+      </div> */}
     </HomeContainer>
   );
-}
+};

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {Preview} from './components/UI/preview';
+import { Preview } from './components/primitiveComponents/preview';
 import {
   ClaimDetailsScreen,
   ClaimsScreen,
@@ -10,12 +10,12 @@ import {
   ProfileScreen,
 } from './screens';
 import { ThemeProvider } from 'styled-components';
-import {defaultTheme, darkTheme} from './utils/themes'
-import { GlobalStyle } from './utils/Global';
+import { theme } from './themes/light';
+import { GlobalStyle } from './utils/GlobalReset';
 
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route path='/' exact component={HomeScreen} />
