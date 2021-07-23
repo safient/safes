@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Preview } from './components/primitiveComponents/preview';
+import { Preview } from './components/primitive/preview';
 import {
   ClaimDetailsScreen,
   ClaimsScreen,
