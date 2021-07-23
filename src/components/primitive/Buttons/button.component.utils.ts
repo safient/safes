@@ -50,7 +50,6 @@ const handleBorderColors = (variant: string, theme: any): string => {
   switch (variant) {
     case 'ghost':
       return `1px solid ${theme.colors.buttonGhostBorder}`;
-
     default:
       return `blue`;
   }

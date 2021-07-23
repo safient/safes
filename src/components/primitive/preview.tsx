@@ -127,13 +127,16 @@ export const Preview: React.FC = () => {
             src={'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'}
           />
           <Card />
-
-          <Icon icon='arrowDown' size={14} />
-          <Icon icon='arrowRight' size={32} />
-          <Icon icon='arrowDown' size={32} />
-          <Icon icon='hamburgerMenu' size={64} />
-          <Icon icon='hamburgerMenu' size={100} color='green' />
-          <Icon icon='hamburgerMenu' size={100} color='red' />
+          <br />
+          <div>
+            <Icon name='arrowDown' size={14} />
+            <Icon name='arrowRight' size={32} />
+            <Icon name='arrowDown' size={32} />
+            <Icon name='hamburgerMenu' size={64} />
+            <Icon name='hamburgerMenu' size={30} />
+            <Icon name='hamburgerMenu' size={100} color='green' />
+            <Icon name='hamburgerMenu' size={100} color='red' />
+          </div>
         </div>
         <div>
           <Input type='text' /> <br />

@@ -1,7 +1,7 @@
 import { IconType } from './icons';
 
 interface IconProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  icon: IconType;
+  name: IconType;
   size?: number;
   color?: string;
 
