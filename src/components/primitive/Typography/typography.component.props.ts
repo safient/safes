@@ -1,7 +1,5 @@
 import React from 'react';
 
-// import {ColorTypes} from '../../theme';
-
 export enum TextPresets {
   /**
    * A greyish  medium sized bold header text
@@ -80,8 +78,8 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /**
    * Text color.
    */
-  // color?: ColorTypes;
-  color?: any;
+
+  color?: string;
 
   /**
    * Center align text
