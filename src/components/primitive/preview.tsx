@@ -1,17 +1,18 @@
 // for quick preview testing
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { Button } from './Buttons/button.component';
 import { Card } from './Card/card-base.component';
 import { Alert } from './Alerts/alert.component';
-import { Text } from './Text/text.component';
+// import { Text } from './Text/text.component';
 import { Image } from './Image/image.component';
 
 import Avatar from './Avatar';
 import { Icon } from './Icons/icon.component';
 import Input from './Input/input.component';
+import { Text } from './Typography/typography.component';
 export const Container = styled.div`
   width: 100%;
   padding: 100px;
@@ -33,41 +34,13 @@ export const HeadingContainer = styled.div`
 `;
 
 export const Preview: React.FC = () => {
+  const [text, setText] = useState('');
+  console.log('text0', text);
   const url =
     'https://images.pexels.com/photos/4394951/pexels-photo-4394951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
   return (
     <>
       <Container>
-        <Text variant='primary' size='regular' bold align='left'>
-          <br />
-          Text with regular size which is bold and aligned left
-        </Text>
-        <Text as='h1' variant='primary' size='reguar' align='left'>
-          <br />
-          Text with regular size which is bold and aligned center
-        </Text>
-        <Text as='h1' variant='success' size='regular' align='left'>
-          <br />
-          Text with regular size which is bold and aligned left
-        </Text>
-        <Text as='h1' variant='error' size='regular' align='left'>
-          <br />
-          Text with regular size which is bold and aligned left
-        </Text>
-        <Text as='h1' variant='warning' size='regular' align='left'>
-          <br />
-          Text with regular size which is bold and aligned left
-        </Text>
-        <Text as='h1' variant='warning' size='regular' align='left'>
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque recusandae, dignissimos cupiditate facilis
-          inventore numquam, aliquam laborum quam aspernatur at, expedita soluta! Cum excepturi ipsa eum nihil in,
-          possimus nostrum.
-        </Text>{' '}
-        <Text as='h1' variant='secondary' size='medium' align='left'>
-          <br />
-          Text with medium size which is bold and aligned right
-        </Text>
         <br />
         <div>
           <Avatar text='B' size='medium' /> <br />
@@ -139,11 +112,20 @@ export const Preview: React.FC = () => {
           </div>
         </div>
         <div>
-          <Input type='text' /> <br />
-          <Input type='password' variant='small' label='name' /> <br />
-          <Input type='password' variant='small' label='name' placeholder='Enter your name' /> <br />
-          <Input type='password' variant='large' label='Password' placeholder='Enter your name' disabled /> <br />
+          <Input type='text' label='name' /> <br />
+          <Input type='password' label='name' placeholder='Enter your name' /> <br />
+          <Input type='password' label='Password' placeholder='Enter your name' disabled /> <br />
         </div>
+        <Text variant='title'>Hello</Text>
+        <Text variant='contentHeader'>Hello</Text>
+        <Text variant='description'>Hello</Text>
+        <Text variant='content'>Hello</Text>
+        <Text variant='small'>Hello</Text>
+        <Text variant='small'>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque magnam dolorum perferendis cumque neque
+          excepturi error nihil obcaecati facere, est placeat in quisquam recusandae, accusamus magni consequatur at
+          aliquam voluptas.
+        </Text>
       </Container>
     </>
   );
