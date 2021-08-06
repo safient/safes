@@ -12,7 +12,7 @@ import { Image } from './Image/image.component';
 import Avatar from './Avatar';
 import { Icon } from './Icons/icon.component';
 import Input from './Input/input.component';
-import { Text } from './Typography/typography.component';
+import { Text } from './Text/text.component';
 export const Container = styled.div`
   width: 100%;
   padding: 100px;
@@ -35,7 +35,7 @@ export const HeadingContainer = styled.div`
 
 export const Preview: React.FC = () => {
   const [text, setText] = useState('');
-  console.log('text0', text);
+
   const url =
     'https://images.pexels.com/photos/4394951/pexels-photo-4394951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
   return (
@@ -107,16 +107,18 @@ export const Preview: React.FC = () => {
             <Icon name='arrowDown' size={32} />
             <Icon name='hamburgerMenu' size={64} />
             <Icon name='hamburgerMenu' size={30} />
-            <Icon name='hamburgerMenu' size={100} color='green' />
-            <Icon name='hamburgerMenu' size={100} color='red' />
+            <Icon name='hamburgerMenu' size={100} color='iconNormal' />
+            <Icon name='hamburgerMenu' size={100} color='iconDark' />
           </div>
         </div>
         <div>
           <Input type='text' label='name' /> <br />
           <Input type='password' label='name' placeholder='Enter your name' /> <br />
-          <Input type='password' label='Password' placeholder='Enter your name' disabled /> <br />
+          <Input type='password' label='Password' placeholder='Enter your name' /> <br />
         </div>
-        <Text variant='title'>Hello</Text>
+        <Text variant='title' paddingLeft={10}>
+          Hello
+        </Text>
         <Text variant='contentHeader'>Hello</Text>
         <Text variant='description'>Hello</Text>
         <Text variant='content'>Hello</Text>

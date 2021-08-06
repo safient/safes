@@ -1,4 +1,5 @@
 import React from 'react';
+import { ColorTypes } from '../../../themes/colors';
 
 export enum TextPresets {
   /**
@@ -44,6 +45,17 @@ export const FontSizes = {
 
 type Size = keyof typeof FontSizes;
 
+/**
+ * Font weights
+ */
+
+export const FontWeight = {
+  semiBold: 500,
+  bold: 600,
+};
+
+type Weight = keyof typeof FontWeight;
+
 export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /**
    * Adds text to the end of the current text
@@ -86,6 +98,22 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
    */
   center?: boolean;
 
+  /**
+   * left align text
+   */
+
+  left?: boolean;
+
+  /**
+   * right align text
+   */
+
+  right?: boolean;
+
+  /**
+   * capitalize  text
+   */
+  capitalize?: boolean;
   /**
    * Grays out the text to make it look disabled and restricts onPress operation
    */
@@ -160,6 +188,6 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
    * Transform text to lower case
    */
   lowerCase?: boolean;
-
+  colors?: ColorTypes | any;
   variant?: string;
 }

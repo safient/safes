@@ -36,7 +36,7 @@ export const palette = {
   },
   grey: {
     greyDefault: '#28293d', // default headings
-    greyLight: '#6B7280',
+    greyLight: '#55577d',
     greyLighter: '#F0F0F0',
     greyLightest: '#555770', //for placeholders
     greyText: '#41464b', // text on grey bg

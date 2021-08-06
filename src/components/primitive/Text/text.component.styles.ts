@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import { FontSizes, TextProps } from './typography.component.props';
+import { FontSizes, FontWeight, TextProps } from './text.component.props';
 
 const Base = styled.h2<TextProps>`
   font-size: ${FontSizes.small}rem;
-  font-weight: 600;
-  color: #55577d;
+  font-weight: ${FontWeight.bold};
+  color: ${({ theme }) => theme.colors.textPrimaryLight};
   line-height: 1.4;
 `;
 
 const Title = styled(Base)<TextProps>`
   font-size: ${FontSizes.large}rem;
-  color: #28293d;
+  color: ${({ theme }) => theme.colors.textPrimary}; ;
 `;
 
 const ContentHeader = styled(Base)<TextProps>`
@@ -22,12 +22,12 @@ const Description = styled(Base)<TextProps>`
 `;
 const Content = styled(Base)<TextProps>`
   font-size: ${FontSizes.medium}rem;
-  font-weight: 500;
+  font-weight: ${FontWeight.semiBold};
 `;
 
 const Small = styled(Base)<TextProps>`
   font-size: ${FontSizes.small}rem;
-  font-weight: 500;
+  font-weight: ${FontWeight.semiBold};
 `;
 
 export { Base, Title, ContentHeader, Description, Content, Small };
