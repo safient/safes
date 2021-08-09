@@ -190,4 +190,5 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   lowerCase?: boolean;
   colors?: ColorTypes | any;
   variant?: string;
+  weight?: Weight;
 }

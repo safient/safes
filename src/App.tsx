@@ -14,7 +14,6 @@ import { theme } from './themes/light';
 import { GlobalStyle } from './utils/GlobalReset';
 
 function App() {
-  console.log(theme);
   return (
     <ThemeProvider theme={theme}>
       <Router>

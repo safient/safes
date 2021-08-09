@@ -1,6 +1,6 @@
 // for quick preview testing
 
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from './Buttons/button.component';
@@ -34,8 +34,6 @@ export const HeadingContainer = styled.div`
 `;
 
 export const Preview: React.FC = () => {
-  const [text, setText] = useState('');
-
   const url =
     'https://images.pexels.com/photos/4394951/pexels-photo-4394951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940';
   return (

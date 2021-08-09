@@ -1,9 +1,6 @@
 import React from 'react';
-import { Text } from '../../components/primitive';
+import { Text, Row, Col } from '../../components/primitive';
 import styled from 'styled-components';
-// import { Col } from '../../components/primitive';
-// import { Row } from '../../components/primitive';
-import { Row, Col } from 'react-grid-system';
 
 const HomeContainer = styled.section`
   padding: 10px;
