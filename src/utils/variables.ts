@@ -1,40 +1,8 @@
-
-
-export const primaryFont = '"Inter", sans-serif';
-
-
-
-export const FONT_SIZE = {
-  NORMAL: '1.6rem',
-  HEADING: '2rem', //20px- base size is10
-};
-
-export const FONT_WEIGHT = {
-  REGULAR: 500,
-  SEMI_BOLD: 600,
-  BOLD: 900,
-};
-
-export const SPACES = {
-  0: '0rem',
-  2: '0.2rem',
-  4: '0.4rem',
-  6: '0.6rem',
-  8: '0.8rem',
-  10: '1rem',
-  12: '1.2rem',
-  14: '1.4rem',
-  16: '1.6rem',
-  18: '1.8rem',
-  20: '2.0rem',
-  22: '2.2rem',
-  24: '2.4rem',
-  26: '2.6rem',
-  28: '2.8rem',
-  30: '3.0rem',
-  32: '3.2rem',
-  34: '3.4rem',
-  36: '3.6rem',
+export const SHADOWS = {
+  default: '0px 16px 32px rgba(221, 230, 237, 0.4)',
+  small: '0 5px 10px rgba(0,0,0,0.12)',
+  medium: '0 8px 30px rgba(0,0,0,0.12)',
+  large: '0 30px 60px rgba(0,0,0,0.12)',
 };
 
 export const SCREEN_SIZE = {
