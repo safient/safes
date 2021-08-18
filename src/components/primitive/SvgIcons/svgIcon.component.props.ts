@@ -1,9 +1,9 @@
-import { IconType } from './icons';
+import { IconType } from './svgIcons';
 import { palette } from '../../../themes';
 
 export const colors = {
-  iconNormal: palette.grey.greyLight,
-  iconDark: palette.grey.greyDefault,
+  iconLight: palette.grey.light,
+  iconDark: palette.grey.main,
 };
 
 export type ColorType = keyof typeof colors;

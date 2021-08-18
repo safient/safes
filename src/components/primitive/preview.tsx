@@ -6,11 +6,10 @@ import styled from 'styled-components';
 import { Button } from './Buttons/button.component';
 import { Card } from './Card/card-base.component';
 import { Alert } from './Alerts/alert.component';
-// import { Text } from './Text/text.component';
 import { Image } from './Image/image.component';
 
 import Avatar from './Avatar';
-import { Icon } from './Icons/icon.component';
+import { Icon } from './SvgIcons/svgIcon.component';
 import Input from './Input/input.component';
 import { Text } from './Text/text.component';
 export const Container = styled.div`
@@ -54,10 +53,7 @@ export const Preview: React.FC = () => {
             {' '}
             <Button variant='primary'>Test </Button>
           </div>
-          <br />
-          <div>
-            <Button variant='secondary'>Test</Button>
-          </div>
+
           <br />
           <div>
             <Button variant='success'>Success</Button>
@@ -105,7 +101,7 @@ export const Preview: React.FC = () => {
             <Icon name='arrowDown' size={32} />
             <Icon name='hamburgerMenu' size={64} />
             <Icon name='hamburgerMenu' size={30} />
-            <Icon name='hamburgerMenu' size={100} color='iconNormal' />
+            <Icon name='hamburgerMenu' size={100} color='iconLight' />
             <Icon name='hamburgerMenu' size={100} color='iconDark' />
           </div>
         </div>
@@ -114,13 +110,11 @@ export const Preview: React.FC = () => {
           <Input type='password' label='name' placeholder='Enter your name' /> <br />
           <Input type='password' label='Password' placeholder='Enter your name' /> <br />
         </div>
-        <Text variant='title' paddingLeft={10}>
-          Hello
-        </Text>
-        <Text variant='contentHeader'>Hello</Text>
-        <Text variant='description'>Hello</Text>
-        <Text variant='content'>Hello</Text>
-        <Text variant='small'>Hello</Text>
+        <Text variant='title'>Title Text</Text>
+        <Text variant='contentHeader'>Content Header</Text>
+        <Text variant='description'>Description</Text>
+        <Text variant='content'>Content</Text>
+        <Text variant='small'>Small</Text>
         <Text variant='small'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque magnam dolorum perferendis cumque neque
           excepturi error nihil obcaecati facere, est placeat in quisquam recusandae, accusamus magni consequatur at

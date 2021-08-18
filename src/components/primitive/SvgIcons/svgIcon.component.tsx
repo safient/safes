@@ -1,7 +1,7 @@
-import { IconProps } from './icon.component.props';
+import { IconProps } from './svgIcon.component.props';
 import { ReactSVG } from 'react-svg';
-import { ICONS } from './icons';
-import { SvgWrapper } from './icon.component.style';
+import { ICONS } from './svgIcons';
+import { SvgWrapper } from './svgIcon.component.style';
 
 export const Icon = ({ name, className, size = 14, color, ...rest }: IconProps) => (
   <SvgWrapper className={className} size={size} color={color} {...rest}>

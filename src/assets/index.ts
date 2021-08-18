@@ -1,6 +1,40 @@
 import arrowDown from './icons/arrow_down.svg';
 import arrowLeft from './icons/arrow_left.svg';
 import arrowRight from './icons/arrow_right.svg';
+import add from './icons/add.svg';
+import arrowUp from './icons/arrow-up.svg';
+import calender from './icons/hamburger_menu.svg';
+import checkActive from './icons/hamburger_menu.svg';
+import check from './icons/hamburger_menu.svg';
+import claim from './icons/hamburger_menu.svg';
+import close from './icons/hamburger_menu.svg';
+import copy from './icons/hamburger_menu.svg';
+import darkMode from './icons/hamburger_menu.svg';
+import dashboard from './icons/hamburger_menu.svg';
+import dayMode from './icons/hamburger_menu.svg';
+import discordFull from './icons/hamburger_menu.svg';
+import discord from './icons/hamburger_menu.svg';
+import edit from './icons/hamburger_menu.svg';
+import externalLink from './icons/hamburger_menu.svg';
+import feedback from './icons/hamburger_menu.svg';
+import github from './icons/hamburger_menu.svg';
+import google from './icons/hamburger_menu.svg';
+import guarding from './icons/hamburger_menu.svg';
 import hamburgerMenu from './icons/hamburger_menu.svg';
+import heart from './icons/hamburger_menu.svg';
+import infoActive from './icons/hamburger_menu.svg';
+import info from './icons/hamburger_menu.svg';
+import inherit from './icons/hamburger_menu.svg';
+import lock from './icons/hamburger_menu.svg';
+import locked from './icons/hamburger_menu.svg';
+import metaMask from './icons/hamburger_menu.svg';
+import money from './icons/hamburger_menu.svg';
+import notification from './icons/hamburger_menu.svg';
+
+import profile from './icons/hamburger_menu.svg';
+
+import safes from './icons/hamburger_menu.svg';
+import twitter from './icons/hamburger_menu.svg';
+import upload from './icons/hamburger_menu.svg';
 
 export { arrowDown, arrowLeft, arrowRight, hamburgerMenu };

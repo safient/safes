@@ -1,26 +1,25 @@
 const handleDefaultBackground = (variant: string, theme: any): string => {
   switch (variant) {
     case 'primary':
-      return `${theme.colors.buttonPrimary}`;
-    case 'secondary':
-      return `${theme.colors.buttonSecondary}`;
+      return `${theme.colors.primary}`;
+
     case 'ghost':
-      return `${theme.colors.buttonGhost}`;
+      return `${theme.colors.white}`;
     case 'success':
-      return `${theme.colors.buttonSuccess}`;
+      return `${theme.colors.success}`;
     case 'warning':
-      return ` ${theme.colors.buttonWarning}`;
+      return ` ${theme.colors.warning}`;
     case 'error':
-      return ` ${theme.colors.buttonError}`;
+      return ` ${theme.colors.error}`;
     default:
-      return `${theme.colors.buttonPrimary}`;
+      return `${theme.colors.primary}`;
   }
 };
 
 const handleDefaultButtonText = (variant: string, theme: any): string => {
   switch (variant) {
     case 'ghost':
-      return `${theme.colors.buttonGhostText}`;
+      return `${theme.colors.greyLight}`;
 
     default:
       return `white`;
@@ -30,26 +29,24 @@ const handleDefaultButtonText = (variant: string, theme: any): string => {
 const handleActiveColors = (variant: string, theme: any): string => {
   switch (variant) {
     case 'primary':
-      return `${theme.colors.textPrimary}`;
-    case 'secondary':
-      return `${theme.colors.textPrimaryLighter}`;
+      return `${theme.colors.primary}`;
     case 'ghost':
-      return `${theme.colors.buttonGhostText}`;
+      return `${theme.colors.greyLight}`;
     case 'success':
-      return `${theme.colors.buttonSuccessActive}`;
+      return `${theme.colors.successLighter}`;
     case 'warning':
-      return ` ${theme.colors.buttonWarningActive}`;
+      return ` ${theme.colors.warningLighter}`;
     case 'error':
-      return ` ${theme.colors.buttonErrorActive}`;
+      return ` ${theme.colors.errorLighter}`;
     default:
-      return `${theme.colors.textPrimary}`;
+      return `${theme.colors.primary}`;
   }
 };
 
 const handleBorderColors = (variant: string, theme: any): string => {
   switch (variant) {
     case 'ghost':
-      return `1px solid ${theme.colors.buttonGhostBorder}`;
+      return `1px solid ${theme.colors.textLighter}`;
     default:
       return `blue`;
   }
