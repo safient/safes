@@ -116,6 +116,7 @@ export const palette: Palette = {
     whiteLiac: '#F6F7FB', //app background
     athensGrey: '#F9FAFB', // model, card bg
   },
+  // aqua blue- for info alert
   aquaBlue: {
     main: '#055160', // text color
     light: '#cff4fc', //background

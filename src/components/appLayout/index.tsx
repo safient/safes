@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { SCREEN_SIZE } from '../../utils/variables';
-// import Navigation from '../common/navigation/navigation.component';
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;

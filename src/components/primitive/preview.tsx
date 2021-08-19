@@ -99,10 +99,7 @@ export const Preview: React.FC = () => {
             <Icon name='arrowDown' size={14} />
             <Icon name='arrowRight' size={32} />
             <Icon name='arrowDown' size={32} />
-            <Icon name='hamburgerMenu' size={64} />
-            <Icon name='hamburgerMenu' size={30} />
-            <Icon name='hamburgerMenu' size={100} color='iconLight' />
-            <Icon name='hamburgerMenu' size={100} color='iconDark' />
+            <Icon name='checkActive' size={32} />
           </div>
         </div>
         <div>
