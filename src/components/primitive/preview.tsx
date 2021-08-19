@@ -9,7 +9,7 @@ import { Alert } from './Alerts/alert.component';
 import { Image } from './Image/image.component';
 
 import Avatar from './Avatar';
-import { Icon } from './SvgIcons/svgIcon.component';
+import { SvgIcon } from './SvgIcons/svgIcon.component';
 import Input from './Input/input.component';
 import { Text } from './Text/text.component';
 export const Container = styled.div`
@@ -88,7 +88,6 @@ export const Preview: React.FC = () => {
         </div>
         <div>
           <Image
-            id='img1'
             altText='my image'
             className='img'
             src={'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'}
@@ -96,27 +95,12 @@ export const Preview: React.FC = () => {
           <Card />
           <br />
           <div>
-            <Icon name='arrowDown' size={14} />
-            <Icon name='arrowRight' size={32} />
-            <Icon name='arrowDown' size={32} />
-            <Icon name='checkActive' size={32} />
+            <SvgIcon name='arrowDown' size={14} />
+            <SvgIcon name='arrowRight' size={32} />
+            <SvgIcon name='arrowDown' size={32} />
+            <SvgIcon name='checkActive' size={32} color={'iconLight'} />
           </div>
         </div>
-        <div>
-          <Input type='text' label='name' /> <br />
-          <Input type='password' label='name' placeholder='Enter your name' /> <br />
-          <Input type='password' label='Password' placeholder='Enter your name' /> <br />
-        </div>
-        <Text variant='title'>Title Text</Text>
-        <Text variant='contentHeader'>Content Header</Text>
-        <Text variant='description'>Description</Text>
-        <Text variant='content'>Content</Text>
-        <Text variant='small'>Small</Text>
-        <Text variant='small'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque magnam dolorum perferendis cumque neque
-          excepturi error nihil obcaecati facere, est placeat in quisquam recusandae, accusamus magni consequatur at
-          aliquam voluptas.
-        </Text>
       </Container>
     </>
   );
