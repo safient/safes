@@ -19,7 +19,7 @@ const handleDefaultBackground = (variant: string, theme: any): string => {
 const handleDefaultButtonText = (variant: string, theme: any): string => {
   switch (variant) {
     case 'ghost':
-      return `${theme.colors.greyLight}`;
+      return `${theme.colors.textLight}`;
 
     default:
       return `white`;

@@ -1,14 +1,14 @@
-import { IconType } from './svgIcons';
 import { palette } from '../../../themes';
+import { ImageTypes } from '../../../themes/images';
 
-export const colors = {
+const colors = {
   iconLight: palette.grey.light,
   iconDark: palette.grey.main,
 };
 
 export type ColorType = keyof typeof colors;
 interface IconProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  name: IconType;
+  name: ImageTypes;
   size?: number;
   color?: ColorType;
 }

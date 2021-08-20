@@ -1,4 +1,4 @@
-// for quick preview testing
+// for quick preview & testing
 
 import React from 'react';
 import styled from 'styled-components';
@@ -73,19 +73,7 @@ export const Preview: React.FC = () => {
           <br />
         </div>
         <br />
-        <div>
-          <Alert variant='primary'> Hello from Ptimary alert </Alert> <br />
-          <Alert variant='secondary'> Hello from Secondary alert </Alert>
-          <br />
-          <Alert variant='info'> Hello from Info alert </Alert>
-          <br />
-          <Alert variant='success'> Hello from Success alert </Alert>
-          <br />
-          <Alert variant='warning'> Hello from Warning alert </Alert>
-          <br />
-          <Alert variant='error'> Hello from Error alert </Alert>
-          <br />
-        </div>
+
         <div>
           <Image
             altText='my image'
@@ -98,7 +86,9 @@ export const Preview: React.FC = () => {
             <SvgIcon name='arrowDown' size={14} />
             <SvgIcon name='arrowRight' size={32} />
             <SvgIcon name='arrowDown' size={32} />
-            <SvgIcon name='checkActive' size={32} color={'iconLight'} />
+            <SvgIcon name='checkActive' size={32} />
+            <SvgIcon name='hamburgerMenu' size={32} />
+            <SvgIcon name='hamburgerMenu' size={32} />
           </div>
         </div>
       </Container>

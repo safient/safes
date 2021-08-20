@@ -67,7 +67,7 @@ interface AquaBlue {
   lighter: string;
 }
 
-interface RoyalBlue {
+interface Blue {
   main: string;
   light: string;
 }
@@ -102,7 +102,7 @@ interface Grey {
 export interface Palette {
   accents: Accents;
   aquaBlue: AquaBlue;
-  royalBlue: RoyalBlue;
+  blue: Blue;
   green: Green;
   yellow: Yellow;
   red: Red;
@@ -122,9 +122,9 @@ export const palette: Palette = {
     light: '#cff4fc', //background
     lighter: '#b6effb', //border
   },
-  royalBlue: {
-    main: '#422ED1', //button backgrounds
-    light: 'rgba(66, 46, 209, 0.2)', //alert, icon backgrounds
+  blue: {
+    main: '#5452F6', //button backgrounds
+    light: 'rgba(84, 82, 246, 0.2)', //alert, icon backgrounds
   },
   green: {
     main: '#2ba745',

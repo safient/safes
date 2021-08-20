@@ -4,7 +4,7 @@ import { ColorType } from './svgIcon.component.props';
 export const SvgWrapper = styled.div<{ size: number; color?: ColorType }>`
   display: inline-block;
   height: ${({ size }) => size}px;
-  fill: ${({ color }) => (color ? 'iconLight' : 'iconDark')} !important;
+  fill: ${(props) => (props.color ? 'iconLight' : 'iconDark')};
   cursor: pointer;
   height: ${(props) => props.size}px;
   line-height: ${(props) => props.size}px;

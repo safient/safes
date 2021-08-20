@@ -14,7 +14,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
   width: ${({ wide }) => (wide ? `600px` : 'auto')};
   min-width: 10rem;
   height: 4rem;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
   color: ${({ variant, theme }) => handleDefaultButtonText(variant, theme)};
   border: ${({ variant, theme }) => handleBorderColors(variant, theme)};

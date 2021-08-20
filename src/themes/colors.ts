@@ -56,7 +56,7 @@ export const colors = {
   // Base Colors
   white: palette.accents.white,
   black: palette.accents.black,
-  primary: palette.royalBlue.main,
+  primary: palette.blue.main,
 
   // Texts
   textDark: palette.grey.main,
