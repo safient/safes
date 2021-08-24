@@ -37,4 +37,5 @@ export const images = {
   upload: require('../assets/icons/upload.svg'),
 };
 
-export type ImageTypes = keyof typeof images;
+export type Images = keyof typeof images;
+export type Image = typeof images;

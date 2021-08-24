@@ -10,7 +10,7 @@ const Base = styled.h2<TextProps>`
 
 const Title = styled(Base)<TextProps>`
   font-size: ${FontSizes.large}rem;
-  color: ${({ theme }) => theme.colors.textDark}; ;
+  color: ${({ theme }) => theme.colors.textDark};
 `;
 
 const ContentHeader = styled(Base)<TextProps>`

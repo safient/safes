@@ -28,7 +28,7 @@ export const HomeScreen: React.FC = () => {
       <br />
       <br />
       <div>
-        <Row debug>
+        {/* <Row debug>
           <Col debug>1 of 3</Col>
           <Col xs={6} debug>
             2 of 3 (wider)
@@ -41,27 +41,30 @@ export const HomeScreen: React.FC = () => {
             2 of 3 (wider)
           </Col>
           <Col debug>3 of 3</Col>
-        </Row>
+        </Row> */}
       </div>
       <br />
       <br />
       <br />
       <br />
-      <Text variant='contentHeader' bold>
+      {/* <Text variant='contentHeader' bold>
         Mix and match breakpoints to create different grids depending on the screen size.
-      </Text>
+      </Text> */}
       <div>
         {/* Stack the columns on mobile by making one full-width and the other half-width */}
-        <Row debug>
+        {/* <Row debug>
           <Col xs={12} md={8} debug>
             xs=12 md=8
           </Col>
           <Col xs={6} md={4} debug>
             xs=6 md=4
           </Col>
-        </Row>
+        </Row> */}
 
         {/* Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop */}
+        <Text variant='contentHeader' bold>
+          Verticle Alightment
+        </Text>
         <Row>
           <Col xs={6} md={4} debug>
             xs=6 md=4
@@ -81,6 +84,120 @@ export const HomeScreen: React.FC = () => {
           </Col>
           <Col xs={6} debug>
             xs=6
+          </Col>
+        </Row>
+      </div>
+      <br />
+      <div>
+        <Row align='start' style={{ height: '75px' }} debug>
+          <Col debug>1 of 3</Col>
+          <Col debug>2 of 3</Col>
+          <Col debug>3 of 3</Col>
+        </Row>
+        <br />
+        <Row align='center' style={{ height: '75px' }} debug>
+          <Col debug>1 of 3</Col>
+          <Col debug>2 of 3</Col>
+          <Col debug>3 of 3</Col>
+        </Row>
+        <br />
+        <Row align='end' style={{ height: '75px' }} debug>
+          <Col debug>1 of 3</Col>
+          <Col debug>2 of 3</Col>
+          <Col debug>3 of 3</Col>
+        </Row>
+        <br />
+        <Row align='stretch' style={{ height: '75px' }} debug>
+          <Col debug>1 of 3</Col>
+          <Col debug>2 of 3</Col>
+          <Col debug>3 of 3</Col>
+        </Row>
+      </div>
+      <Text variant='contentHeader' bold>
+        Horizontal Alightment
+      </Text>
+      <div>
+        <Row justify='start' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='center' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='end' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='between' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='around' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='initial' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
+          </Col>
+        </Row>
+        <br />
+        <Row justify='inherit' debug>
+          <Col xs={3} debug>
+            1 of 3
+          </Col>
+          <Col xs={3} debug>
+            2 of 3
+          </Col>
+          <Col xs={3} debug>
+            3 of 3
           </Col>
         </Row>
       </div>
