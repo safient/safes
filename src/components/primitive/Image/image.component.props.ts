@@ -1,10 +1,9 @@
 interface ImageComponentProps {
-  id?: string | number | any;
   src: string;
   altText: string;
   className?: string;
-  width?: string | number;
-  height?: string | number;
+  width?: number;
+  height?: number;
 }
 
 export type { ImageComponentProps };

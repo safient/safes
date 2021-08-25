@@ -1,6 +1,5 @@
 import { ColProps, RowProps } from 'react-grid-system';
 import { SpacingTypes } from '../../../utils';
-import { ColorType } from '../Icons/icon.component.props';
 
 export interface BoxComponentProps extends ColProps, RowProps {
   /**
@@ -21,7 +20,7 @@ export interface BoxComponentProps extends ColProps, RowProps {
   /**
     Background color for the row. Useful in dev environment.
     */
-  color?: ColorType;
+  // color?: ColorType; // color type is not there
 
   /**
     Horizontally center align child components
