@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorTypes } from '../../../themes/colors';
+import { Colors } from '../../../themes/colors';
 
 export enum TextPresets {
   /**
@@ -188,7 +188,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
    * Transform text to lower case
    */
   lowerCase?: boolean;
-  colors?: ColorTypes | any;
+  colors?: Colors | any;
   variant?: string;
   weight?: Weight;
 }

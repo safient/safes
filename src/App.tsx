@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Preview } from './components/primitive/preview';
+
 import {
   ClaimDetailsScreen,
   ClaimsScreen,
@@ -25,7 +25,6 @@ function App() {
           <Route path='/claims' exact component={ClaimsScreen} />
           <Route path='/claims/:id' exact component={ClaimDetailsScreen} />
           <Route path='/profile' exact component={ProfileScreen} />
-          <Route path='/preview' exact component={Preview} />
         </Switch>
         <GlobalStyle />
       </Router>
