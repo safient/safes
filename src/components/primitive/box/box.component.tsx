@@ -61,11 +61,6 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
   //max-width
   const _maxWidth = maxWidth ?? width;
 
-  // center align
-  // const _centerAlign = row
-  //   ? { justifyContent: 'center' }
-  //   : { alignItems: 'center' };
-
   const style = {
     display: 'flex',
     flexDirection: row ? 'row' : 'column',
