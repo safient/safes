@@ -15,7 +15,7 @@ export const IconSvg: React.FunctionComponent<IconProps> = withTheme((props: Ico
   const iconColor = colors[color];
 
   return (
-    <SvgWrapper size={size} color={iconColor} {...rest}>
+    <SvgWrapper size={size ?? 14} color={iconColor} {...rest}>
       <ReactSVG
         src={images[name].default}
         beforeInjection={(svg) => {
