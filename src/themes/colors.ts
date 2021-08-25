@@ -1,24 +1,21 @@
 import { palette } from './palette';
 
 export const colors = {
-  // Base Colors
-  white: palette.accents.white,
-  black: palette.accents.black,
-  primary: palette.blue.main,
-
-  // Texts
-  textDark: palette.grey.main,
-  textLight: palette.grey.light,
-  textLighter: palette.grey.lighter, //placeholder and borders
-
-  // Status
-
-  success: palette.green.main,
-  successLight: palette.green.light, //text
-  error: palette.red.main,
-  errorLight: palette.red.light, //text
-  warning: palette.yellow.main,
-  warningLight: palette.yellow.light, //text
+  white: palette.white,
+  black: palette.black,
+  primary: palette.blue,
+  textDark: palette.grey,
+  textLight: palette.greyLight,
+  textLighter: palette.greyLighter, //placeholder and borders
+  success: palette.green,
+  successLight: palette.greenLight, //text
+  error: palette.red,
+  errorLight: palette.redLight, //text
+  link: palette.blueLight,
+  warning: palette.yellow,
+  warningLight: palette.yellowLight, //text
+  shadow: palette.shadow,
+  modalBackdrop: palette.grayTransparent,
 };
 
 export type Colors = keyof typeof colors;
