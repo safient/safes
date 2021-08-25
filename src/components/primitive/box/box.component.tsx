@@ -62,9 +62,9 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
   const _maxWidth = maxWidth ?? width;
 
   // center align
-  const _centerAlign = row
-    ? { justifyContent: 'center' }
-    : { alignItems: 'center' };
+  // const _centerAlign = row
+  //   ? { justifyContent: 'center' }
+  //   : { alignItems: 'center' };
 
   const style = {
     display: 'flex',
@@ -125,7 +125,9 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
 
     ...(!!bottom ? { justifyContent: 'flex-end' } : {}),
     ...(!!rightAlign ? { alignItems: 'flex-end' } : {}),
-    ...(!!centerAlign ? _centerAlign : {}),
+    ...(!!centerAlign
+      ? { justifyContent: 'center', alignItems: 'center' }
+      : {}),
 
     ...(!!spaceBetween ? { justifyContent: 'space-between' } : {}),
     ...styleOverride,

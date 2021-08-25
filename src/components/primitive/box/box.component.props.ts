@@ -76,72 +76,72 @@ export interface BoxComponentProps extends ColProps, RowProps {
   /**
     Component margin top
     */
-  marginTop?: SpacingTypes;
+  marginTop?: SpacingTypes | number;
 
   /**
     Component margin bottom
     */
-  marginBottom?: SpacingTypes;
+  marginBottom?: SpacingTypes | number;
 
   /**
     Component vertical margin
     */
-  marginVertical?: SpacingTypes;
+  marginVertical?: SpacingTypes | number;
 
   /**
     Component horizontal margin
     */
-  marginHorizontal?: SpacingTypes;
+  marginHorizontal?: SpacingTypes | number;
 
   /**
     Component right margin
     */
-  marginRight?: SpacingTypes;
+  marginRight?: SpacingTypes | number;
 
   /**
     Component left margin
     */
-  marginLeft?: SpacingTypes;
+  marginLeft?: SpacingTypes | number;
 
   /**
     Component margin
     */
-  margin?: SpacingTypes;
+  margin?: SpacingTypes | number;
 
   /**
     Component padding
     */
-  padding?: SpacingTypes;
+  padding?: SpacingTypes | number;
 
   /**
     Component padding top
     */
-  paddingTop?: SpacingTypes;
+  paddingTop?: SpacingTypes | number;
 
   /**
       Component padding bottom
       */
-  paddingBottom?: SpacingTypes;
+  paddingBottom?: SpacingTypes | number;
 
   /**
       Component vertical padding
       */
-  paddingVertical?: SpacingTypes;
+  paddingVertical?: SpacingTypes | number;
 
   /**
       Component horizontal padding
       */
-  paddingHorizontal?: SpacingTypes;
+  paddingHorizontal?: SpacingTypes | number;
 
   /**
       Component right padding
       */
-  paddingRight?: SpacingTypes;
+  paddingRight?: SpacingTypes | number;
 
   /**
       Component left padding
       */
-  paddingLeft?: SpacingTypes;
+  paddingLeft?: SpacingTypes | number;
 
   /**
     Aligns content to right
@@ -161,7 +161,7 @@ export interface BoxComponentProps extends ColProps, RowProps {
   /**
     An optional style override useful for padding & margin.
     */
-  style?: any;
+  style?: React.CSSProperties;
 
   /**
     justify content space-between for the box
