@@ -40,22 +40,22 @@ export interface BoxComponentProps extends ColProps, RowProps {
   /**
     Height of the container
     */
-  height?: number | string;
+  height?: number;
 
   /**
     Width of the container
     */
-  width?: number | string;
+  width?: number;
 
   /**
     Maximum height of the container
     */
-  maxHeight?: number | string;
+  maxHeight?: number;
 
   /**
     Maximum width of the container
     */
-  maxWidth?: number | string;
+  maxWidth?: number;
 
   /**
     Flex size

@@ -71,7 +71,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
     ...(!_.isNil(hCenter) ? { alignItems: 'center' } : {}),
     ...(!_.isNil(vCenter) ? { justifyContent: 'center' } : {}),
     ...(!_.isNil(height) ? { height: `${height}rem` } : {}),
-    ...(!_.isNil(width) ? { width: `${width}%` } : {}),
+    ...(!_.isNil(width) ? { width: `${width}rem` } : {}),
     ...(!_.isNil(maxWidth) ? { maxWidth: `${_maxWidth}rem` } : {}),
     ...(!_.isNil(maxHeight) ? { maxHeight: `${maxHeight}rem` } : {}),
     ...(!_.isNil(wrap) ? { flexWrap: 'wrap' } : {}),
