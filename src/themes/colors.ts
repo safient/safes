@@ -18,5 +18,5 @@ export const colors = {
   modalBackdrop: palette.grayTransparent,
 };
 
-export type Colors = keyof typeof colors;
-export type Color = typeof colors;
+export type Colors = typeof colors;
+export type Color = keyof typeof colors;

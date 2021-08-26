@@ -1,10 +1,18 @@
-import { Colors } from '../../../themes/colors';
-import { Images } from '../../../themes/images';
+import { Color } from '../../../themes';
+import { Image } from '../../../themes';
 
-interface IconProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  name: Images;
-  size?: number;
-  color?: Colors;
+export const sizes = {
+  small: 14,
+  medium: 18,
+  large: 32,
+  xLarge: 40,
+};
+type Size = keyof typeof sizes;
+
+interface IconProps {
+  name: Image;
+  size?: Size;
+  color?: Color;
 }
 
-export type { IconProps };
+export type { IconProps, Size };
