@@ -1,44 +1,31 @@
 export const palette = {
-  accents: {
-    white: '#fff',
-    black: '#000',
-    whiteLiac: '#F6F7FB', //app background
-    athensGrey: '#F9FAFB', // model, card bg
-  },
-  // aqua blue- for info alert
-  aquaBlue: {
-    main: '#055160', // text color
-    light: '#cff4fc', //background
-    lighter: '#b6effb', //border
-  },
-  blue: {
-    main: '#5452F6', //button backgrounds
-    light: 'rgba(84, 82, 246, 0.2)', //alert, icon backgrounds
-  },
-  green: {
-    main: '#2ba745',
-    light: '#0f5132', //green text color
-    lighter: '#d1e7dd', //alert bg
-    lightest: '#badbcc', //for border
-    dark: '#065f43', //for icons
-  },
-  yellow: {
-    main: '#ffc107', //default yellow color
-    light: '#664d03', //for text
-    lighter: '#fff3cd', //alert bg
-    lightest: '#ffecb5', //border
-  },
-  red: {
-    main: '#dc3545',
-    light: '#842029', //text color on alert bg
-    lighter: '#f8d7da', // alert bg
-    lightest: '#f5c2c7', //borders
-  },
-  grey: {
-    main: '#28293d', // default dark headings
-    light: '#555770', // light heading, body text
-    lighter: '#8E90A6', //for placeholders and secondary button, border
-  },
+  black: '#000000',
+  white: '#FFFFFF',
+  whiteLiac: '#F6F7FB', //app background
+  offWhite: '#F9FAFB', // model, card bg
+  aquaBlue: '#055160', // text color
+  aquaBlueLight: '#cff4fc', //background
+  aquaBlueLighter: '#b6effb', //border
+  blue: '#5452F6', //button backgrounds
+  blueLight: 'rgba(84, 82, 246, 0.1)', //alert, icon backgrounds
+  green: '#2ba745',
+  greenLight: '#0f5132', //green text color
+  greenLighter: '#d1e7dd', //alert bg
+  greenLightest: '#badbcc', //for border
+  greenDark: '#065f43', //for icons
+  yellow: '#ffc107', //default yellow color
+  yellowLight: '#664d03', //for text
+  yellowLighter: '#fff3cd', //alert bg
+  yellowLightest: '#ffecb5', //border
+  red: '#dc3545',
+  redLight: '#842029', //text color on alert bg
+  redLighter: '#f8d7da', // alert bg
+  redLightest: '#f5c2c7', //borders
+  grey: '#28293d', // default dark headings
+  greyLight: '#555770', // light heading, body text
+  greyLighter: '#8E90A6', //for placeholders and secondary button, border
+  grayTransparent: 'rgba(98, 108, 116, 0.4)', //model backdrop
+  shadow: ' 0px 16px 32px rgba(221, 230, 237, 0.4)',
 };
 
 export type Palette = typeof palette;

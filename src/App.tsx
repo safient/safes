@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { ThemeProvider } from 'styled-components';
 import {
   ClaimDetailsScreen,
   ClaimsScreen,
@@ -9,7 +9,6 @@ import {
   RegisterScreen,
   ProfileScreen,
 } from './screens';
-import { ThemeProvider } from 'styled-components';
 import { theme } from './themes/light';
 import { GlobalStyle } from './utils/GlobalReset';
 

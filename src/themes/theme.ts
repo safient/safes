@@ -1,6 +1,6 @@
-import { Color } from './colors';
-import { Image } from './images';
+import { Colors } from './colors';
+import { Images } from './images';
 export interface Theme {
-  colors: Color;
-  images: Image;
+  colors: Colors;
+  images: Images;
 }
