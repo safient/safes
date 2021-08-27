@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Row, Col } from '../../components/primitive';
+import { Text, Row, Col, IconSvg } from '../../components/primitive';
 import styled from 'styled-components';
 
 const HomeContainer = styled.section`
@@ -199,6 +199,7 @@ export const HomeScreen: React.FC = () => {
           <Col xs={3} debug>
             3 of 3
           </Col>
+          <IconSvg name='add' color='black' size={60} />
         </Row>
       </div>
     </HomeContainer>

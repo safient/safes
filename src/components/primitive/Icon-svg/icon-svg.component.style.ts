@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Color } from '../../../themes';
 
-export const SvgWrapper = styled.div<{ size: any; color?: any }>`
+interface SvgWrapperProps {
+  color?: Color;
+}
+
+export const SvgWrapper = styled.div<SvgWrapperProps>`
   display: inline-block;
-  height: ${({ size }) => size}px;
-  fill: ${({ color }) => color} !important;
+  fill: ${({ color, theme: { colors } }) => (color ? colors[color] : colors.black)};
   cursor: pointer;
-  height: ${({ size }) => size}px;
-  line-height: ${({ size }) => size}px;
 `;
