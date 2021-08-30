@@ -1,31 +1,21 @@
 import React from 'react';
-import { Color } from '../../../themes/colors';
+import { Color } from '../../../themes';
 
 export enum TextPresets {
   /**
-   * A greyish  medium sized bold header text
-   */
-  CONTENT_HEADER = 'contentHeader',
-
-  /**
-   * A greyish  medium sized text
-   */
-  CONTENT = 'content',
-
-  /**
-   * Common medium sized description text
-   */
-  DESCRIPTION = 'description',
-
-  /**
-   * Large sized dark text
+   * Large sized dark text, usually a large heading
    */
   TITLE = 'title',
 
   /**
-   * Used to show small light colored info messages
+   * A grayish  medium sized bold header
    */
-  MESSAGE = 'message',
+  CONTENT_HEADER = 'contentHeader',
+
+  /**
+   * Common medium sized text used in description and other contents.
+   */
+  CONTENT = 'content',
 
   /**
    * Renders a small gray text
@@ -33,35 +23,33 @@ export enum TextPresets {
   SMALL = 'small',
 }
 
-/**
- * base size is 10px - so 1rem=10px
- */
-export const FontSizes = {
-  tiny: 1.2,
-  small: 1.6,
-  medium: 2.0,
-  large: 2.6,
-};
+export enum Variant {
+  title,
+  contentHeader,
+  content,
+  small,
+}
 
-type Size = keyof typeof FontSizes;
+/**
+ * Font Sizes- base size is 10px - so 1rem=10px
+ */
+export enum FontSizes {
+  tiny = 1.2,
+  small = 1.6,
+  medium = 2.0,
+  large = 2.6,
+}
 
 /**
  * Font weights
  */
 
-export const FontWeight = {
-  semiBold: 500,
-  bold: 600,
-};
+export enum FontWeight {
+  semiBold = 500,
+  bold = 600,
+}
 
-type Weight = keyof typeof FontWeight;
-
-export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
-  /**
-   * Adds text to the end of the current text
-   */
-  append?: TextProps;
-
+export interface TextComponentProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /**
    * Bolder text
    */
@@ -70,12 +58,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   /**
    * Less bolder text
    */
-  bold500?: boolean;
-
-  /**
-   * Less bolder text
-   */
-  bold200?: boolean;
+  bold600?: boolean;
 
   /**
    * Sets font weight to normal
@@ -91,7 +74,7 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
    * Text color.
    */
 
-  color?: string;
+  color?: Color;
 
   /**
    * Center align text
@@ -141,12 +124,6 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   text?: string;
 
   /**
-   * An optional style override useful for padding & margin.
-   */
-  // style?: TextStyle | TextStyle[];
-  style?: any;
-
-  /**
    * When a text is displayed in a row next to an item, this prop
    * can be used to add some space before text
    */
@@ -159,25 +136,14 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
   paddingRight?: number;
 
   /**
-   * Adds text to the beginning of the current text
-   */
-  prepend?: TextProps;
-
-  /**
-   * While appending or prepending a text, a spacing is automatically added.
-   * If noSpace prop is true, then the space will not be added.
-   */
-  noSpace?: boolean;
-
-  /**
    * One of the different types of text presets.
    */
-  preset?: TextPresets;
+  preset?: string;
 
   /**
    * Font size from the predefined set of sizes or an arbitrary number
    */
-  size?: Size | number;
+  size?: keyof typeof FontSizes | number;
 
   /**
    * Transform text to UPPER CASE
@@ -188,7 +154,16 @@ export interface TextProps extends React.HTMLAttributes<HTMLHeadingElement> {
    * Transform text to lower case
    */
   lowerCase?: boolean;
-  colors?: Color | any;
-  variant?: string;
-  weight?: Weight;
+
+  /**
+   * determines the differnt text variants.
+   */
+
+  variant?: keyof typeof Variant;
+
+  /**
+   * sets the font weight
+   */
+
+  weight?: keyof typeof FontWeight;
 }

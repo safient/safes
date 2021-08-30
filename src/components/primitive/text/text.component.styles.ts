@@ -1,36 +1,32 @@
 import styled from 'styled-components';
-import { FontSizes, FontWeight, TextProps } from './text.component.props';
+import { FontSizes, FontWeight, TextComponentProps } from './text.component.props';
 
-const Base = styled.h2<TextProps>`
+const Base = styled.h2<TextComponentProps>`
   font-size: ${FontSizes.small}rem;
   font-weight: ${FontWeight.bold};
   color: ${({ theme }) => theme.colors.textLight};
   line-height: 1.4;
 `;
 
-const Title = styled(Base)<TextProps>`
+const Title = styled(Base)<TextComponentProps>`
   font-size: ${FontSizes.large}rem;
-  color: ${({ theme }) => theme.colors.textDark};
+  color: ${({ theme }) => theme.colors.textDark} !important;
 `;
 
-const ContentHeader = styled(Base)<TextProps>`
+const ContentHeader = styled(Base)<TextComponentProps>`
   font-size: ${FontSizes.medium}rem;
 `;
 
-const Description = styled.p<TextProps>`
+const Content = styled.p<TextComponentProps>`
   color: ${({ theme }) => theme.colors.textLight};
   font-weight: ${FontWeight.semiBold};
   font-size: ${FontSizes.small}rem;
   line-height: 1.4;
 `;
-const Content = styled(Base)<TextProps>`
-  font-size: ${FontSizes.medium}rem;
-  font-weight: ${FontWeight.semiBold};
-`;
 
-const Small = styled(Base)<TextProps>`
+const Small = styled(Base)<TextComponentProps>`
   font-size: ${FontSizes.small}rem;
   font-weight: ${FontWeight.semiBold};
 `;
 
-export { Base, Title, ContentHeader, Description, Content, Small };
+export { Base, Title, ContentHeader, Content, Small };
