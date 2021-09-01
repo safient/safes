@@ -58,6 +58,6 @@
     "@types/i18n-js": "^3.8.2",
     "@types/lodash": "^4.14.172",
     "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.12"
+    "@types/styled-components": "^5.1.13"
   }
 }
