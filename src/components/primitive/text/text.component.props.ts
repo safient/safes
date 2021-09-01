@@ -1,39 +1,32 @@
 import React from 'react';
 import { Color } from '../../../themes';
 
-export enum TextPresets {
+export enum Variant {
   /**
    * Large sized dark text, usually a large heading
    */
-  TITLE = 'title',
+  title = 'title',
 
   /**
    * A grayish  medium sized bold header
    */
-  CONTENT_HEADER = 'contentHeader',
+  contentHeader = 'contentHeader',
 
   /**
    * Common medium sized text used in description and other contents.
    */
-  CONTENT = 'content',
+  content = 'content',
 
   /**
    * Renders a small gray text
    */
-  SMALL = 'small',
-}
-
-export enum Variant {
-  title,
-  contentHeader,
-  content,
-  small,
+  small = 'small',
 }
 
 /**
  * Font Sizes- base size is 10px - so 1rem=10px
  */
-export enum FontSizes {
+export enum FontSize {
   tiny = 1.2,
   small = 1.6,
   medium = 2.0,
@@ -43,10 +36,18 @@ export enum FontSizes {
 /**
  * Font weights
  */
-
 export enum FontWeight {
   semiBold = 500,
   bold = 600,
+}
+
+/**
+ * Text Alignment properties
+ */
+export enum TextAlign {
+  left,
+  center,
+  right,
 }
 
 export interface TextComponentProps extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -57,6 +58,11 @@ export interface TextComponentProps extends React.HTMLAttributes<HTMLHeadingElem
 
   /**
    * Less bolder text
+   */
+  bold500?: boolean;
+
+  /**
+   * More bolder text
    */
   bold600?: boolean;
 
@@ -143,7 +149,7 @@ export interface TextComponentProps extends React.HTMLAttributes<HTMLHeadingElem
   /**
    * Font size from the predefined set of sizes or an arbitrary number
    */
-  size?: keyof typeof FontSizes | number;
+  size?: keyof typeof FontSize | number;
 
   /**
    * Transform text to UPPER CASE
