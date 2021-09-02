@@ -12,27 +12,26 @@ const NavlinkContainer = styled(Box)`
   }
 `;
 
-// @ts-ignore
-export const Navlink: React.FunctionComponent<NavlinkComponentProps> = withTheme(
-  (props: NavlinkComponentProps & IStyledTheme) => {
-    const { active, label, icon, onClick, ...rest } = props;
+export const Navlink: React.FunctionComponent<NavlinkComponentProps> = (
+  props: NavlinkComponentProps
+) => {
+  const { active, label, icon, onClick, ...rest } = props;
 
-    return (
-      // @ts-ignore
-      <NavlinkContainer
-        row
-        hCenter
-        margin='tiny'
-        paddingHorizontal='small'
-        paddingVertical='tiny'
-        color={active ? 'shadow' : 'white'}
-        onClick={onClick}
-        {...rest}>
-        <IconSvg {...icon} />
-        <Box marginLeft='tiny'>
-          <Text bold size='small' lineHeight={2.4} color='black' {...label} />
-        </Box>
-      </NavlinkContainer>
-    );
-  }
-);
+  return (
+    // @ts-ignore - No overload matches this call
+    <NavlinkContainer
+      row
+      hCenter
+      margin='tiny'
+      paddingHorizontal='small'
+      paddingVertical='tiny'
+      color={active ? 'shadow' : 'white'}
+      onClick={onClick}
+      {...rest}>
+      <IconSvg {...icon} />
+      <Box marginLeft='tiny'>
+        <Text bold size='small' lineHeight={2.4} color='black' {...label} />
+      </Box>
+    </NavlinkContainer>
+  );
+};
