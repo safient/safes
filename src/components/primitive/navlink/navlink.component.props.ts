@@ -1,6 +1,6 @@
 import { BoxComponentProps } from '../box/box.component.props';
 import { IconProps } from '../icon-svg/icon-svg.component.props';
-import { TextProps } from '../text/text.component.props';
+import { TextComponentProps } from '../text/text.component.props';
 
 export interface NavlinkComponentProps extends BoxComponentProps {
   /**
@@ -16,5 +16,5 @@ export interface NavlinkComponentProps extends BoxComponentProps {
   /**
    * label for the navlink
    */
-  label: TextProps;
+  label: TextComponentProps;
 }

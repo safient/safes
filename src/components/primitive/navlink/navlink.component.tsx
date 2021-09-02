@@ -23,11 +23,11 @@ export const Navlink: React.FunctionComponent<NavlinkComponentProps> = withTheme
         hCenter
         paddingHorizontal='small'
         paddingVertical='tiny'
-        color={active ? 'black' : 'error'}>
+        color={active ? 'shadow' : 'white'}>
         <IconSvg {...icon} />
-        <Text bold color={colors.black}>
-          Dashboard
-        </Text>
+        <Box marginLeft='tiny'>
+          <Text bold size='small' lineHeight={2.4} color='black' {...label} />
+        </Box>
       </Box>
     );
   }
