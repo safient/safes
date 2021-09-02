@@ -17,4 +17,9 @@ export interface NavlinkComponentProps extends BoxComponentProps {
    * label for the navlink
    */
   label: TextComponentProps;
+
+  /**
+   * function will be triggered when the link is clicked
+   */
+  onClick: () => void;
 }
