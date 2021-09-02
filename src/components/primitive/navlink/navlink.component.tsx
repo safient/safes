@@ -9,13 +9,7 @@ import { IconSvg } from '../icon-svg/icon-svg.component';
 // @ts-ignore
 export const Navlink: React.FunctionComponent<NavlinkComponentProps> = withTheme(
   (props: NavlinkComponentProps & IStyledTheme) => {
-    const {
-      theme: { colors },
-      active,
-      label,
-      icon,
-      ...rest
-    } = props;
+    const { active, label, icon, ...rest } = props;
 
     return (
       <Box
@@ -24,7 +18,8 @@ export const Navlink: React.FunctionComponent<NavlinkComponentProps> = withTheme
         margin='tiny'
         paddingHorizontal='small'
         paddingVertical='tiny'
-        color={active ? 'shadow' : 'white'}>
+        color={active ? 'shadow' : 'white'}
+        {...rest}>
         <IconSvg {...icon} />
         <Box marginLeft='tiny'>
           <Text bold size='small' lineHeight={2.4} color='black' {...label} />
