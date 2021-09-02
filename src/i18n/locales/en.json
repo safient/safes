@@ -1,0 +1,9 @@
+{
+  "common": {
+    "signIn": "Sign In ",
+    "signOut": "Sign Out",
+    "Home": "Home",
+    "Claims": "Claims",
+    "Profile": "Profile"
+  }
+}
