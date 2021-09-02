@@ -13,6 +13,7 @@
     "@types/react-dom": "^17.0.6",
     "@types/styled-jsx": "^2.2.9",
     "classnames": "^2.3.1",
+    "i18n-js": "^3.8.0",
     "init": "^0.1.2",
     "lodash": "^4.17.21",
     "polished": "^4.1.1",
@@ -54,8 +55,9 @@
     ]
   },
   "devDependencies": {
+    "@types/i18n-js": "^3.8.2",
     "@types/lodash": "^4.14.172",
     "@types/react-router-dom": "^5.1.7",
-    "@types/styled-components": "^5.1.12"
+    "@types/styled-components": "^5.1.13"
   }
 }
