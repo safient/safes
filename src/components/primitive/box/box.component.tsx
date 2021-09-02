@@ -71,7 +71,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = withTheme(
       ? { justifyContent: 'flex-end' }
       : { alignItems: 'flex-end' };
 
-    const style = {
+    const style: React.CSSProperties = {
       display: 'flex',
       flexDirection: row ? 'row' : 'column',
       minHeight: 'auto',
@@ -138,7 +138,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = withTheme(
       ...styleOverride,
     };
 
-    const Layout = row ? Row : Col;
+    const Layout: any = row ? Row : Col;
 
     const Base = styled(Layout)<BoxComponentProps>``;
 
@@ -147,7 +147,6 @@ export const Box: React.FunctionComponent<BoxComponentProps> = withTheme(
     }
 
     return (
-      // @ts-ignore
       <Base style={style} {...rest}>
         {children}
       </Base>

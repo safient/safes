@@ -5,7 +5,9 @@ import { CardComponentProps } from './card.component.props';
 import { Box } from '../box/box.component';
 import { BoxComponentProps } from '../box/box.component.props';
 
-const CardBase = styled(Box)<BoxComponentProps>`
+const CardBase = styled(Box).attrs({
+  padding: 'tiny',
+})<BoxComponentProps>`
   background-color: ${({
     theme: {
       colors: { white },
@@ -31,12 +33,9 @@ const CardBase = styled(Box)<BoxComponentProps>`
     }) => shadow};
 `;
 
-// @ts-ignore
-export const Card: React.FunctionComponent<CardComponentProps> = withTheme(
-  (props: CardComponentProps & IStyledTheme) => {
-    const { children, ...rest } = props;
-
-    // @ts-ignore
-    return <CardBase {...((rest.padding = 'tiny'), rest)}>{children}</CardBase>;
-  }
+export const Card: React.FunctionComponent<CardComponentProps> = (
+  props: CardComponentProps
+) => (
+  // @ts-ignore
+  <CardBase {...props} />
 );
