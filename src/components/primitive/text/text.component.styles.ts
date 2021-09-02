@@ -1,36 +1,47 @@
 import styled from 'styled-components';
-import { FontSizes, FontWeight, TextProps } from './text.component.props';
+import { FontSize, FontWeight, TextComponentProps } from './text.component.props';
 
-const Base = styled.h2<TextProps>`
-  font-size: ${FontSizes.small}rem;
+/**
+ * Base style for text component that can be extended.
+ */
+const Base = styled.h2<TextComponentProps>`
+  font-size: ${FontSize.small}rem;
   font-weight: ${FontWeight.bold};
   color: ${({ theme }) => theme.colors.textLight};
   line-height: 1.4;
 `;
 
-const Title = styled(Base)<TextProps>`
-  font-size: ${FontSizes.large}rem;
+/**
+ * Large sized dark text, usually a large heading.
+ */
+const Title = styled(Base)<TextComponentProps>`
+  font-size: ${FontSize.large}rem;
   color: ${({ theme }) => theme.colors.textDark};
 `;
 
-const ContentHeader = styled(Base)<TextProps>`
-  font-size: ${FontSizes.medium}rem;
+/**
+ * A grayish  medium sized bold header.
+ */
+const ContentHeader = styled(Base)<TextComponentProps>`
+  font-size: ${FontSize.medium}rem;
 `;
 
-const Description = styled.p<TextProps>`
+/**
+ * Common medium sized text used in description and other contents.
+ */
+const Content = styled.p<TextComponentProps>`
   color: ${({ theme }) => theme.colors.textLight};
   font-weight: ${FontWeight.semiBold};
-  font-size: ${FontSizes.small}rem;
+  font-size: ${FontSize.small}rem;
   line-height: 1.4;
 `;
-const Content = styled(Base)<TextProps>`
-  font-size: ${FontSizes.medium}rem;
+
+/**
+ * Renders a small gray text.
+ */
+const Small = styled(Base)<TextComponentProps>`
+  font-size: ${FontSize.small}rem;
   font-weight: ${FontWeight.semiBold};
 `;
 
-const Small = styled(Base)<TextProps>`
-  font-size: ${FontSizes.small}rem;
-  font-weight: ${FontWeight.semiBold};
-`;
-
-export { Base, Title, ContentHeader, Description, Content, Small };
+export { Base, Title, ContentHeader, Content, Small };
