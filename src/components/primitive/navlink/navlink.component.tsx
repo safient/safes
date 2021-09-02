@@ -21,6 +21,7 @@ export const Navlink: React.FunctionComponent<NavlinkComponentProps> = withTheme
       <Box
         row
         hCenter
+        margin='tiny'
         paddingHorizontal='small'
         paddingVertical='tiny'
         color={active ? 'shadow' : 'white'}>
