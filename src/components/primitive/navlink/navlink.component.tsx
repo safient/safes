@@ -1,6 +1,5 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import { IStyledTheme } from '../../../themes/styled-components';
+import styled from 'styled-components';
 import { NavlinkComponentProps } from './navlink.component.props';
 import { Box } from '../box/box.component';
 import { Text } from '../text/text.component';
