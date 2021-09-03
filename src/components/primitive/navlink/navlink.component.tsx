@@ -24,7 +24,7 @@ export const Navlink: React.FunctionComponent<NavlinkComponentProps> = (
       margin='tiny'
       paddingHorizontal='small'
       paddingVertical='tiny'
-      color={active ? 'shadow' : 'white'}
+      color={active ? 'textLighter' : 'white'}
       onClick={onClick}
       {...rest}>
       <IconSvg {...icon} />
