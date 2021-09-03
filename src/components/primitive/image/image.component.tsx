@@ -14,11 +14,18 @@ export const Image: React.FunctionComponent<ImageComponentProps> = withTheme(
     const {
       src,
       altText,
-      name = 'add',
+      name,
       theme: { images },
       ...rest
     } = props;
 
-    return <StyledImage src={src ? src : images[name]} alt={altText} {...rest} />;
+    let image = {};
+    if (name) {
+      image = { src: images[name] };
+    } else {
+      image = { src };
+    }
+
+    return <StyledImage {...image} alt={altText} {...rest} />;
   }
 );

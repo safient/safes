@@ -1,5 +1,5 @@
 import { Image } from '../../../themes';
-interface ImageComponentProps {
+interface ImageComponentProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   /**
    * Source for the image
    */
