@@ -1,4 +1,5 @@
 import { Image } from '../../../themes';
+
 interface ImageComponentProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   /**
    * Source for the image
@@ -8,7 +9,7 @@ interface ImageComponentProps extends React.ImgHTMLAttributes<HTMLImageElement> 
   /**
    * Fallback text if image fails to load.
    */
-  altText?: string;
+  alt?: string;
 
   /**
    * Option to pass local images.
