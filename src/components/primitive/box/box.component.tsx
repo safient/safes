@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Col, Row } from 'react-grid-system';
-import styled, { ThemeContext } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import _ from 'lodash';
 import { BoxComponentProps } from './box.component.props';
 import { spacing } from '../../../utils';
@@ -8,7 +8,7 @@ import { spacing } from '../../../utils';
 export const Box: React.FunctionComponent<BoxComponentProps> = (
   props: BoxComponentProps
 ) => {
-  const { colors } = useContext(ThemeContext);
+  const { colors } = useTheme();
 
   const {
     row,
