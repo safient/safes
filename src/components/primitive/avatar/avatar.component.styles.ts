@@ -23,7 +23,7 @@ export const Medium = styled(Small)<AvatarComponentProps>`
 /**
  * Styles for Large sized Avatar
  */
-export const Large = styled(Medium)<AvatarComponentProps>`
+export const Large = styled(Small)<AvatarComponentProps>`
   height: 10rem;
   width: 10rem;
 `;

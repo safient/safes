@@ -14,7 +14,7 @@ export enum Variant {
   /**
    * Large sized avatar.
    */
-  large = 'lage',
+  large = 'large',
 }
 
 /**
@@ -30,7 +30,7 @@ export enum AvatarSize {
 
 export interface AvatarComponentProps extends ImageComponentProps {
   /**
-   * Avatar sizes
+   * Avatar sizes- Small is the Default size.
    */
   size?: keyof typeof AvatarSize;
 
