@@ -1,27 +1,58 @@
 import styled from 'styled-components';
-import { StyledButtonProps } from './button.component.props';
-import {
-  handleBorderColors,
-  handleActiveColors,
-  handleDefaultBackground,
-  handleDefaultButtonText,
-} from './button.component.utils';
+import { Box } from '../box/box.component';
+import { Text } from '../text/text.component';
 
-export const StyledButton = styled.button<StyledButtonProps>`
-  padding: 1rem 2rem;
-  border-radius: 4px;
+/**
+ * Styles for Primary Button.
+ */
+export const Primary = styled(Box)`
+  height: 5rem;
+  width: 14.6rem;
+  min-width: 14.6rem !important;
+  border-radius: 0.4rem;
+  border: none;
   cursor: pointer;
-  width: ${({ wide }) => (wide ? `600px` : 'auto')};
-  min-width: 10rem;
-  height: 4rem;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: ${({ variant, theme }) => handleDefaultButtonText(variant, theme)};
-  border: ${({ variant, theme }) => handleBorderColors(variant, theme)};
-  background-color: ${({ variant, theme }) => handleDefaultBackground(variant, theme)};
-  transition: background-color 0.2s linear, color 0.2s linear;
+  background-color: ${({ theme: { colors } }) => colors.primary} !important;
+`;
 
-  &:active {
-    color: ${({ variant, theme }) => handleActiveColors(variant, theme)};
-  }
+/**
+ * styles for Button Label.
+ */
+export const ButtonText = styled(Text)`
+  color: ${({ theme: { colors } }) => colors.white};
+  font-weight: 500;
+  overflow: hidden;
+`;
+
+/**
+ * Styles for Small Button.
+ */
+export const Small = styled(Box)`
+  height: 4.2rem;
+  width: 14.6rem;
+  min-width: 14.6rem !important;
+  background-color: ${({ theme: { colors } }) => colors.primary} !important;
+  border: 1px solid white;
+`;
+
+/**
+ * Styles for Ghost Button.
+ */
+export const GhostButton = styled(Box)`
+  height: 5rem;
+  width: 14.6rem !important;
+  border-radius: 0.5rem;
+  max-width: 240px !important;
+  border: none;
+  cursor: pointer;
+  color: ${({ theme: { colors } }) => colors.border} !important;
+  border: 2px solid ${({ theme: { colors } }) => colors.textLighter} !important;
+  background-color: transparent;
+`;
+
+/**
+ * Styles for IconWrapper.
+ */
+export const IconWrapper = styled.span`
+  margin: 0 2rem 0 -2rem;
 `;
