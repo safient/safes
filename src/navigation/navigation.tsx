@@ -3,43 +3,52 @@ import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { LoginScreen } from '../screens';
 import { routes } from './routes';
 
-export interface IPage {
-  name: string;
-}
-
 const Navigation = () => {
-  const isLoggedIn: boolean = false;
+  const isLoggedIn: boolean = true;
 
   return (
     <Switch>
-      {routes.map((route, index) => {
-        if (route.privateRoute) {
+      {routes.map(
+        (
+          {
+            component: Component,
+            name,
+            path,
+            exact,
+            private: isPrivate,
+            props: routeProps,
+          },
+          index
+        ) => {
+          if (isPrivate) {
+            return (
+              <Route
+                key={name}
+                path={path}
+                exact={exact}
+                render={(props: any) =>
+                  isLoggedIn ? (
+                    <Component {...props} {...routeProps} />
+                  ) : (
+                    <LoginScreen {...props} />
+                  )
+                }
+              />
+            );
+          }
+
           return (
             <Route
               key={index}
-              path={route.path}
-              exact={route.exact}
-              render={(props: any) =>
-                isLoggedIn ? (
-                  <route.component {...props} {...route.props} />
-                ) : (
-                  <LoginScreen {...props} />
-                )
-              }
+              path={path}
+              exact={exact}
+              render={(props: RouteComponentProps<any>) => (
+                <Component {...props} {...routeProps} />
+              )}
             />
           );
         }
-        return (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            render={(props: RouteComponentProps<any>) => (
-              <route.component {...props} {...route.props} />
-            )}
-          />
-        );
-      })}
+      )}
       <Redirect to='/404' />
     </Switch>
   );
