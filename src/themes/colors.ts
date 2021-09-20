@@ -16,7 +16,9 @@ export const colors = {
   warningLight: palette.yellowLight, //text
   shadow: palette.shadow,
   modalBackdrop: palette.grayTransparent,
-  border: palette.greyLighter,
+  border: palette.grey,
+  borderLight: palette.greyLight,
+  borderLighter: palette.greyLighter,
 };
 
 export type Colors = typeof colors;

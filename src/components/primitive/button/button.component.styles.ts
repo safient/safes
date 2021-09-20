@@ -1,53 +1,45 @@
 import styled from 'styled-components';
+import { ButtonComponentProps } from './button.component.props';
 import { Box } from '../box/box.component';
 import { Text } from '../text/text.component';
 
 /**
- * Styles for Primary Button.
+ * Styles for Base Button.
  */
-export const Primary = styled(Box)`
+export const BaseButton = styled(Box)<ButtonComponentProps>`
   height: 5rem;
-  width: 14.6rem;
-  min-width: 14.6rem !important;
+  width: fit-content;
+  padding: 1.2rem 0.6rem !important;
+  min-width: 14.2rem !important;
   border-radius: 0.4rem;
   border: none;
   cursor: pointer;
-  background-color: ${({ theme: { colors } }) => colors.primary} !important;
 `;
 
 /**
- * styles for Button Label.
+ * Styles for Primary Button.
  */
-export const ButtonText = styled(Text)`
-  color: ${({ theme: { colors } }) => colors.white};
-  font-weight: 500;
-  overflow: hidden;
-`;
-
-/**
- * Styles for Small Button.
- */
-export const Small = styled(Box)`
-  height: 4.2rem;
-  width: 14.6rem;
-  min-width: 14.6rem !important;
+export const PrimaryButton = styled(BaseButton)<ButtonComponentProps>`
   background-color: ${({ theme: { colors } }) => colors.primary} !important;
-  border: 1px solid white;
 `;
 
 /**
  * Styles for Ghost Button.
  */
-export const GhostButton = styled(Box)`
-  height: 5rem;
-  width: 14.6rem !important;
-  border-radius: 0.5rem;
-  max-width: 240px !important;
-  border: none;
-  cursor: pointer;
-  color: ${({ theme: { colors } }) => colors.border} !important;
-  border: 2px solid ${({ theme: { colors } }) => colors.textLighter} !important;
+export const GhostButton = styled(BaseButton)<ButtonComponentProps>`
+  border: 2px solid ${({ theme: { colors } }) => colors.borderLighter} !important;
   background-color: transparent;
+`;
+
+/**
+ * Styles for Small Button.
+ */
+export const SmallButton = styled(Box)<ButtonComponentProps>`
+  width: fit-content;
+  min-width: 14.2rem !important;
+  height: 4.2rem;
+  background-color: ${({ theme: { colors } }) => colors.primary} !important;
+  border-radius: 0.4rem;
 `;
 
 /**
@@ -55,4 +47,11 @@ export const GhostButton = styled(Box)`
  */
 export const IconWrapper = styled.span`
   margin: 0 2rem 0 -2rem;
+`;
+
+/**
+ * styles for Button Label. default color will be white it can be overridden by passing color props.
+ */
+export const ButtonText = styled(Text)`
+  color: ${({ theme: { colors } }) => colors.white};
 `;
