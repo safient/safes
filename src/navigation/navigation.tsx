@@ -1,10 +1,11 @@
 import React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { LoginScreen } from '../screens';
+import { RoutePath } from './route-path';
 import { routes } from './routes';
 
 const Navigation = () => {
-  const isLoggedIn: boolean = true;
+  const isLoggedIn: boolean = false;
 
   return (
     <Switch>
@@ -49,7 +50,7 @@ const Navigation = () => {
           );
         }
       )}
-      <Redirect to='/404' />
+      <Redirect to={RoutePath.notFound} />
     </Switch>
   );
 };

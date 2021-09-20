@@ -9,67 +9,66 @@ import {
   ProfileScreen,
   RegisterScreen,
 } from '../screens';
-import { RouteNames } from './route-names';
+import { RouteName } from './route-name';
+import { RoutePath } from './route-path';
 
 export interface IRoute extends RouteProps {
   path: string;
-  name: RouteNames;
+  name: RouteName;
   exact: boolean;
   component: React.ComponentType<any>;
   props?: any;
   private?: boolean;
 }
 
-// route-param-list.ts - interface - properties of type Route, values -> navigation route params RouteParam
-
 export const routes: IRoute[] = [
   {
-    path: '/',
-    name: RouteNames.HOME,
+    path: RoutePath.home,
+    name: RouteName.home,
     exact: true,
     component: HomeScreen,
     props: { name: 'HomeScreen' },
   },
   {
-    path: '/login',
-    name: RouteNames.LOGIN,
+    path: RoutePath.login,
+    name: RouteName.login,
     exact: true,
     component: LoginScreen,
   },
   {
-    path: '/register',
-    name: RouteNames.REGISTER,
+    path: RoutePath.register,
+    name: RouteName.register,
     exact: true,
     component: RegisterScreen,
   },
   {
-    path: '/createsafe',
-    name: RouteNames.CREATE_SAFE,
+    path: RoutePath.createSafe,
+    name: RouteName.createSafe,
     exact: true,
     component: CreateSafeScreen,
   },
   {
-    path: '/claims',
-    name: RouteNames.CLAIMS,
+    path: RoutePath.claims,
+    name: RouteName.claims,
     exact: true,
     component: ClaimsScreen,
   },
   {
-    path: '/claims/:id',
-    name: RouteNames.CLAIM_DETAILS,
+    path: RoutePath.claimDetails,
+    name: RouteName.claimDetails,
     exact: true,
     component: ClaimDetailsScreen,
   },
   {
-    path: '/profile',
-    name: RouteNames.PROFILE,
+    path: RoutePath.profile,
+    name: RouteName.profile,
     exact: true,
     component: ProfileScreen,
     private: true,
   },
   {
-    path: '/404',
-    name: RouteNames.NOT_FOUND,
+    path: RoutePath.notFound,
+    name: RouteName.notFound,
     exact: true,
     component: NotFoundScreen,
   },
