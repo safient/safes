@@ -80,13 +80,13 @@ There are two ways to navigate one is using Link which is equivalent to a tag an
 ###### Navigating using Link
 
 ```html
-<link to="{RoutePath.example}" />
+<link to={RoutePath.example} />
 ```
 
 ###### Programmatically navigate using Redirect
 
 ```html
-<Redirect to="{RoutePath.example}" />
+<Redirect to={RoutePath.example} />
 ```
 
 ### Route params
