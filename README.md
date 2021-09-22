@@ -37,11 +37,11 @@ You are welcome to submit issues and enhancement requests and work on any of the
 
 #### Steps:
 
-- Add the screen name in RouteName enum
-- Add the screen path in the RoutePath enum
-- Add the screen route object to the routes array
-- If the screen contains params then define it to route-param-list else make it undefined
-- If the screen contains query strings then define it to route-query-list else make it undefined
+- Add the screen name in RouteName enum in src/navigation/route-name.ts
+- Add the screen path in the RoutePath enum in src/navigation/route-path.ts
+- Add the screen route object to the routes array in src/navigation/routes.ts
+- If the screen contains params then define it to route-param-list else make it undefined in src/navigation/route-param-list.ts
+- If the screen contains query strings then define it to route-query-list else make it undefined in src/navigation/route-query-list.ts
 
 ##### Example
 
@@ -73,7 +73,7 @@ RouteQuery:
 
 ### Navigating to a new screen
 
-There are two ways to navigate one is using Link which is equivalent to a tag and other is Problematically using Redirect
+There are two ways to navigate one is using Link which is equivalent to a tag and other is programmatically using Redirect
 
 ##### Example
 
@@ -130,7 +130,7 @@ Query string definition in RouteQueryList:
 Using the useQuery() hook
 const query = useQuery<RouteQueryList[RouteName.home]>(RouteName.home);
 
-As the datatype of the values are not string then we need to type case the string to number
+As the datatype of the values are not string then we need to type case the string to number. To do that you have to add query string object in src/navigation/route-query-list.ts and if there are any type casting then have to do that in typecast() function in src/hooks/useQuery.ts
 
 const _data = { ...data };
   switch (routeName) {
