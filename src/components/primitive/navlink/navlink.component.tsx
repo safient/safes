@@ -11,9 +11,7 @@ const NavlinkContainer = styled(Box)`
   }
 `;
 
-export const Navlink: React.FunctionComponent<NavlinkComponentProps> = (
-  props: NavlinkComponentProps
-) => {
+export const Navlink: React.FunctionComponent<NavlinkComponentProps> = (props: NavlinkComponentProps) => {
   const { active, label, icon, onClick, ...rest } = props;
 
   return (
@@ -24,9 +22,10 @@ export const Navlink: React.FunctionComponent<NavlinkComponentProps> = (
       margin='tiny'
       paddingHorizontal='small'
       paddingVertical='tiny'
-      color={active ? 'textLighter' : 'white'}
+      color={active ? 'navLinkActive' : 'white'}
       onClick={onClick}
-      {...rest}>
+      {...rest}
+    >
       <IconSvg {...icon} />
       <Box marginLeft='tiny'>
         <Text bold size='small' lineHeight={2.4} color='black' {...label} />
