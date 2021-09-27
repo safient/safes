@@ -1,5 +1,5 @@
-import { IconProps } from './../icon-svg/icon-svg.component.props';
-import { TextComponentProps } from './../text/text.component.props';
+import { IconProps } from '../icon-svg/icon-svg.component.props';
+import { TextComponentProps } from '../text/text.component.props';
 
 /**
  * Different screen sizes used across the screens.
@@ -17,6 +17,6 @@ export enum ScreenSize {
 export interface NavbarItem {
   label: TextComponentProps;
   icon: IconProps;
-  path: string;
   onClick: () => void;
+  path: string;
 }

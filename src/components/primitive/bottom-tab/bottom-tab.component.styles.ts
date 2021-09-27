@@ -1,16 +1,24 @@
 import styled from 'styled-components';
-import { Box, Navlink } from '..';
+import { ScreenSize } from './../navbar/navbar.component.props';
+import { Box, Navlink } from '../../primitive';
 
 /**
  * Styles for Bottom-navigation displayed on smaller devices.
  */
 export const BottomNavigation = styled(Box)`
-  justify-content: space-evenly !important;
   flex: 1;
-  background-color: white;
-  @media screen and (max-width: 768px) {
+  background-color: ${({ theme: { colors } }) => colors.white};
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  justify-content: space-evenly !important;
+
+  /**
+ * Media Queries applied on medium screens.
+ */
+  @media screen and (max-width: ${ScreenSize.medium}) {
     flex-direction: row;
-    height: 70px;
+    height: 7rem;
     width: 100vw;
     position: fixed;
     bottom: 0;

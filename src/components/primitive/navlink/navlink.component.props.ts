@@ -22,4 +22,6 @@ export interface NavlinkComponentProps extends BoxComponentProps {
    * function will be triggered when the link is clicked
    */
   onClick: () => void;
+
+  path: string;
 }

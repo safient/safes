@@ -1,16 +1,14 @@
-import { BottomNavigation, NavLabel } from './botton-tab.component.styles';
+import { useHistory } from 'react-router';
+import { BottomNavigation, NavLabel } from './bottom-tab.component.styles';
+import { navItems } from './bottom-tab';
 
 export const BottomTab: React.FunctionComponent = () => {
+  const history = useHistory();
   return (
     <BottomNavigation row>
-      <NavLabel
-        label={{ text: 'Home' }}
-        icon={{ name: 'dashboard' }}
-        onClick={() => console.log('clicked')}
-        active={true}
-      />
-      <NavLabel label={{ text: 'Claims' }} icon={{ name: 'claim' }} onClick={() => console.log('clicked')} />
-      <NavLabel label={{ text: 'Profile' }} icon={{ name: 'profile' }} onClick={() => console.log('clicked')} />
+      {navItems.map((item, index) => {
+        return <NavLabel key={index} active={item.path === history.location.pathname} {...item} />;
+      })}
     </BottomNavigation>
   );
 };
