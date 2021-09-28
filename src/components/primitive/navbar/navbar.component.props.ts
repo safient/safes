@@ -4,7 +4,7 @@ import { TextComponentProps } from './../text/text.component.props';
 /**
  * Different screen sizes used across the screens.
  */
-export enum ScreenSize {
+export enum BreakPoints {
   small = '480px',
   medium = '768px',
   large = '1040px',

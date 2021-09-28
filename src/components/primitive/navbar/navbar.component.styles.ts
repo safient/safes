@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Navlink, Box } from '../../primitive';
-import { ScreenSize } from './navbar.component.props';
+import { BreakPoints } from './navbar.component.props';
 
 /**
  * Styling for sidebar.
@@ -17,14 +17,14 @@ export const SideBar = styled(Box)`
   /**
  * Styles that are applied on medium screens.
  */
-  @media screen and (max-width: ${ScreenSize.medium}) {
+  @media screen and (max-width: ${BreakPoints.medium}) {
     display: none !important;
   }
 
   /**
  * Styles that are applied on medium screens and small screens.
  */
-  @media screen and (max-width: ${ScreenSize.medium}) and (max-width: ${ScreenSize.small}) {
+  @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     display: none !important;
   }
 `;
@@ -40,14 +40,14 @@ export const LogoWrapper = styled.div`
   /**
  * Styles that are applied on medium screens.
  */
-  @media screen and (max-width: ${ScreenSize.medium}) {
+  @media screen and (max-width: ${BreakPoints.medium}) {
     display: none !important;
   }
 
   /**
  * Styles that are applied on medium screens and small screens.
  */
-  @media screen and (max-width: ${ScreenSize.medium}) and (max-width: ${ScreenSize.small}) {
+  @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     display: none !important;
   }
 `;

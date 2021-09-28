@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ScreenSize } from './../navbar/navbar.component.props';
+import { BreakPoints } from './../navbar/navbar.component.props';
 import { Box, Navlink } from '../../primitive';
 
 /**
@@ -16,7 +16,7 @@ export const BottomNavigation = styled(Box)`
   /**
  * Media Queries applied on medium screens.
  */
-  @media screen and (max-width: ${ScreenSize.medium}) {
+  @media screen and (max-width: ${BreakPoints.medium}) {
     flex-direction: row;
     height: 7rem;
     width: 100vw;

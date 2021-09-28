@@ -23,5 +23,8 @@ export interface NavlinkComponentProps extends BoxComponentProps {
    */
   onClick: () => void;
 
+  /**
+   * A string representation of the Link location, created by concatenating the location’s pathname.
+   */
   path: string;
 }
