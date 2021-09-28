@@ -1,14 +1,47 @@
-interface ButtonProps {
-  wide?: string | boolean;
-  variant?: string;
-  children?: React.ReactNode | never;
+import { BoxComponentProps } from '../box/box.component.props';
+import { IconProps } from '../icon-svg/icon-svg.component.props';
+import { TextComponentProps } from '../text/text.component.props';
+
+export enum Variant {
+  /**
+   * Medium sized Button
+   */
+  primary = 'primary',
+
+  /**
+   * Small sized Button.
+   */
+  small = 'small',
+
+  /**
+   * Outlined transparant Button.
+   */
+  ghost = 'ghost',
 }
 
-interface StyledButtonProps {
-  wide: string | any;
-  variant?: string | any;
-  theme?: any;
-  children?: React.ReactNode | never;
-}
+export interface ButtonComponentProps extends BoxComponentProps {
+  /**
+   * label for Text Component
+   */
+  label: TextComponentProps;
 
-export type { ButtonProps, StyledButtonProps };
+  /**
+   * option to use diffent variants. Primary is the default variant.
+   */
+  variant: keyof typeof Variant;
+
+  /**
+   * sets the outlined Button.
+   */
+  outlined?: boolean;
+
+  /**
+   * Allows to use Icons with Button.
+   */
+  icon?: IconProps;
+
+  /**
+   * function will be triggered when the Button is clicked
+   */
+  onClick: () => void;
+}

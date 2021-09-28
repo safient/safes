@@ -1,12 +1,17 @@
 export * from './alerts/alert.component';
+
 export * from './box/box.component';
 export * from './box/box.component.props';
+
 export * from './button/button.component';
+export * from './button/button.component.props';
 
 export * from './card/card.component';
 export * from './card/card.component.props';
 
 export * from './icon-svg/icon-svg.component';
+export * from './icon-svg/icon-svg.component.props';
+
 export * from './image/image.component';
 
 export * from './navlink/navlink.component';
