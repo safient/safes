@@ -20,6 +20,7 @@ export const colors = {
   borderLight: palette.greyLight,
   borderLighter: palette.greyLighter,
   navLinkActive: palette.blueTransparent,
+  applicationBackground: palette.whiteLiac,
 };
 
 export type Colors = typeof colors;
