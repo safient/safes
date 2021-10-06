@@ -19,6 +19,8 @@ export const colors = {
   border: palette.grey,
   borderLight: palette.greyLight,
   borderLighter: palette.greyLighter,
+  navLinkActive: palette.blueTransparent,
+  applicationBackground: palette.whiteLiac,
 };
 
 export type Colors = typeof colors;
