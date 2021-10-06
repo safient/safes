@@ -1,8 +1,6 @@
 import React from 'react';
-import { Text } from '../../components/primitive';
 import styled from 'styled-components';
-import { NavBar } from '../../components/primitive/navbar/navbar.component';
-import { BottomTab } from '../../components/primitive/bottom-tab/bottom-tab.component';
+import { Text } from 'components/primitive';
 
 const HomeContainer = styled.section`
   padding: 10px;
@@ -10,9 +8,8 @@ const HomeContainer = styled.section`
 `;
 export const HomeScreen: React.FC = () => {
   return (
-    <div>
-      <NavBar />
-      {/* <BottomTab /> */}
-    </div>
+    <HomeContainer>
+      <Text>Home Page</Text>
+    </HomeContainer>
   );
 };
