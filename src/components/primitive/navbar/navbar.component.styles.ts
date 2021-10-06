@@ -5,9 +5,7 @@ import { BreakPoints } from '../../../utils';
 /**
  * Styling for SideBarWrapper.
  */
-export const SideBarWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const SideBarWrapper = styled(Box)`
   flex: 1;
   background-color: ${({ theme: { colors } }) => colors.white};
 

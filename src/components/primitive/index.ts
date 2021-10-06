@@ -20,7 +20,4 @@ export * from './navlink/navlink.component.props';
 export * from './text/text.component';
 export * from './input/input.component';
 
-export * from './bottom-tab/bottom-tab.component';
-export * from './bottom-tab/bottom-tab.component.props';
-
 export * from 'react-grid-system';
