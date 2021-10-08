@@ -7,17 +7,17 @@ export class User {
   private readonly avatar: string;
 
   constructor(user: any) {
-    makeObservable<this, any>(this, {
+    this.firstName = user?.firstName ?? '';
+    this.lastName = user?.lastName ?? '';
+    this.avatar = user?.avatar ?? '';
+    this.email = user?.email ?? '';
+
+    makeObservable<User, any>(this, {
       firstName: observable,
       lastName: observable,
       email: observable,
       avatar: observable,
     });
-
-    this.firstName = user?.firstName ?? '';
-    this.lastName = user?.lastName ?? '';
-    this.avatar = user?.avatar ?? '';
-    this.email = user?.email ?? '';
   }
 
   getName = (): string => {

@@ -2,11 +2,8 @@ import { action, makeObservable, observable } from 'mobx';
 import { AccountStore } from './account.store';
 import { StoreImpl } from '../store/store.impl';
 import { User } from '../../models';
-
-const LOCAL_STORAGE_KEYS = {
-  token: 'token',
-  userId: 'user_id',
-};
+import { storageService } from '../../services/core/services';
+import { StorageServiceImpl } from '../../services/storage/storage.service.impl';
 
 export class AccountStoreImpl extends StoreImpl implements AccountStore {
   private token?: string;
@@ -17,8 +14,6 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     super();
     this.loadToken();
     this.loadUserId();
-
-    this.user = undefined;
 
     makeObservable<AccountStoreImpl, any>(this, {
       user: observable,
@@ -34,29 +29,36 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     this.token = '';
     this.userId = '';
     this.user = undefined;
-    await localStorage.removeItem(LOCAL_STORAGE_KEYS.token);
-    await localStorage.removeItem(LOCAL_STORAGE_KEYS.userId);
+
+    storageService.remove(StorageServiceImpl.KEYS.token);
+    storageService.remove(StorageServiceImpl.KEYS.userId);
   }
 
   private async loadToken() {
     const token =
-      (await localStorage.getItem(LOCAL_STORAGE_KEYS.token)) ?? undefined;
+      (await storageService.get(StorageServiceImpl.KEYS.token)) ?? undefined;
     this.token = token ? JSON.parse(token) : '';
   }
 
   private async loadUserId() {
-    const userId = await localStorage.getItem(LOCAL_STORAGE_KEYS.userId);
+    const userId = await storageService.get(StorageServiceImpl.KEYS.userId);
     this.userId = userId ? JSON.parse(userId) : undefined;
   }
 
   async setToken(token: string) {
     this.token = token;
-    await localStorage.setItem(LOCAL_STORAGE_KEYS.token, JSON.stringify(token));
+    await storageService.set(
+      StorageServiceImpl.KEYS.token,
+      JSON.stringify(token)
+    );
   }
 
   async setUserId(id: string) {
     this.userId = id;
-    await localStorage.setItem(LOCAL_STORAGE_KEYS.userId, JSON.stringify(id));
+    await storageService.set(
+      StorageServiceImpl.KEYS.userId,
+      JSON.stringify(id)
+    );
   }
 
   getToken() {
