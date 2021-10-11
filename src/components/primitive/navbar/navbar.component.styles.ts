@@ -8,11 +8,12 @@ import { BreakPoints } from '../../../utils';
 export const SideBarWrapper = styled(Box)`
   flex: 1;
   background-color: ${({ theme: { colors } }) => colors.white};
+  z-index: 20;
 
   @media screen and (max-width: ${BreakPoints.medium}) {
     flex-direction: row;
     height: 7rem;
-    width: 100vw;
+    width: 100vw !important;
     position: fixed !important;
     bottom: 0;
   }
