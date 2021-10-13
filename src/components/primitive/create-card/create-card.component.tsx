@@ -1,14 +1,14 @@
 import { IconSvg } from '../../primitive';
 import { CreateCardComponentProps } from './create-card.component.props';
-import { SafeCard, SafeText } from './create-card.component.styles';
+import { CardContainer, Label } from './create-card.component.styles';
 
 export const CreateCard: React.FC<CreateCardComponentProps> = (props) => {
   const { label, icon } = props;
 
   return (
-    <SafeCard hCenter vCenter>
+    <CardContainer hCenter vCenter>
       <IconSvg {...icon} />
-      <SafeText {...label} />
-    </SafeCard>
+      <Label {...label} />
+    </CardContainer>
   );
 };

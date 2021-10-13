@@ -5,7 +5,7 @@ import { BreakPoints } from '../../../utils';
 /**
  * Styles for the Create Safe Card.
  */
-export const SafeCard = styled(Card)`
+export const CardContainer = styled(Card)`
   height: 24.3rem !important;
   max-width: 33rem !important;
   margin: 1.5rem !important;
@@ -22,6 +22,6 @@ export const SafeCard = styled(Card)`
 /**
  * Styles for text inside the cards.
  */
-export const SafeText = styled(Text)`
+export const Label = styled(Text)`
   margin-top: 2rem;
 `;

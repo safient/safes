@@ -5,11 +5,12 @@
     "home": "Home",
     "claims": "Claims",
     "profile": "Profile",
+    "dashboard": "Dashboard",
     "safes": "Safes",
     "createSafe": "Create Safe",
     "genericNotes": "Generic Notes",
     "safeRole": "Safe Role",
-    "Creator": "Creator",
-    "Safients": "Safients"
+    "creator": "Creator",
+    "safients": "Safients"
   }
 }
