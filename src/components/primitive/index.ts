@@ -23,4 +23,6 @@ export * from './navbar/navbar.component.props';
 export * from './text/text.component';
 export * from './input/input.component';
 
+export * from './create-card/create-card.component';
+
 export * from 'react-grid-system';

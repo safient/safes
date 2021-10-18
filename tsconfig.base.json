@@ -20,7 +20,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "downlevelIteration": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@primitive/*": ["primitive/*"]
+    }
   },
   "exclude": ["node_modules", "cypress"],
   "include": ["src/**/*"]

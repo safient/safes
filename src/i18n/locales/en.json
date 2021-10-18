@@ -2,8 +2,15 @@
   "common": {
     "signIn": "Sign In ",
     "signOut": "Sign Out",
-    "Home": "Home",
-    "Claims": "Claims",
-    "Profile": "Profile"
+    "home": "Home",
+    "claims": "Claims",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "safes": "Safes",
+    "createSafe": "Create Safe",
+    "genericNotes": "Generic Notes",
+    "safeRole": "Safe Role",
+    "creator": "Creator",
+    "safients": "Safients"
   }
 }
