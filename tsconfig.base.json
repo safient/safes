@@ -23,8 +23,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@primitive/*": ["primitive/*"]
+      "@components/*": ["components/*"]
     }
   },
   "exclude": ["node_modules", "cypress"],
