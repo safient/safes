@@ -4,7 +4,7 @@ import { Text } from 'components/primitive';
 export const HomeScreen: React.FC = () => {
   return (
     <>
-      <Text variant='title' tx='common.dashboard' />
+      <Text variant='small' tx='common.dashboard' />
     </>
   );
 };
