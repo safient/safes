@@ -35,6 +35,7 @@ export const images = {
   safes: require('../assets/icons/safes.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
+  safientAvatar: require('../assets/logo/safient_avatar.png').default,
 };
 
 export type Images = typeof images;

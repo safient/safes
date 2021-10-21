@@ -35,6 +35,7 @@ import safes from './icons/safes.svg';
 import twitter from './icons/twitter.svg';
 import upload from './icons/upload.svg';
 import safientLogo from './logo/logo.svg';
+import safientAvatar from './logo/safient_avatar.png';
 
 export {
   arrowDown,
@@ -74,4 +75,5 @@ export {
   twitter,
   upload,
   safientLogo,
+  safientAvatar,
 };
