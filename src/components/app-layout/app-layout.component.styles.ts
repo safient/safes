@@ -1,3 +1,4 @@
+import { Box } from 'components/primitive';
 import styled from 'styled-components';
 
 /**
@@ -8,6 +9,16 @@ export const AppContainer = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
+`;
+
+/**
+ * styling for main ContentWrapper.
+ */
+export const ContentWrapper = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: 100vw !important;
+  flex: 5 !important;
 `;
 
 /**

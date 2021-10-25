@@ -9,8 +9,6 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.1",
-    "@types/react": "^17.0.9",
-    "@types/react-dom": "^17.0.6",
     "@types/styled-jsx": "^2.2.9",
     "classnames": "^2.3.1",
     "i18n-js": "^3.8.0",
@@ -21,7 +19,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-grid-system": "^7.2.0",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-svg": "^14.0.4",
     "sb": "^6.1.20",
@@ -57,7 +55,9 @@
   "devDependencies": {
     "@types/i18n-js": "^3.8.2",
     "@types/lodash": "^4.14.172",
-    "@types/react-router-dom": "^5.1.7",
+    "@types/react": "^17.0.28",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.1",
     "@types/styled-components": "^5.1.13"
   }
 }

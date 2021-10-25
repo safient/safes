@@ -44,7 +44,7 @@ export const CardsContainer = styled(Box)`
 
   @media screen and (max-width: ${BreakPoints.small}) {
     flex-direction: column !important;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 `;
@@ -53,6 +53,7 @@ export const CardsContainer = styled(Box)`
  * Styles for the Create Safe Card.
  */
 export const SafeCard = styled(Card)`
+  flex: 0 0 auto !important;
   height: 24.3rem !important;
   max-width: 33rem !important;
   margin: 1.5rem !important;
@@ -61,7 +62,8 @@ export const SafeCard = styled(Card)`
   background-color: ${({ theme: { colors } }) => colors.white};
 
   @media screen and (max-width: ${BreakPoints.small}) {
-    height: 24.3rem !important;
+    flex: 0 0 auto !important;
+    max-height: 24.3rem !important;
     max-width: 33rem !important;
     margin: 1.5rem 0 1.5rem !important;
   }
