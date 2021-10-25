@@ -1,5 +1,4 @@
-import { TopBar } from 'components/primitive/top-bar/top-bar.component';
-import { NavBar } from '../primitive/navbar/navbar.component';
+import { TopBar, NavBar } from 'components/primitive';
 import { AppLayoutProps } from './app-layout.component.props';
 import { AppContainer, Content, ContentWrapper } from './app-layout.component.styles';
 

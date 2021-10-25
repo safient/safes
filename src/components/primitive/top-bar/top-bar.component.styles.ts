@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box, Avatar } from '../../primitive';
+import { Box, Avatar } from 'components/primitive';
 import { BreakPoints } from 'utils';
 
 /**

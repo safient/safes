@@ -1,5 +1,5 @@
-import { Box } from 'components/primitive';
 import styled from 'styled-components';
+import { Box } from 'components/primitive';
 
 /**
  * Styling for AppContainer.

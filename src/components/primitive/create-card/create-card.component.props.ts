@@ -1,5 +1,5 @@
-import { TextComponentProps } from './../text/text.component.props';
-import { IconProps } from './../icon-svg/icon-svg.component.props';
+import { TextComponentProps } from 'components/primitive/text/text.component.props';
+import { IconProps } from 'components/primitive/icon-svg/icon-svg.component.props';
 
 export interface CreateCardComponentProps {
   /**
