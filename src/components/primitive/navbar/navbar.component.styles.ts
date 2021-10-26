@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Box, Navlink } from '../../primitive';
-import { BreakPoints } from '../../../utils';
+import { Box, Navlink } from 'components/primitive';
+import { BreakPoints } from 'utils';
 
 /**
  * Styling for SideBarWrapper.
@@ -8,11 +8,12 @@ import { BreakPoints } from '../../../utils';
 export const SideBarWrapper = styled(Box)`
   flex: 1;
   background-color: ${({ theme: { colors } }) => colors.white};
-  padding-left: 2rem !important;
+  padding-left: 1rem !important;
   z-index: 20;
+  height: 100vh !important;
   @media screen and (max-width: ${BreakPoints.medium}) {
     flex-direction: row;
-    height: 7rem;
+    height: 7rem !important;
     width: 100vw !important;
     position: fixed !important;
     bottom: 0;

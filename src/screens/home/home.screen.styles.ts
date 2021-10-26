@@ -6,8 +6,7 @@ import { BreakPoints } from '../../utils';
  * Main container of the home screen.
  */
 export const HomeScreenContainer = styled(Box)`
-  height: 90vh;
-  width: 100vw;
+  height: 95%;
   margin: 3rem !important;
   @media screen and (max-width: ${BreakPoints.small}) {
     height: 80vh;

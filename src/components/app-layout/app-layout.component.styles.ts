@@ -5,8 +5,7 @@ import { Box } from 'components/primitive';
  * Styling for AppContainer.
  */
 export const AppContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100% !important;
   display: flex;
   flex-direction: row;
 `;
