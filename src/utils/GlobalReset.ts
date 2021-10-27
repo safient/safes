@@ -8,9 +8,6 @@ import { normalize } from 'polished';
 */
 
 export const GlobalStyle = createGlobalStyle`
-
-
-
 ${normalize()}
 html {
   box-sizing: border-box;
