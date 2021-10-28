@@ -33,6 +33,10 @@ const Container = styled(Box)<{ length: number }>`
   }
 `;
 
+const PhraseInput = styled(Input)`
+  border: none !important;
+`;
+
 export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
   const { seedPhrases, setSeedPhrases } = props;
 
@@ -64,7 +68,8 @@ export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
 
   return (
     <Container length={seedPhrasesLength()}>
-      <Input
+      <PhraseInput
+        autoFocus
         placeholder={
           isSeedPhraseFull()
             ? t('chipInput.phrasesEntered')
@@ -76,7 +81,6 @@ export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
         }}
         onKeyDown={addChip}
         disabled={isSeedPhraseFull()}
-        autoFocus
       />
       <ChipContainer>
         {seedPhrases &&
