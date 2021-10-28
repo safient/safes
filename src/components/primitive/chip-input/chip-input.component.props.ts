@@ -2,10 +2,10 @@ export interface ChipInputComponentProps {
   /**
    * array of seed phases
    */
-  seedPhases: string[];
+  seedPhrases: string[];
 
   /**
    * method to change the seed phases
    */
-  setSeedPhases: (seedPhases: string[]) => void;
+  setSeedPhrases: (seedPhases: string[]) => void;
 }

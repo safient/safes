@@ -1,92 +1,86 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { t } from 'i18n-js';
+import { Input } from '../input/input.component';
+import { Box } from '../box/box.component';
 import Chip from '../chip/chip.component';
 import { ChipInputComponentProps } from './chip-input.component.props';
 
-const ChipContainer = styled.div`
-  margin-top: 1rem;
-  display: grid;
+const ChipContainer = styled(Box)`
+  margin-top: 1rem !important;
+  display: grid !important;
   grid-template: repeat(6, 1fr) / repeat(6, 1fr);
 
   @media screen and (max-width: 768px) {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
   }
 `;
 
-const Container = styled.div<{ length: number }>`
+const Container = styled(Box)<{ length: number }>`
   margin: 1rem !important;
   border: 2px solid #cbccdc;
   border-radius: 5px;
   width: 100%;
-  padding: 1rem !important;
+  padding: 0 1rem !important;
   background-color: #fff;
   height: ${({ length }) =>
-    length === 0 ? '5rem' : length > 6 ? '16rem' : '11rem'};
+    length === 0 ? '7rem' : length > 6 ? '18rem' : '13rem'} !important;
 
   @media screen and (max-width: 768px) {
     height: ${({ length }) =>
-      length === 0 ? '5rem' : `${length * 45 + 70}px`};
+      length === 0 ? '7rem' : `${length * 5 + 11}rem`} !important;
   }
 `;
 
-const Input = styled.input`
-  font-size: 1.4rem;
-  padding: 5px;
-  width: 100%;
-`;
-
 export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
-  const { seedPhases, setSeedPhases } = props;
+  const { seedPhrases, setSeedPhrases } = props;
 
   const [value, setValue] = useState<string>('');
 
-  // const [seedPhases, setSeedPhases] = useState<string[]>([]);
-
   const addChip = (event: any) => {
     if (event.key === 'Enter') {
-      if (value.trim().length === 0) return;
-      seedPhases.push(value.trim());
-      setSeedPhases(seedPhases);
+      if (!value.trim()) return;
+      seedPhrases.push(value.trim());
+      setSeedPhrases(seedPhrases);
       setValue('');
     }
   };
 
   const removeChip = (index: number) => {
-    const newSeedPhases = seedPhases.filter((_, i) => {
+    const newSeedPhrases = seedPhrases.filter((_, i) => {
       return i !== index;
     });
-    setSeedPhases(newSeedPhases);
+    setSeedPhrases(newSeedPhrases);
   };
 
-  const seedPhasesLength = (): number => {
-    return seedPhases.length;
+  const seedPhrasesLength = (): number => {
+    return seedPhrases.length;
   };
 
-  const isSeedPhaseFull = (): boolean => {
-    return seedPhases.length === 12;
+  const isSeedPhraseFull = (): boolean => {
+    return seedPhrases.length === 12;
   };
 
   return (
-    <Container length={seedPhasesLength()}>
+    <Container length={seedPhrasesLength()}>
       <Input
         placeholder={
-          isSeedPhaseFull()
-            ? '12 phases entered'
-            : 'Enter the 12-word seed phase'
+          isSeedPhraseFull()
+            ? t('chipInput.phrasesEntered')
+            : t('chipInput.enterPhrase')
         }
-        style={{}}
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
         onKeyDown={addChip}
-        disabled={isSeedPhaseFull()}
+        disabled={isSeedPhraseFull()}
+        autoFocus
       />
-
       <ChipContainer>
-        {seedPhases &&
-          seedPhases.map((label, index) => {
+        {seedPhrases &&
+          seedPhrases.map((label, index) => {
             return <Chip label={label} index={index} onRemove={removeChip} />;
           })}
       </ChipContainer>

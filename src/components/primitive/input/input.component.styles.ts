@@ -15,7 +15,7 @@ const StyledInput = styled.input<InputProps>`
   border: 1px solid #e3e4eb;
   outline: none;
   box-sizing: border-box;
-  width: 400px;
+  width: 100%;
   height: 50px;
   background-color: transparent;
   transition: border 150ms ease-out;

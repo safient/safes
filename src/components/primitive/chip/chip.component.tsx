@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Box } from '../box/box.component';
+import { Text } from '../text/text.component';
 import { ChipComponentProps } from './chip.component.props';
 
 const Close = styled.h2`
@@ -14,17 +16,11 @@ const Close = styled.h2`
   border-radius: 1rem;
   padding: 4px;
   display: none;
-  font-weight: bold;
   margin: 5px;
   text-align: center;
 `;
 
-const ChipBody = styled.div<{ index: number }>`
-  background-color: #eeeeff;
-  border-radius: 5px;
-  color: #5c5af6;
-  padding: 10px;
-  margin: 5px;
+const ChipBody = styled(Box)<{ index: number }>`
   margin-left: ${({ index }) => (index === 0 || index === 6 ? '0' : '10px')};
   position: relative;
 
@@ -34,17 +30,21 @@ const ChipBody = styled.div<{ index: number }>`
   }
 
   @media screen and (max-width: 768px) {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 `;
 
 const Chip = ({ label, index, onRemove }: ChipComponentProps) => {
   return (
-    <ChipBody index={index}>
-      <h1
-        style={{ fontSize: '1.6rem', fontWeight: 'bold', textAlign: 'center' }}>
-        {label}
-      </h1>
+    <ChipBody
+      row
+      vCenter
+      index={index}
+      padding={1}
+      margin={0.5}
+      borderRadius={0.5}
+      color='applicationBackground'>
+      <Text bold text={label} color='primary' size={1.6} />
       <Close onClick={() => onRemove(index)}>X</Close>
     </ChipBody>
   );

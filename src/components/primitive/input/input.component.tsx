@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { useEffect, createRef } from 'react';
 import { Props } from './input.component.props';
-import { Wrapper, InputLabel, InputWrapper, StyledInput } from './input.component.styles';
+import {
+  Wrapper,
+  InputLabel,
+  InputWrapper,
+  StyledInput,
+} from './input.component.styles';
 
-const Input = ({
+export const Input = ({
   value,
   type = 'text',
   innerRef,
