@@ -31,10 +31,11 @@ import metaMask from './icons/metamask.svg';
 import money from './icons/money.svg';
 import notification from './icons/notification.svg';
 import profile from './icons/profile.svg';
-
 import safes from './icons/safes.svg';
 import twitter from './icons/twitter.svg';
 import upload from './icons/upload.svg';
+import safientLogo from './logo/logo.svg';
+import safientAvatar from './logo/safient_avatar.png';
 
 export {
   arrowDown,
@@ -73,4 +74,6 @@ export {
   safes,
   twitter,
   upload,
+  safientLogo,
+  safientAvatar,
 };

@@ -14,9 +14,19 @@ export * from './icon-svg/icon-svg.component.props';
 
 export * from './image/image.component';
 
+export * from './avatar/avatar.component';
+
 export * from './navlink/navlink.component';
 export * from './navlink/navlink.component.props';
 
+export * from './navbar/navbar.component';
+export * from './navbar/navbar.component.props';
+
+export * from './top-bar/top-bar.component';
+
 export * from './text/text.component';
 export * from './input/input.component';
+
+export * from './create-card/create-card.component';
+
 export * from 'react-grid-system';
