@@ -3,7 +3,7 @@ import { AccountStore } from './account.store';
 import { StoreImpl } from '../store/store.impl';
 import { User } from '../../models';
 import { storageService } from '../../services/core/services';
-import { StorageServiceImpl } from '../../services/storage/storage.service.impl';
+import { StorageKey } from '../../services/storage/storage.service.impl';
 
 export class AccountStoreImpl extends StoreImpl implements AccountStore {
   private token?: string;
@@ -30,34 +30,34 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     this.userId = '';
     this.user = undefined;
 
-    storageService.remove(StorageServiceImpl.KEYS.token);
-    storageService.remove(StorageServiceImpl.KEYS.userId);
+    storageService.remove(StorageKey.token);
+    storageService.remove(StorageKey.userId);
   }
 
   private async loadToken() {
     const token =
-      (await storageService.get(StorageServiceImpl.KEYS.token)) ?? undefined;
-    this.token = token ? JSON.parse(token) : '';
+      (await storageService.get(StorageKey.token)) ?? undefined;
+    this.token = token ?? '';
   }
 
   private async loadUserId() {
-    const userId = await storageService.get(StorageServiceImpl.KEYS.userId);
-    this.userId = userId ? JSON.parse(userId) : undefined;
+    const userId = await storageService.get(StorageKey.userId);
+    this.userId = userId ?? undefined;
   }
 
   async setToken(token: string) {
     this.token = token;
     await storageService.set(
-      StorageServiceImpl.KEYS.token,
-      JSON.stringify(token)
+      StorageKey.token,
+      token
     );
   }
 
   async setUserId(id: string) {
     this.userId = id;
     await storageService.set(
-      StorageServiceImpl.KEYS.userId,
-      JSON.stringify(id)
+      StorageKey.userId,
+      id
     );
   }
 

@@ -1,20 +1,22 @@
 import { StorageService } from './storage.service';
 
+export enum StorageKey{
+  token = "token",
+  userId = "userId",
+}
+
 export class StorageServiceImpl implements StorageService {
-  static KEYS = {
-    token: 'token',
-    userId: 'user_id',
-  };
-
-  async get(key: string): Promise<any> {
-    return await localStorage.getItem(key);
+  async get(key: keyof typeof StorageKey): Promise<any> {
+    const data = await localStorage.getItem(key);
+    return data ? JSON.parse(data) : undefined;
   }
 
-  async set(key: string, value: any) {
-    await localStorage.setItem(key, value);
+  async set(key: keyof typeof StorageKey, value: any) {
+    const data = JSON.stringify(value);
+    await localStorage.setItem(key, data);
   }
 
-  async remove(key: string) {
+  async remove(key: keyof typeof StorageKey) {
     await localStorage.removeItem(key);
   }
 }
