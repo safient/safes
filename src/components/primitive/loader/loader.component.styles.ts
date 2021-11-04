@@ -1,16 +1,22 @@
 import styled, { keyframes } from 'styled-components';
-import { BreakPoints } from 'utils';
 import { Box, Text } from 'components/primitive';
+import { BreakPoints } from 'utils';
 
+/**
+ * KeyFrame Animation
+ */
 const spin = keyframes`
     0% {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg);
-    }
+       transform: rotate(360deg);
+       }
 `;
 
+/**
+ * Styles for Loading Spinner
+ */
 export const Spinner = styled.div`
   border: 0.4rem solid ${({ theme: { colors } }) => colors.spinnerBorder};
   border-top: 0.4rem solid ${({ theme: { colors } }) => colors.primary};
@@ -20,6 +26,9 @@ export const Spinner = styled.div`
   animation: ${spin} 0.6s linear infinite;
 `;
 
+/**
+ * Styles for SpinnerContainer
+ */
 export const SpinnerContainer = styled(Box)`
   flex: 0 0 20rem !important;
   background: ${({ theme: { colors } }) => colors.white};
@@ -37,6 +46,7 @@ export const SpinnerContainer = styled(Box)`
     align-content: normal !important;
     background: ${({ theme: { colors } }) => colors.white};
   }
+
   @media screen and (max-width: ${BreakPoints.small}) {
     align-items: center !important;
     justify-content: center !important;
@@ -45,6 +55,9 @@ export const SpinnerContainer = styled(Box)`
   }
 `;
 
+/**
+ * Styles for Loader Text
+ */
 export const LoaderText = styled(Text)`
   margin-top: 1.4rem;
 `;

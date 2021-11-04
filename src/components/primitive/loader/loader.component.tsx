@@ -1,15 +1,13 @@
 import React from 'react';
-import { Text } from '../../primitive';
+import { LoaderComponentProps } from './loader.component.props';
 import { Spinner, SpinnerContainer, LoaderText } from './loader.component.styles';
 
-function Loader(props: any) {
-  const { text } = props;
+export const Loader: React.FC<LoaderComponentProps> = (props) => {
+  const { label } = props;
   return (
     <SpinnerContainer hCenter vCenter>
       <Spinner />
-      <LoaderText variant='small' tx={text} text={props.label} />
+      <LoaderText variant='small' {...label} />
     </SpinnerContainer>
   );
-}
-
-export default Loader;
+};
