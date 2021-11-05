@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { IconSvg } from '../../primitive';
-import { PrimaryButton, SmallButton, GhostButton, IconWrapper, ButtonText } from './button.component.styles';
+import { IconSvg } from 'components/primitive';
+import { PrimaryButton, SmallButton, GhostButton, IconWrapper, ButtonText, Spinner } from './button.component.styles';
 import { ButtonComponentProps, Variant } from './button.component.props';
 
 export const Button: React.FunctionComponent<ButtonComponentProps> = (props: ButtonComponentProps) => {
-  const { variant, label, icon, onClick, ...rest } = props;
+  const { variant, label, icon, loading, onClick, ...rest } = props;
 
   const getVariant = (variant: Variant = Variant.primary) => {
     let ButtonComponent;
@@ -18,6 +18,7 @@ export const Button: React.FunctionComponent<ButtonComponentProps> = (props: But
       case Variant.ghost:
         ButtonComponent = GhostButton;
         break;
+
       default:
         ButtonComponent = PrimaryButton;
     }
@@ -41,7 +42,7 @@ export const Button: React.FunctionComponent<ButtonComponentProps> = (props: But
           <IconSvg {...icon} />
         </IconWrapper>
       )}
-      <ButtonText {...label} />
+      {loading ? <Spinner /> : <ButtonText {...label} />}
     </StyledButtonComponent>
   );
 };
