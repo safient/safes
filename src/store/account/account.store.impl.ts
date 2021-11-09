@@ -3,7 +3,7 @@ import { AccountStore } from './account.store';
 import { StoreImpl } from '../store/store.impl';
 import { User } from '../../models';
 import { storageService } from '../../services/core/services';
-import { StorageKey } from '../../services/storage/storage.service.impl';
+import { StorageKey } from '../../services/storage/storage.service';
 
 export class AccountStoreImpl extends StoreImpl implements AccountStore {
   private token?: string;

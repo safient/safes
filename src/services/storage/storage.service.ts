@@ -1,4 +1,7 @@
-import { StorageKey } from "./storage.service.impl";
+export enum StorageKey{
+  token = "token",
+  userId = "userId",
+}
 
 export interface StorageService {
   /**

@@ -1,4 +1,4 @@
-import { action, makeObservable, observable } from 'mobx';
+import { action, makeObservable } from 'mobx';
 import { AppStore } from './app.store';
 import { StoreImpl } from '../store/store.impl';
 

@@ -1,9 +1,4 @@
-import { StorageService } from './storage.service';
-
-export enum StorageKey{
-  token = "token",
-  userId = "userId",
-}
+import { StorageKey, StorageService } from './storage.service';
 
 export class StorageServiceImpl implements StorageService {
   async get(key: StorageKey): Promise<any> {
