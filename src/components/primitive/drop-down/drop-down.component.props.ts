@@ -1,4 +1,4 @@
-export interface DropDwonProps {
+export interface DropDownComponentProps {
   /**
    * Label for the Dropsdown
    */
@@ -25,9 +25,14 @@ export interface DropDwonProps {
   onChange: any;
 }
 
-export interface OptionsProps {
+export interface DropDownOptionProps {
   /**
    * Value of selected item
    */
   value: string | number;
+
+  /**
+   * Children Component
+   */
+  children?: React.ReactNode;
 }
