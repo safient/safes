@@ -34,7 +34,7 @@ export const StyledSelect = styled.select`
   &:focus {
     background-image: linear-gradient(45deg, gray 50%, transparent 50%),
       linear-gradient(135deg, transparent 50%, gray 50%), linear-gradient(to right, white, white);
-    background-position: calc(100% - 1.5rem) 1em, calc(100% - 20px) 1em, 100% 0;
+    background-position: calc(100% - 1.5rem) 1em, calc(100% - 2rem) 1em, 100% 0;
     background-repeat: no-repeat;
     outline: 0;
     border: 1px solid ${({ theme: { colors } }) => colors.primary};
