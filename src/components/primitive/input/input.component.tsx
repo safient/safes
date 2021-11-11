@@ -1,50 +1,29 @@
-import * as React from 'react';
-import { useEffect, createRef } from 'react';
 import { Props } from './input.component.props';
-import { Wrapper, InputLabel, InputWrapper, StyledInput } from './input.component.styles';
+import {
+  InputWrapperContainer,
+  InputLabel,
+  InputWrapper,
+  StyledInput,
+  ErrorMessageContainer,
+} from './input.component.styles';
+import { Text } from 'components/primitive';
+import { createRef, useEffect, useRef } from 'react';
 
-const Input = ({
-  value,
-  type = 'text',
-  innerRef,
-  variant = 'large',
-  width,
-  height,
-  label,
-
-  isDisabled,
-  wrapperProps,
-
-  ...rest
-}: Props) => {
-  const inputAddonRef = createRef<HTMLDivElement>();
-  const [inputAddonWidth, setInputAddonWidth] = React.useState(0);
-
-  useEffect(() => {
-    if (inputAddonRef.current) {
-      const rect = inputAddonRef.current.getBoundingClientRect();
-      setInputAddonWidth(rect.width + 10); // addon ha absolute pos with 10px offset
-    } else {
-      setInputAddonWidth(0);
-    }
-  }, [inputAddonRef]);
+const Input = ({ value, type = 'text', label, isDisabled, ...rest }: Props) => {
+  const inputAddonRef = useRef(null);
 
   return (
-    <Wrapper {...wrapperProps}>
+    <InputWrapperContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
-        <StyledInput
-          value={value}
-          type={type}
-          variant={variant}
-          disabled={isDisabled}
-          width={width}
-          ref={innerRef}
-          inputAddonWidth={inputAddonWidth}
-          {...rest}
-        />
+        <StyledInput value={value} type={type} ref={inputAddonRef} {...rest} />
       </InputWrapper>
-    </Wrapper>
+      <ErrorMessageContainer>
+        <Text variant='small' color='error'>
+          errorrr
+        </Text>
+      </ErrorMessageContainer>
+    </InputWrapperContainer>
   );
 };
 
