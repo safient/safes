@@ -1,4 +1,4 @@
-import { IconSvg } from '../../primitive';
+import { IconSvg } from 'components/primitive';
 import { CreateCardComponentProps } from './create-card.component.props';
 import { CardContainer, Label } from './create-card.component.styles';
 

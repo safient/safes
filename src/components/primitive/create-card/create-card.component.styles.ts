@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Card, Text } from '../../primitive';
-import { BreakPoints } from '../../../utils';
+import { Card, Text } from 'components/primitive';
+import { BreakPoints } from 'utils';
 
 /**
  * Styles for the Create Safe Card.

@@ -22,8 +22,12 @@ export * from './navlink/navlink.component.props';
 export * from './navbar/navbar.component';
 export * from './navbar/navbar.component.props';
 
+export * from './top-bar/top-bar.component';
+
 export * from './text/text.component';
 export * from './input/input.component';
+
+export * from './loader/loader.component';
 
 export * from './create-card/create-card.component';
 

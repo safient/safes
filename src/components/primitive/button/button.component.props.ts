@@ -41,6 +41,11 @@ export interface ButtonComponentProps extends BoxComponentProps {
   icon?: IconProps;
 
   /**
+   * To Support loading indicator on Buttons.
+   */
+  loading?: boolean;
+
+  /**
    * function will be triggered when the Button is clicked
    */
   onClick: () => void;
