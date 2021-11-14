@@ -27,6 +27,8 @@ export * from './top-bar/top-bar.component';
 export * from './text/text.component';
 export * from './input/input.component';
 
+export * from './loader/loader.component';
+
 export * from './create-card/create-card.component';
 
 export * from 'react-grid-system';

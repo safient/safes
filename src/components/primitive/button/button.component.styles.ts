@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { ButtonComponentProps } from './button.component.props';
 import { Box } from '../box/box.component';
 import { Text } from '../text/text.component';
@@ -40,6 +40,30 @@ export const SmallButton = styled(Box)<ButtonComponentProps>`
   height: 4.2rem;
   background-color: ${({ theme: { colors } }) => colors.primary} !important;
   border-radius: 0.4rem;
+`;
+
+/**
+ * Key Frame for spinner.
+ */
+const spin = keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+`;
+
+/**
+ * Styles for Spinner
+ */
+export const Spinner = styled.div`
+  border: 0.4rem solid ${({ theme: { colors } }) => colors.spinnerBorder};
+  border-top: 0.4rem solid ${({ theme: { colors } }) => colors.white};
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: ${spin} 0.6s linear infinite;
 `;
 
 /**

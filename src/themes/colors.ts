@@ -21,6 +21,7 @@ export const colors = {
   borderLighter: palette.greyLighter,
   navLinkActive: palette.blueTransparent,
   applicationBackground: palette.whiteLiac,
+  spinnerBorder: palette.greyLighter,
 };
 
 export type Colors = typeof colors;
