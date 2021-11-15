@@ -1,13 +1,40 @@
+export interface DropDownOptions {
+  /**
+   * Used as Key while mapping through the lists
+   */
+  id?: string | number;
+
+  /**
+   * Fallback option used when there is no ID
+   */
+  index?: string | number;
+
+  /**
+   * Used to get the selected value
+   */
+  value: string;
+
+  /**
+   * Options in the DropDown
+   */
+  option: string;
+}
+
 export interface DropDownComponentProps {
   /**
-   * Label for the Dropsdown
+   * Label for the Dropdown
    */
   label?: string;
 
   /**
    * Value of selected item
    */
-  value: string | number;
+  value?: string | number;
+
+  /**
+   * Options for Dropdown
+   */
+  options?: DropDownOptions[];
 
   /**
    * Sets the width to 100% if its true
@@ -15,24 +42,17 @@ export interface DropDownComponentProps {
   wide?: boolean;
 
   /**
-   * Children Component
+   * Error Message string
    */
-  children?: React.ReactNode;
-
-  /**
-   * Onchange Handler
-   */
-  onChange: any;
-}
-
-export interface DropDownOptionProps {
-  /**
-   * Value of selected item
-   */
-  value: string | number;
+  error?: string;
 
   /**
    * Children Component
    */
   children?: React.ReactNode;
+
+  /**
+   * onChange Handler
+   */
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

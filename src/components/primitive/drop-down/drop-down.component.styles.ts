@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BreakPoints } from 'utils';
 import { DropDownComponentProps } from './drop-down.component.props';
 
 /**
@@ -9,19 +10,23 @@ export const DropdownWrapper = styled.div<DropDownComponentProps>`
   width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
   flex-flow: column;
   justify-content: flex-start;
+
+  @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
+    width: 100% !important;
+  }
 `;
 
 /**
  * Styles for Select Feild
  */
-export const StyledSelect = styled.select`
+export const StyledSelect = styled.select<DropDownComponentProps>`
   appearance: none;
   font-size: 1.6rem;
   height: 5rem;
   padding: 0.5em 3.5em 0.5em 1em;
   color: ${({ theme: { colors } }) => colors.textLight};
   background-color: ${({ theme: { colors } }) => colors.white};
-  border: 1px solid ${({ theme: { colors } }) => colors.borderLightest};
+  border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
   border-radius: 0.5rem;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%),
     linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, white, white);
@@ -53,6 +58,11 @@ export const StyledOption = styled.option`
   display: flex;
   white-space: pre;
   color: ${({ theme: { colors } }) => colors.textDark};
+
+  @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
+    width: 100% !important;
+    overflow: hidden;
+  }
 `;
 
 /**
@@ -64,4 +74,11 @@ export const StyledLabel = styled.label`
   font-size: 1.6rem;
   font-weight: 500 !important;
   margin-bottom: 1rem;
+`;
+
+/**
+ * Error message container
+ */
+export const ErrorMessageContainer = styled.fieldset`
+  margin: 0.4rem 0 0.4rem 0;
 `;
