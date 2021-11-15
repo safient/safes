@@ -18,11 +18,11 @@ const Input = ({ value, type = 'text', label, isDisabled, ...rest }: Props) => {
       <InputWrapper>
         <StyledInput value={value} type={type} ref={inputAddonRef} {...rest} />
       </InputWrapper>
-      <ErrorMessageContainer>
+      {/* <ErrorMessageContainer>
         <Text variant='small' color='error'>
           errorrr
         </Text>
-      </ErrorMessageContainer>
+      </ErrorMessageContainer> */}
     </InputWrapperContainer>
   );
 };

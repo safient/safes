@@ -31,12 +31,12 @@ export const StyledInput = styled.input`
     cursor: not-allowed;
   }
   &::placeholder {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.6rem;
     /* color: #8e90a6 !important; */
 
     /* todo- replace color */
-    color: ${({ theme: { colors } }) => colors.textLight};
+    color: ${({ theme: { colors } }) => colors.textLighter};
   }
 `;
 
