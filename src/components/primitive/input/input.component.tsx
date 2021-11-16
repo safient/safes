@@ -9,12 +9,12 @@ import {
 } from './input.component.styles';
 import { InputComponentProps } from './input.component.props';
 
-const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: InputComponentProps) => {
+export const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: InputComponentProps) => {
   return (
     <InputWrapperContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
-        <StyledInput value={value} type={type} error={error} {...rest} />
+        <StyledInput autoFocus value={value} type={type} error={error} {...rest} />
       </InputWrapper>
       {error && (
         <ErrorMessageContainer>
@@ -26,5 +26,3 @@ const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: Inpu
     </InputWrapperContainer>
   );
 };
-
-export default Input;
