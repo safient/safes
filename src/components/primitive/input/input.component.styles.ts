@@ -1,20 +1,29 @@
 import styled from 'styled-components';
+import { BreakPoints } from 'utils';
+import { InputComponentProps } from './input.component.props';
 
-export const InputWrapperContainer = styled.fieldset`
+export const InputWrapperContainer = styled.fieldset<InputComponentProps>`
   display: inline-flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
+  width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
+  @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
+    width: 100% !important;
+  }
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<InputComponentProps>`
   /* todo- change font color */
-  color: #555770;
+  color: ${({ error, theme: { colors } }) => (error ? colors.error : colors.textLighter)};
   font-size: 1.6rem;
   font-weight: 500;
   padding: 0.1rem 1rem;
   border-radius: 0.5rem;
   /* todo- change border color */
-  border: 1px solid ${({ theme: { colors } }) => colors.borderLighter};
+  /* border: 1px solid ${({ theme: { colors } }) => colors.borderLighter}; */
+
+  /** todo- change the border color */
+  border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLighter)} !important;
   outline: none;
   width: 40rem;
   height: 5rem;
@@ -33,7 +42,6 @@ export const StyledInput = styled.input`
   &::placeholder {
     font-weight: 400;
     font-size: 1.6rem;
-    /* color: #8e90a6 !important; */
 
     /* todo- replace color */
     color: ${({ theme: { colors } }) => colors.textLighter};
@@ -45,6 +53,9 @@ export const InputWrapper = styled.div`
   position: relative;
 `;
 
+/**
+ * Styles for Label
+ */
 export const InputLabel = styled.label`
   color: ${({ theme: { colors } }) => colors.textLight};
   font-size: 1.6rem;
@@ -52,6 +63,9 @@ export const InputLabel = styled.label`
   margin-bottom: 1rem;
 `;
 
+/**
+ * Error message container
+ */
 export const ErrorMessageContainer = styled.fieldset`
-  margin: 4px 0 4px 0;
+  margin: 0.4rem 0 0.4rem 0;
 `;

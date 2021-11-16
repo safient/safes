@@ -1,4 +1,5 @@
-import { Props } from './input.component.props';
+import React from 'react';
+import { Text } from 'components/primitive';
 import {
   InputWrapperContainer,
   InputLabel,
@@ -6,23 +7,22 @@ import {
   StyledInput,
   ErrorMessageContainer,
 } from './input.component.styles';
-import { Text } from 'components/primitive';
-import { createRef, useEffect, useRef } from 'react';
+import { InputComponentProps } from './input.component.props';
 
-const Input = ({ value, type = 'text', label, isDisabled, ...rest }: Props) => {
-  const inputAddonRef = useRef(null);
-
+const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: InputComponentProps) => {
   return (
     <InputWrapperContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
-        <StyledInput value={value} type={type} ref={inputAddonRef} {...rest} />
+        <StyledInput value={value} type={type} error={error} {...rest} />
       </InputWrapper>
-      {/* <ErrorMessageContainer>
-        <Text variant='small' color='error'>
-          errorrr
-        </Text>
-      </ErrorMessageContainer> */}
+      {error && (
+        <ErrorMessageContainer>
+          <Text variant='small' color='error'>
+            {error}
+          </Text>
+        </ErrorMessageContainer>
+      )}
     </InputWrapperContainer>
   );
 };
