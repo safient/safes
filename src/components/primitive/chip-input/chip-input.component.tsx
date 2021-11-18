@@ -42,51 +42,63 @@ export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
 
   const [value, setValue] = useState<string>('');
 
-  const addChip = (event: any) => {
-    if (event.key === 'Enter') {
-      if (!value.trim()) return;
-      seedPhrases.push(value.trim());
-      setSeedPhrases(seedPhrases);
-      setValue('');
-    }
-  };
+  // const addChip = (event: any) => {
+  //   if (event.key === 'Enter') {
+  //     if (!value.trim()) return;
+  //     seedPhrases.push(value.trim());
+  //     setSeedPhrases(seedPhrases);
+  //     setValue('');
+  //   }
+  // };
 
-  const removeChip = (index: number) => {
-    const newSeedPhrases = seedPhrases.filter((_, i) => {
-      return i !== index;
-    });
-    setSeedPhrases(newSeedPhrases);
-  };
+  // const removeChip = (index: number) => {
+  //   const newSeedPhrases = seedPhrases.filter((_, i) => {
+  //     return i !== index;
+  //   });
+  //   setSeedPhrases(newSeedPhrases);
+  // };
 
-  const seedPhrasesLength = (): number => {
-    return seedPhrases.length;
-  };
+  // const seedPhrasesLength = (): number => {
+  //   return seedPhrases.length;
+  // };
 
-  const isSeedPhraseFull = (): boolean => {
-    return seedPhrases.length === 12;
-  };
+  // const isSeedPhraseFull = (): boolean => {
+  //   return seedPhrases.length === 12;
+  // };
+
+  const addChip = () =>{
+
+  }
+
+  const removeChip = () => {
+
+  }
 
   return (
-    <Container length={seedPhrasesLength()}>
+    <Container length={seedPhrases.size}>
       <PhraseInput
         autoFocus
         placeholder={
-          isSeedPhraseFull()
-            ? t('chipInput.phrasesEntered')
-            : t('chipInput.enterPhrase')
+          seedPhrases.isEmpty()
+            ? t('chipInput.enterPhrase') : t('chipInput.phrasesEntered')
         }
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
         onKeyDown={addChip}
-        disabled={isSeedPhraseFull()}
+        disabled={!seedPhrases.isEmpty()}
       />
       <ChipContainer>
-        {seedPhrases &&
+        {seedPhrases.hasItems() && seedPhrases.items.map((item) => {
+          return(
+            <Chip index={seedPhrases.getIndex(item.id)} phrase={item} onRemove={removeChip} />
+          )
+        })}
+        {/* {seedPhrases &&
           seedPhrases.map((label, index) => {
             return <Chip label={label} index={index} onRemove={removeChip} />;
-          })}
+          })} */}
       </ChipContainer>
     </Container>
   );

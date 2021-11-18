@@ -34,7 +34,7 @@ const ChipBody = styled(Box)<{ index: number }>`
   }
 `;
 
-const Chip = ({ label, index, onRemove }: ChipComponentProps) => {
+const Chip = ({ phrase, index, onRemove }: ChipComponentProps) => {
   return (
     <ChipBody
       row
@@ -44,8 +44,8 @@ const Chip = ({ label, index, onRemove }: ChipComponentProps) => {
       margin={0.5}
       borderRadius={0.5}
       color='applicationBackground'>
-      <Text bold text={label} color='primary' size={1.6} />
-      <Close onClick={() => onRemove(index)}>X</Close>
+      <Text bold text={phrase.getPhrase()} color='primary' size={1.6} />
+      {/* <Close onClick={onRemove}>X</Close> */}
     </ChipBody>
   );
 };
