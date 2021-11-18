@@ -36,6 +36,9 @@ export const images = {
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
   safientAvatar: require('../assets/logo/safient_avatar.png').default,
+  LoginWithGoogle: require('../assets/icons/login-google.svg').default,
+  LoginWithGitHub: require('../assets/icons/login-github.svg').default,
+  LoginWithMetaMask: require('../assets/icons/login-metamask.svg').default,
 };
 
 export type Images = typeof images;
