@@ -4,6 +4,7 @@ export const colors = {
   white: palette.white,
   black: palette.black,
   primary: palette.blue,
+  primaryGradient: palette.linearGradient,
   textDark: palette.grey,
   textLight: palette.greyLight,
   textLighter: palette.greyLighter, //placeholder and borders
