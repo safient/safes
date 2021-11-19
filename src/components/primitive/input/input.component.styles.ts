@@ -54,6 +54,18 @@ export const InputWrapper = styled.div`
 `;
 
 /**
+ * This styled will be applied while using Validations
+ */
+
+export const Icon = styled.span`
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 1.5rem;
+  left: 36.5rem;
+`;
+
+/**
  * Styles for Label
  */
 export const InputLabel = styled.label`
