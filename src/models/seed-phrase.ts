@@ -1,4 +1,3 @@
-import _ from "lodash";
 import { makeObservable, observable } from "mobx";
 import { Id } from "./list";
 
