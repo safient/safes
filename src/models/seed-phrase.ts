@@ -1,16 +1,20 @@
 import _ from "lodash";
+import { makeObservable, observable } from "mobx";
 import { Id } from "./list";
 
 export class SeedPhrase{
-    id?: Id;
-    phrase: string;
+    readonly id!: Id;
+    private readonly phrase: string;
 
-    constructor(data: any){
-        this.id = _.uniqueId()
-        this.phrase = data.phrase;
+    constructor(phrase: string){
+        this.phrase = phrase;
+
+        makeObservable<any>(this, {
+            phrase: observable
+        })
     }
 
-    getPhrase(): string{
+    get(): string{
         return this.phrase;
     }
 }

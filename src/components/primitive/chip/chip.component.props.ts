@@ -1,19 +1,24 @@
+import { Id } from "models";
 import { SeedPhrase } from "models/seed-phrase";
 
 export interface ChipComponentProps {
   /**
-   * label of the chip
-   */
-  // label: string;
-
-  /**
    * index of the chip
    */
   index: number;
+
+  /**
+   * id of the chip
+   */
+  id: Id;
+
+  /**
+   * chip phrase
+   */
   phrase: SeedPhrase
 
   /**
    * method to remove the chip
    */
-  onRemove: (index: number) => void;
+  onRemove: (id: Id) => void;
 }

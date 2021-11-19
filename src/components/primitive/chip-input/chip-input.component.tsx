@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { t } from 'i18n-js';
+import { observer } from 'mobx-react-lite';
 import { Input } from '../input/input.component';
 import { Box } from '../box/box.component';
 import Chip from '../chip/chip.component';
 import { ChipInputComponentProps } from './chip-input.component.props';
+import { Id, SeedPhrase } from 'models';
 
 const ChipContainer = styled(Box)`
   margin-top: 1rem !important;
@@ -37,69 +39,49 @@ const PhraseInput = styled(Input)`
   border: none !important;
 `;
 
-export const ChipInput: React.FC<ChipInputComponentProps> = (props) => {
-  const { seedPhrases, setSeedPhrases } = props;
+export const ChipInput: React.FC<ChipInputComponentProps> = observer((props) => {
+  const { seedPhraseList } = props;
 
   const [value, setValue] = useState<string>('');
 
-  // const addChip = (event: any) => {
-  //   if (event.key === 'Enter') {
-  //     if (!value.trim()) return;
-  //     seedPhrases.push(value.trim());
-  //     setSeedPhrases(seedPhrases);
-  //     setValue('');
-  //   }
-  // };
-
-  // const removeChip = (index: number) => {
-  //   const newSeedPhrases = seedPhrases.filter((_, i) => {
-  //     return i !== index;
-  //   });
-  //   setSeedPhrases(newSeedPhrases);
-  // };
-
-  // const seedPhrasesLength = (): number => {
-  //   return seedPhrases.length;
-  // };
-
-  // const isSeedPhraseFull = (): boolean => {
-  //   return seedPhrases.length === 12;
-  // };
-
-  const addChip = () =>{
-
+  const addChip = (event: KeyboardEvent) =>{
+    if(event.key === 'Enter'){
+      if(!value.trim()) return;
+      seedPhraseList.addItem(new SeedPhrase(value))
+      setValue('')
+    }
   }
 
-  const removeChip = () => {
-
+  const removeChip = (id: Id) => {
+    seedPhraseList.removeItem(id)
   }
+
+  const isSeedPhraseFull = (): boolean => {
+    return seedPhraseList.size === 12;
+  };
 
   return (
-    <Container length={seedPhrases.size}>
+    <Container length={seedPhraseList.size}>
       <PhraseInput
         autoFocus
         placeholder={
-          seedPhrases.isEmpty()
+          seedPhraseList.isEmpty()
             ? t('chipInput.enterPhrase') : t('chipInput.phrasesEntered')
         }
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
-        onKeyDown={addChip}
-        disabled={!seedPhrases.isEmpty()}
+        onKeyDown={e => addChip(e as any)}
+        disabled={isSeedPhraseFull()}
       />
       <ChipContainer>
-        {seedPhrases.hasItems() && seedPhrases.items.map((item) => {
+        {seedPhraseList.hasItems() && seedPhraseList.items.map((item) => {
           return(
-            <Chip index={seedPhrases.getIndex(item.id)} phrase={item} onRemove={removeChip} />
+            <Chip index={seedPhraseList.getIndex(item.id)} id={item.id} phrase={item} onRemove={removeChip} />
           )
         })}
-        {/* {seedPhrases &&
-          seedPhrases.map((label, index) => {
-            return <Chip label={label} index={index} onRemove={removeChip} />;
-          })} */}
       </ChipContainer>
     </Container>
   );
-};
+});

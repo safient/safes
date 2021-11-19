@@ -3,22 +3,16 @@ import styled from 'styled-components';
 import { Box } from '../box/box.component';
 import { Text } from '../text/text.component';
 import { ChipComponentProps } from './chip.component.props';
+import {close} from 'assets'
 
-const Close = styled.h2`
+const Close = styled.img`
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 1rem;
-  color: ${({ theme: { colors } }) => colors.white};
-  background-color: ${({ theme: { colors } }) => colors.error};
-  height: 2rem;
-  width: 2rem;
-  border-radius: 1rem;
-  padding: 4px;
-  display: none;
+  height: 1.5rem;
   margin: 5px;
-  text-align: center;
-`;
+  display: none;
+`
 
 const ChipBody = styled(Box)<{ index: number }>`
   margin-left: ${({ index }) => (index === 0 || index === 6 ? '0' : '10px')};
@@ -34,7 +28,7 @@ const ChipBody = styled(Box)<{ index: number }>`
   }
 `;
 
-const Chip = ({ phrase, index, onRemove }: ChipComponentProps) => {
+const Chip = ({ id, index, phrase, onRemove }: ChipComponentProps) => {
   return (
     <ChipBody
       row
@@ -43,9 +37,10 @@ const Chip = ({ phrase, index, onRemove }: ChipComponentProps) => {
       padding={1}
       margin={0.5}
       borderRadius={0.5}
-      color='applicationBackground'>
-      <Text bold text={phrase.getPhrase()} color='primary' size={1.6} />
-      {/* <Close onClick={onRemove}>X</Close> */}
+      color='applicationBackground'
+      >
+      <Text bold text={phrase.get()} color='primary' size={1.6} />
+      <Close src={close} onClick={() => onRemove(id)}/>
     </ChipBody>
   );
 };

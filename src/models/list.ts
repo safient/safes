@@ -24,7 +24,7 @@ export abstract class List<T extends { id?: Id }> {
    */
    protected constructor(
       // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-      rawData: any,
+      rawData: any[] = [],
       Type: CustomClass<T>,
       generateId?: boolean,
    ) {
