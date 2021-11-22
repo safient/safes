@@ -38,7 +38,7 @@ export const SmallButton = styled(Box)<ButtonComponentProps>`
   width: fit-content;
   min-width: 14.2rem !important;
   height: 4.2rem;
-  background-color: ${({ theme: { colors } }) => colors.primary} !important;
+  background: ${({ theme: { colors } }) => colors.primary} !important;
   border-radius: 0.4rem;
 `;
 
