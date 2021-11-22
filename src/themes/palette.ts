@@ -28,6 +28,7 @@ export const palette = {
   greyLightest: '#C7C8D9', //for border
   grayTransparent: 'rgba(98, 108, 116, 0.4)', //model backdrop
   shadow: ' 0px 16px 32px rgba(221, 230, 237, 0.4)',
+  blueIndigoGradient: 'linear-gradient(89.58deg, #44BCF0 -19.85%, #818CF8 54.07%, #A099FF 120.75%)',
 };
 
 export type Palette = typeof palette;

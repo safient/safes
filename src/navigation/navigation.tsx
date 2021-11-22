@@ -1,11 +1,14 @@
+import { observer } from 'mobx-react-lite';
 import React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { LoginScreen } from '../screens';
+import { useStores } from '../store';
 import { RoutePath } from './route-path';
 import { routes } from './routes';
 
-const Navigation = () => {
-  const isLoggedIn: boolean = false;
+const Navigation = observer(() => {
+  const { accountStore } = useStores();
+  const isLoggedIn: boolean = !!accountStore.getUser();
 
   return (
     <Switch>
@@ -53,6 +56,6 @@ const Navigation = () => {
       <Redirect to={RoutePath.notFound} />
     </Switch>
   );
-};
+});
 
 export default Navigation;
