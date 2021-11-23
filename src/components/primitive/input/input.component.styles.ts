@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import { BreakPoints } from 'utils';
 import { InputComponentProps } from './input.component.props';
 
-export const InputWrapperContainer = styled.fieldset<InputComponentProps>`
+/**
+ * Styles for Input Container.
+ */
+export const InputContainer = styled.fieldset<InputComponentProps>`
   display: inline-flex;
   flex-direction: column;
   width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
@@ -11,18 +14,16 @@ export const InputWrapperContainer = styled.fieldset<InputComponentProps>`
   }
 `;
 
+/**
+ * Styles for Input Field.
+ */
 export const StyledInput = styled.input<InputComponentProps>`
-  /* todo- change font color */
-  color: ${({ error, theme: { colors } }) => (error ? colors.error : colors.textLighter)};
+  color: ${({ error, theme: { colors } }) => (error ? colors.error : colors.textLight)};
   font-size: 1.6rem;
   font-weight: 500;
-  padding: 0.1rem 1rem;
+  padding: 0.5em 3.5em 0.5em 1em;
   border-radius: 0.5rem;
-  /* todo- change border color */
-  /* border: 1px solid ${({ theme: { colors } }) => colors.borderLighter}; */
-
-  /** todo- change the border color */
-  border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLighter)} !important;
+  border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
   outline: none;
   width: 40rem;
   height: 5rem;
@@ -35,18 +36,21 @@ export const StyledInput = styled.input<InputComponentProps>`
     border-color: ${({ theme: { colors } }) => colors.primary};
     background-color: ${({ theme: { colors } }) => colors.white};
   }
+
   &:disabled {
     cursor: not-allowed;
   }
+
   &::placeholder {
     font-weight: 400;
     font-size: 1.6rem;
-
-    /* todo- replace color */
     color: ${({ theme: { colors } }) => colors.textLighter};
   }
 `;
 
+/**
+ * Styles for InputField Wrapper.
+ */
 export const InputWrapper = styled.div`
   display: flex;
   position: relative;
@@ -55,7 +59,6 @@ export const InputWrapper = styled.div`
 /**
  * This styled will be applied while using Validations
  */
-
 export const Icon = styled.span`
   position: absolute;
   height: 4rem;
@@ -65,7 +68,7 @@ export const Icon = styled.span`
 `;
 
 /**
- * Styles for Label
+ * Styles for Input Label.
  */
 export const InputLabel = styled.label`
   color: ${({ theme: { colors } }) => colors.textLight};
@@ -75,7 +78,7 @@ export const InputLabel = styled.label`
 `;
 
 /**
- * Error message container
+ * Error message container.
  */
 export const ErrorMessageContainer = styled.fieldset`
   margin: 0.4rem 0 0.4rem 0;

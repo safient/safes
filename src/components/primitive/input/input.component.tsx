@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, IconSvg } from 'components/primitive';
 import {
-  InputWrapperContainer,
+  InputContainer,
   InputLabel,
   InputWrapper,
   StyledInput,
@@ -12,7 +12,7 @@ import { InputComponentProps } from './input.component.props';
 
 export const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: InputComponentProps) => {
   return (
-    <InputWrapperContainer>
+    <InputContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
         <StyledInput autoFocus value={value} type={type} error={error} {...rest} />
@@ -29,6 +29,6 @@ export const Input = ({ value, type = 'text', label, isDisabled, error, ...rest 
           </Text>
         </ErrorMessageContainer>
       )}
-    </InputWrapperContainer>
+    </InputContainer>
   );
 };
