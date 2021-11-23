@@ -24,7 +24,8 @@ export const palette = {
   redLightest: '#f5c2c7', //borders
   grey: '#28293d', // default dark headings
   greyLight: '#555770', // light heading, body text
-  greyLighter: '#8E90A6', //for placeholders and secondary button, border
+  greyLighter: '#8E90A6', //for placeholders and secondary button
+  greyLightest: '#C7C8D9', //for border
   grayTransparent: 'rgba(98, 108, 116, 0.4)', //model backdrop
   shadow: ' 0px 16px 32px rgba(221, 230, 237, 0.4)',
   blueIndigoGradient: 'linear-gradient(89.58deg, #44BCF0 -19.85%, #818CF8 54.07%, #A099FF 120.75%)',
