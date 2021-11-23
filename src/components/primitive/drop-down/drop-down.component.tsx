@@ -16,7 +16,7 @@ export const DropDown: React.FC<DropDownComponentProps> = (props) => {
     <DropdownWrapper wide={wide}>
       <StyledLabel>{label}</StyledLabel>
       <StyledSelect error={error} {...rest}>
-        {options !== undefined &&
+        {!!options &&
           options.map((item, index) => (
             <StyledOption value={item.value} key={item.id || index}>
               {item.option}
