@@ -5,7 +5,6 @@ import { InputComponentProps } from './input.component.props';
 export const InputWrapperContainer = styled.fieldset<InputComponentProps>`
   display: inline-flex;
   flex-direction: column;
-  /* width: 100%; */
   width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
   @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     width: 100% !important;
