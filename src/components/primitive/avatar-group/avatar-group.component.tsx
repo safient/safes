@@ -1,26 +1,18 @@
-import styled, { keyframes } from 'styled-components';
-import { Avatar } from '..';
+import { Avatar } from 'components/primitive';
+import { AvatarGroupComponentProps } from './avatar-group.component.props';
+import { AvatarGroupContainer, StyledAvatars } from './avatar-group.component.styles';
 
-export const AvatarGroupContainer = styled.div`
-  display: flex;
-`;
+export const AvatarGroup: React.FC<AvatarGroupComponentProps> = (props) => {
+  const { avatars } = props;
 
-export const StyledAvatars = styled.div`
-  margin-left: -10px;
-`;
-
-export const AvatarGroup = () => {
   return (
     <AvatarGroupContainer>
-      <StyledAvatars>
-        <Avatar name='safientAvatar' size='small' />
-      </StyledAvatars>
-      <StyledAvatars>
-        <Avatar name='safientAvatar' size='small' />
-      </StyledAvatars>
-      <StyledAvatars>
-        <Avatar name='safientAvatar' size='small' />
-      </StyledAvatars>
+      {!!avatars &&
+        avatars.map((item, index) => (
+          <StyledAvatars key={index}>
+            <Avatar src={item.ulr} size='small' />
+          </StyledAvatars>
+        ))}
     </AvatarGroupContainer>
   );
 };
