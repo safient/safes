@@ -35,6 +35,8 @@ export const images = {
   safes: require('../assets/icons/safes.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
+  bitcoin: require('../assets/icons/bitcoin.svg').default,
+  ether: require('../assets/icons/ether.svg').default,
   safientAvatar: require('../assets/logo/safient_avatar.png').default,
 };
 
