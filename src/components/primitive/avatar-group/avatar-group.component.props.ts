@@ -14,7 +14,7 @@ export interface AvatarLists {
   /**
    * Source of the image
    */
-  ulr: string;
+  url: string;
 }
 
 export interface AvatarGroupComponentProps extends AvatarComponentProps {

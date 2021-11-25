@@ -10,7 +10,7 @@ export const AvatarGroup: React.FC<AvatarGroupComponentProps> = (props) => {
       {!!avatars &&
         avatars.map((item, index) => (
           <StyledAvatars key={index}>
-            <Avatar src={item.ulr} size='small' />
+            <Avatar src={item.url} size='small' />
           </StyledAvatars>
         ))}
     </AvatarGroupContainer>
