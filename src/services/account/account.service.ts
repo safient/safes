@@ -1,5 +1,5 @@
-import { ServiceResponse } from "../core/service-response.";
-import { SafientCore } from "@safient/core";
+import { ServiceResponse } from '../core/service-response.';
+import { SafientCore } from '@safient/core';
 
 export interface AccountService {
   /**
