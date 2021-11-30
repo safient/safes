@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { BadgeComponentProps, Variant } from './badge.component.props';
-import { ButtonText, DangerBadge, SuccessBadge, WarningBadge } from './badge.component.styles';
+import { ButtonText, DangerBadge, SuccessBadge } from './badge.component.styles';
 
 export const Badge: React.FC<BadgeComponentProps> = (props) => {
-  const { variant = 'success', label, ...rest } = props;
+  const { variant, label, ...rest } = props;
 
   const getVariant = (variant: Variant = Variant.success) => {
     let BadgeComponent;
@@ -12,9 +12,6 @@ export const Badge: React.FC<BadgeComponentProps> = (props) => {
         BadgeComponent = SuccessBadge;
         break;
 
-      case Variant.warning:
-        BadgeComponent = WarningBadge;
-        break;
       case Variant.danger:
         BadgeComponent = DangerBadge;
         break;

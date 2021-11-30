@@ -8,7 +8,6 @@ import { BoxComponentProps } from '..';
 export enum Variant {
   success = 'success',
   danger = 'danger',
-  warning = 'warning',
 }
 
 export interface BadgeComponentProps extends BoxComponentProps {
