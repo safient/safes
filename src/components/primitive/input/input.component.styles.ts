@@ -25,7 +25,8 @@ export const StyledInput = styled.input<InputComponentProps>`
   border-radius: 0.5rem;
   border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
   outline: none;
-  width: 40rem;
+  box-sizing: border-box;
+  width: 100%;
   height: 5rem;
   background-color: ${({ theme: { colors } }) => colors.white};
   transition: border 150ms ease-out;
