@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import { Box, Text } from '..';
+import { Box, Text } from 'components/primitive';
 
+/**
+ * Base styles for Badge Component.
+ */
 export const BaseBadge = styled(Box)`
-  height: 3.5rem;
+  height: 3.3rem !important;
   width: fit-content;
   padding: 1.2rem 0.6rem !important;
   min-width: 10.5rem !important;
@@ -12,18 +15,23 @@ export const BaseBadge = styled(Box)`
 `;
 
 /**
- * Success Danger Warning
+ * Style for SuccessBadge.
  */
 export const SuccessBadge = styled(BaseBadge)`
-  /* background-color: ${({ theme: { colors } }) => colors.primary} !important; */
-  background-color: rgba(73, 179, 147, 0.1);
-  color: #49b393 !important;
+  background-color: ${({ theme: { colors } }) => colors.successLighter} !important;
 `;
 
+/**
+ * Style for DangerBadge.
+ */
 export const DangerBadge = styled(BaseBadge)`
-  background-color: rgba(255, 162, 136, 0.1);
+  background-color: ${({ theme: { colors } }) => colors.errorLighter} !important;
 `;
 
-export const ButtonText = styled(Text)`
+/**
+ * Default styles for BadgeText.
+ */
+export const BadgeText = styled(Text)`
   color: ${({ theme: { colors } }) => colors.white};
+  font-size: 1.4rem;
 `;

@@ -1,37 +1,34 @@
-import styled from 'styled-components';
 import { BadgeComponentProps, Variant } from './badge.component.props';
-import { ButtonText, DangerBadge, SuccessBadge } from './badge.component.styles';
+import { BadgeText, DangerBadge, SuccessBadge } from './badge.component.styles';
 
 export const Badge: React.FC<BadgeComponentProps> = (props) => {
   const { variant, label, ...rest } = props;
 
   const getVariant = (variant: Variant = Variant.success) => {
-    let BadgeComponent;
+    let badgeComponent;
+
     switch (variant) {
       case Variant.success:
-        BadgeComponent = SuccessBadge;
+        badgeComponent = SuccessBadge;
         break;
 
       case Variant.danger:
-        BadgeComponent = DangerBadge;
+        badgeComponent = DangerBadge;
         break;
 
       default:
-        BadgeComponent = SuccessBadge;
+        badgeComponent = SuccessBadge;
     }
-    return BadgeComponent;
+
+    return badgeComponent;
   };
 
-  const StyledBadge = getVariant(Variant[variant]);
-
-  const StyledBadgeComponent = styled(StyledBadge)`
-    background: ${({ color, theme: { colors } }) => color && colors[color]} !important;
-  `;
+  const StyledBadgeComponent = getVariant(Variant[variant]);
 
   return (
     // @ts-ignore - No overload matched this call.
     <StyledBadgeComponent row vCenter hCenter {...rest}>
-      <ButtonText {...label} />
+      <BadgeText {...label} />
     </StyledBadgeComponent>
   );
 };

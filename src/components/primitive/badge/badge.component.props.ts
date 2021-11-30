@@ -1,17 +1,22 @@
 import { TextComponentProps } from 'components/primitive/text/text.component.props';
+import { BoxComponentProps } from 'components/primitive/box/box.component.props';
+
 /**
- * Success Danger Warning
+ * Different Variants of Badge Component
  */
-
-import { BoxComponentProps } from '..';
-
 export enum Variant {
   success = 'success',
   danger = 'danger',
 }
 
 export interface BadgeComponentProps extends BoxComponentProps {
+  /**
+   * label for Text Component
+   */
   label: TextComponentProps;
 
+  /**
+   * option to use diffent variants. Success is the default variant.
+   */
   variant: keyof typeof Variant;
 }
