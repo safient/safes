@@ -20,5 +20,5 @@ export interface AccountStore extends StoreImpl, IStore {
    */
   userExists: () => boolean;
 
-  initializeSafient: (web3Provider: Web3Provider) => void;
+  loadAccount: (web3Provider: Web3Provider) => void;
 }

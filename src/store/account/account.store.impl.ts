@@ -5,7 +5,7 @@ import { User } from '../../models';
 import { StorageKey, storageService } from '../../services';
 import { JsonRpcSigner, Network, Web3Provider } from '@ethersproject/providers';
 import { formatEther } from '@ethersproject/units';
-import { SafientCore, Types } from '@safient/core';
+import { SafientCore, Types, Enums } from '@safient/core';
 
 export class AccountStoreImpl extends StoreImpl implements AccountStore {
   private token?: string;
@@ -37,7 +37,7 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
       loadUserId: action,
       setUser: action,
       userExists: action,
-      initializeSafient: action,
+      loadAccount: action,
     });
   }
 
@@ -50,7 +50,7 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     storageService.remove(StorageKey.userId);
   }
 
-  async initializeSafient(web3Provider: Web3Provider): Promise<void> {
+  async loadAccount(web3Provider: Web3Provider): Promise<void> {
     this.web3Provider = web3Provider;
     const network = await this.web3Provider.getNetwork();
     this.chainId = await network.chainId;
@@ -58,12 +58,16 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     this.address = await this.signer.getAddress();
     const balance = await this.signer.getBalance();
     this.balance = formatEther(balance);
-    this.safient = new SafientCore(this.signer, this.chainId as number, 'threadDB');
+    this.safient = new SafientCore(
+      this.signer,
+      Enums.NetworkType.localhost,
+      'threadDB',
+      'bjngsmak24m6e5p2ijtcedws2tq',
+      'bn3h6ozdpkmh7tgx3jh5el55cgfaevwxh7mcnnfi',
+      null
+    );
     if (this.chainId == 31337 || this.chainId == 1 || this.chainId == 4) {
-      const user = await this.safient.loginUser(
-        'bjotvawozxytpzemtrei3a2zquq',
-        'b55myxtcfe3fqgwze7hbr336in3avvbbkj3kzfda'
-      );
+      const user = await this.safient.loginUser();
       if (user.status && user.data) {
         this.web3User = user.data;
       }

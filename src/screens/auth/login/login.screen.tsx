@@ -46,7 +46,10 @@ export const LoginScreen = observer(() => {
                     <Text variant='content' text={stores.accountStore.web3User?.email} />
                   </>
                 ) : (
-                  <Text variant='small' text='Sign the message & wait for a few seconds to log in...' />
+                  <Text
+                    variant='small'
+                    text='Sign the message & wait for a few seconds to log in... if not logged in, please register!'
+                  />
                 )}
               </>
             ) : (

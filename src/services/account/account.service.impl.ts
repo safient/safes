@@ -23,7 +23,7 @@ export class AccountServiceImpl extends Service implements AccountService {
     try {
       const injectedProvider = await this.web3Modal.connect();
       const provider = new Web3Provider(injectedProvider);
-      await this.accountStore.initializeSafient(provider);
+      await this.accountStore.loadAccount(provider);
 
       return this.success<SafientCore>(this.accountStore.safient as SafientCore);
     } catch (e: any) {

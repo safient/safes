@@ -7,7 +7,7 @@
     "@ethersproject/providers": "^5.5.0",
     "@ethersproject/units": "^5.5.0",
     "@react-tiny-grid/core": "^0.1.7",
-    "@safient/core": "^0.1.4-alpha",
+    "@safient/core": "^0.1.5-alpha",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -48,24 +48,18 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@types/i18n-js": "^3.8.2",
     "@types/lodash": "^4.14.172",
     "@types/react": "^17.0.28",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.1",
-    "@types/styled-components": "^5.1.13"
+    "@types/styled-components": "^5.1.13",
+    "webpack": "^4.44.2"
   }
 }
