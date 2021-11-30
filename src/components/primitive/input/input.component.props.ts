@@ -1,26 +1,31 @@
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  value?: string;
-  innerRef?: React.Ref<HTMLInputElement>;
-  variant?: 'small' | 'large';
-  label?: React.ReactElement | string;
-  labelAddon?: React.ReactElement;
-  labelRight?: React.ReactElement;
-  innerAddon?: React.ReactNode;
-  isDisabled?: boolean;
-
-  wrapperProps?: Record<string, any>;
+export interface InputComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  /**
+   * Type of the Input
+   */
   type?: string;
 
-  labelAddonIsVisible?: boolean;
-  height?: number;
-}
+  /**
+   * Label for the Input
+   */
+  label?: string;
 
-interface WrappedProps {
-  width?: any;
-}
+  /**
+   * Value of Input Field
+   */
+  value?: string | number;
 
-interface InputProps extends Props {
-  inputAddonWidth?: number;
-}
+  /**
+   * Disables the Input Field
+   */
+  isDisabled?: boolean;
 
-export type { InputProps, Props, WrappedProps };
+  /**
+   * Sets the width to 100% if its true
+   */
+  wide?: boolean;
+
+  /**
+   * Error Message string
+   */
+  error?: string;
+}

@@ -4,6 +4,7 @@ export const colors = {
   white: palette.white,
   black: palette.black,
   primary: palette.blue,
+  primaryGradient: palette.blueIndigoGradient,
   textDark: palette.grey,
   textLight: palette.greyLight,
   textLighter: palette.greyLighter, //placeholder and borders
@@ -19,6 +20,7 @@ export const colors = {
   border: palette.grey,
   borderLight: palette.greyLight,
   borderLighter: palette.greyLighter,
+  borderLightest: palette.greyLightest,
   navLinkActive: palette.blueTransparent,
   applicationBackground: palette.whiteLiac,
   spinnerBorder: palette.greyLighter,

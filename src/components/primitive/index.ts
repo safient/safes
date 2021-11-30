@@ -15,6 +15,7 @@ export * from './icon-svg/icon-svg.component.props';
 export * from './image/image.component';
 
 export * from './avatar/avatar.component';
+export * from './avatar-group/avatar-group.component';
 
 export * from './navlink/navlink.component';
 export * from './navlink/navlink.component.props';
