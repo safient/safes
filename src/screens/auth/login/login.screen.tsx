@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Text, Button, Image, IconSvg } from 'components/primitive';
+import { Text, Image, Input, Button } from 'components/primitive';
 import { safientLogo } from 'assets';
 import { BreakPoints } from 'utils';
-import { Input } from './sample-input';
+//import { Input } from './sample-input';
 
 export const LoginContainer = styled.section`
   width: 100%;
@@ -51,41 +51,41 @@ export const FormContainer = styled.div`
   padding: 50px 80px 50px 80px;
 `;
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(Button)`
   width: 400px;
-  background: linear-gradient(89.58deg, #44bcf0 -19.85%, #818cf8 54.07%, #a099ff 120.75%) !important;
+  /* background: linear-gradient(89.58deg, #44bcf0 -19.85%, #818cf8 54.07%, #a099ff 120.75%) !important;
   border-radius: 5px;
   color: white;
   height: 50px;
   font-weight: 600;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 24px; */
   /* or 150% */
-  cursor: pointer;
+  /* cursor: pointer;
   align-items: center;
-  text-align: center;
-  margin-top: 40px;
+  text-align: center; */
+  margin-top: 4rem !important;
 `;
 
 export const LoginText = styled(Text)`
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 `;
 
 export const SocialLoginContainer = styled.div`
-  margin-top: 40px;
+  margin-top: 4rem;
 `;
 
 export const SocialIconsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  margin-top: 30px;
+  margin-top: 3rem;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 `;
 
 export const StyledCheckbox = styled.input`
@@ -97,13 +97,13 @@ export const StyledCheckbox = styled.input`
 
 export const TermsContainer = styled.section`
   display: flex;
-  margin-top: 50px;
+  margin-top: 5rem;
   align-items: center;
   justify-content: center;
   gap: 16px;
 `;
 
-export const LoginScreen = () => {
+export const LoginScreen = (props: any) => {
   return (
     <LoginContainer>
       <NavContainer>
@@ -131,7 +131,12 @@ export const LoginScreen = () => {
             Get Started
           </LoginText>
           <Input type='text' label='Enter your Email or DID' placeholder='hello@example.com' />
-          <StyledButton>Log in</StyledButton>
+          <StyledButton
+            variant='primary'
+            label={{ text: 'Log In' }}
+            onClick={() => 'clicked'}
+            color='primaryGradient'
+          />
 
           <SocialLoginContainer>
             <TextContainer>
