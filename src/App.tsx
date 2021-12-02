@@ -9,6 +9,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
+        {/* Todo - hide the sidebar on login and registration screen. -conditional rendering goes here */}
         <AppLayout>
           <Navigation />
         </AppLayout>
