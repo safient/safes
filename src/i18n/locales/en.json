@@ -11,7 +11,11 @@
     "genericNotes": "Generic Notes",
     "safeRole": "Safe Role",
     "creator": "Creator",
-    "safients": "Safients",
+    "safients": "Safients"
+  },
+  "chipInput": {
+    "phrasesEntered": "12 Phrases Entered",
+    "enterPhrase": "Enter the 12-word seed phrase",
     "loading": "Loading"
   }
 }
