@@ -32,6 +32,6 @@ export const DangerBadge = styled(BaseBadge)`
  * Default styles for BadgeText.
  */
 export const BadgeText = styled(Text)`
-  color: ${({ theme: { colors } }) => colors.white};
+  color: ${({ theme: { colors } }) => colors.successLight};
   font-size: 1.4rem;
 `;
