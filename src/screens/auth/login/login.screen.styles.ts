@@ -16,7 +16,7 @@ export const LoginFormContainer = styled.section`
 `;
 
 export const FormContainer = styled.div`
-  background-color: white;
+  background-color: ${({ theme: { colors } }) => colors.white};
   width: 53.4rem;
   padding: 5rem 8rem 5rem 8rem;
 `;

@@ -11,7 +11,15 @@
     "genericNotes": "Generic Notes",
     "safeRole": "Safe Role",
     "creator": "Creator",
-    "safients": "Safients"
+    "safients": "Safients",
+    "or": "OR",
+    "alternativeOption": " You can also continue with"
+  },
+  "auth": {
+    "getStarted": "Get Started",
+    "login": "Log In",
+    "create": "Create",
+    "createAccount": "Create an Account"
   },
   "chipInput": {
     "phrasesEntered": "12 Phrases Entered",

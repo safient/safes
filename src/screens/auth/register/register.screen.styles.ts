@@ -17,7 +17,7 @@ export const LoginFormContainer = styled.section`
 `;
 
 export const FormContainer = styled.div`
-  background-color: white;
+  background-color: ${({ theme: { colors } }) => colors.white};
   width: 53.4rem;
   padding: 5rem 8rem 5rem 8rem;
   margin-top: -8rem;
@@ -59,6 +59,13 @@ export const TermsContainer = styled.section`
   gap: 1.6rem;
 `;
 
-export const styledLink = styled(Link)`
-  color: red;
+export const StyledLink = styled(Link)`
+  line-height: 1.8;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    color: ${({ theme }) => theme.colors.textLight};
+  }
 `;

@@ -19,25 +19,20 @@ export const LoginScreen = () => {
 
       <LoginFormContainer>
         <FormContainer>
-          <LoginText variant='contentHeader' center>
-            Get Started
-          </LoginText>
+          <LoginText variant='contentHeader' center tx='auth.getStarted' />
           <Input type='text' label='Enter your Email or DID' placeholder='hello@example.com' />
+
           <StyledButton
             variant='primary'
-            label={{ text: 'Log In' }}
+            label={{ tx: 'auth.login' }}
             onClick={() => 'clicked'}
             color='primaryGradient'
           />
 
           <SocialLoginContainer>
             <TextContainer>
-              <Text variant='contentHeader' center>
-                OR
-              </Text>
-              <Text variant='contentHeader' center>
-                You can also continue with
-              </Text>
+              <Text variant='contentHeader' center tx='common.or' />
+              <Text variant='contentHeader' center tx='common.alternativeOption' />
             </TextContainer>
 
             <SocialIconsContainer>

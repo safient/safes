@@ -10,6 +10,7 @@ import {
   StyledButton,
   TermsContainer,
   StyledCheckbox,
+  StyledLink,
 } from './register.screen.styles';
 
 export const RegisterScreen = () => {
@@ -19,9 +20,7 @@ export const RegisterScreen = () => {
 
       <LoginFormContainer>
         <FormContainer>
-          <LoginText variant='contentHeader' center>
-            Crate an Account
-          </LoginText>
+          <LoginText variant='contentHeader' center tx='auth.createAccount' />
 
           <Box style={{ gap: '2.6rem' }}>
             <Input type='text' label='Enter your Full Name' placeholder='John Doe' />
@@ -31,8 +30,8 @@ export const RegisterScreen = () => {
           <TermsContainer>
             <StyledCheckbox type='checkbox' />
             <Text variant='content'>
-              By clicking, you agree to <Link to={'google.com'}>Safient's Terms </Link>
-              of Use & <Link to={'google.com'}>Privacy Policy.</Link>
+              By clicking, you agree to <StyledLink to={'safient.io'}>Safient's Terms </StyledLink>
+              of Use & <StyledLink to={'safient.io'}> Privacy Policy.</StyledLink>
             </Text>
           </TermsContainer>
 
