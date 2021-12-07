@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, Input } from 'components/primitive';
+import { Text, Input } from 'components/primitive';
 import { Header } from 'components/common/auth-header.component';
 import {
   LoginContainer,
@@ -10,6 +10,7 @@ import {
   SocialLoginContainer,
   TextContainer,
   SocialIconsContainer,
+  SocialIcon,
 } from './login.screen.styles';
 
 export const LoginScreen = () => {
@@ -36,9 +37,9 @@ export const LoginScreen = () => {
             </TextContainer>
 
             <SocialIconsContainer>
-              <Image name='LoginWithGitHub' height={5} width={7} />
-              <Image name='LoginWithGoogle' height={5} width={7} />
-              <Image name='LoginWithMetaMask' height={5} width={7} />
+              <SocialIcon name='LoginWithGitHub' height={5} width={7} />
+              <SocialIcon name='LoginWithGoogle' height={5} width={7} />
+              <SocialIcon name='LoginWithMetaMask' height={5} width={7} />
             </SocialIconsContainer>
           </SocialLoginContainer>
         </FormContainer>

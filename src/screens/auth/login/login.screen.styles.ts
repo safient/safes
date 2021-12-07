@@ -1,4 +1,4 @@
-import { Button, Text } from 'components/primitive';
+import { Button, Text, Image } from 'components/primitive';
 import styled from 'styled-components';
 
 export const LoginContainer = styled.section`
@@ -39,6 +39,17 @@ export const SocialIconsContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   margin-top: 3rem;
+`;
+
+export const SocialIcon = styled(Image)`
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1, 1.1) !important;
+    border: 1px solid;
+    border-radius: 0.5rem !important;
+    border-image: ${({ theme: { colors } }) => colors.primaryGradient};
+    border-image-slice: 1;
+  }
 `;
 
 export const TextContainer = styled.div`
