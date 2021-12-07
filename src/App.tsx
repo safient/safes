@@ -9,10 +9,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        {/* Todo - hide the sidebar on login and registration screen after integrating auth flow. -conditional rendering goes here */}
-        <AppLayout>
           <Navigation />
-        </AppLayout>
         <GlobalStyle />
       </Router>
     </ThemeProvider>

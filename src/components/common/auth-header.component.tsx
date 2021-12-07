@@ -17,7 +17,7 @@ export const Header = () => {
           <Button
             variant='ghost'
             label={{ text: 'Know more', color: 'textLight' }}
-            onClick={() => console.log('clicked')}
+            onClick={() => window.location.href = "https://docs.safient.io"}
           />
         </List>
       </StyledNav>

@@ -47,8 +47,7 @@ export const SocialIcon = styled(Image)`
     transform: scale(1.1, 1.1) !important;
     border: 1px solid;
     border-radius: 0.5rem !important;
-    border-image: ${({ theme: { colors } }) => colors.primaryGradient};
-    border-image-slice: 1;
+    border-color:   ${({ theme: { colors } }) => colors.primary};
   }
 `;
 

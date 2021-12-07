@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
+import { AppLayout } from '../components/app-layout';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { LoginScreen } from '../screens';
 import { useStores } from '../store';
@@ -8,7 +9,8 @@ import { routes } from './routes';
 
 const Navigation = observer(() => {
   const { accountStore } = useStores();
-  const isLoggedIn: boolean = !!accountStore.getUser();
+  const isMock: boolean = true
+  const isLoggedIn: boolean = !!accountStore.getUser() || isMock
 
   return (
     <Switch>
@@ -32,7 +34,9 @@ const Navigation = observer(() => {
                 exact={exact}
                 render={(props: any) =>
                   isLoggedIn ? (
+                    <AppLayout>
                     <Component {...props} {...routeProps} />
+                    </AppLayout>
                   ) : (
                     <LoginScreen {...props} />
                   )
