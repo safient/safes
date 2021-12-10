@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button, Text } from 'components/primitive';
+import { BreakPoints } from 'utils';
 
 export const LoginContainer = styled.section`
   width: 100%;
@@ -21,11 +22,19 @@ export const FormContainer = styled.div`
   width: 53.4rem;
   padding: 5rem 8rem 5rem 8rem;
   margin-top: -8rem;
+  @media screen and (max-width: ${BreakPoints.small}) {
+    margin-top: -10rem;
+    width: 320px;
+    padding: 3rem 1.5rem 3rem 1.5rem;
+  }
 `;
 
 export const StyledButton = styled(Button)`
-  width: 40rem !important;
+  width: 100% !important;
   margin-top: 3rem !important;
+  @media screen and (max-width: ${BreakPoints.small}) {
+    width: 100% !important;
+  }
 `;
 
 export const LoginText = styled(Text)`
