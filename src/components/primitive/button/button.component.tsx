@@ -31,7 +31,7 @@ export const Button: React.FunctionComponent<ButtonComponentProps> = (props: But
    * custom styling goes here.
    */
   const StyledButtonComponent = styled(StyledButton)<ButtonComponentProps>`
-    background-color: ${({ color, theme: { colors } }) => color && colors[color]} !important;
+    background: ${({ color, theme: { colors } }) => color && colors[color]} !important;
   `;
 
   return (

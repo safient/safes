@@ -1,51 +1,34 @@
-import * as React from 'react';
-import { useEffect, createRef } from 'react';
-import { Props } from './input.component.props';
-import { Wrapper, InputLabel, InputWrapper, StyledInput } from './input.component.styles';
+import React from 'react';
+import { Text, IconSvg } from 'components/primitive';
+import {
+  InputContainer,
+  InputLabel,
+  InputWrapper,
+  StyledInput,
+  ErrorMessageContainer,
+  Icon,
+} from './input.component.styles';
+import { InputComponentProps } from './input.component.props';
 
-const Input = ({
-  value,
-  type = 'text',
-  innerRef,
-  variant = 'large',
-  width,
-  height,
-  label,
-
-  isDisabled,
-  wrapperProps,
-
-  ...rest
-}: Props) => {
-  const inputAddonRef = createRef<HTMLDivElement>();
-  const [inputAddonWidth, setInputAddonWidth] = React.useState(0);
-
-  useEffect(() => {
-    if (inputAddonRef.current) {
-      const rect = inputAddonRef.current.getBoundingClientRect();
-      setInputAddonWidth(rect.width + 10); // addon ha absolute pos with 10px offset
-    } else {
-      setInputAddonWidth(0);
-    }
-  }, [inputAddonRef]);
-
+export const Input = ({ value, type = 'text', label, isDisabled, error, ...rest }: InputComponentProps) => {
   return (
-    <Wrapper {...wrapperProps}>
+    <InputContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
-        <StyledInput
-          value={value}
-          type={type}
-          variant={variant}
-          disabled={isDisabled}
-          width={width}
-          ref={innerRef}
-          inputAddonWidth={inputAddonWidth}
-          {...rest}
-        />
+        <StyledInput autoFocus value={value} type={type} error={error} {...rest} />
+        {error && (
+          <Icon>
+            <IconSvg name='error' size='medium' />
+          </Icon>
+        )}
       </InputWrapper>
-    </Wrapper>
+      {error && (
+        <ErrorMessageContainer>
+          <Text variant='small' color='error'>
+            {error}
+          </Text>
+        </ErrorMessageContainer>
+      )}
+    </InputContainer>
   );
 };
-
-export default Input;

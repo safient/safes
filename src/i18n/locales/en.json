@@ -12,6 +12,20 @@
     "safeRole": "Safe Role",
     "creator": "Creator",
     "safients": "Safients",
+    "or": "OR",
+    "alternativeOption": "You can also continue with",
+    "knowAboutSafient": "Don't know what Safient does?",
+    "knowMore": "Know more"
+  },
+  "auth": {
+    "getStarted": "Get Started",
+    "login": "Log In",
+    "create": "Create",
+    "createAccount": "Create an Account"
+  },
+  "chipInput": {
+    "phrasesEntered": "12 Phrases Entered",
+    "enterPhrase": "Enter the 12-word seed phrase",
     "loading": "Loading"
   }
 }
