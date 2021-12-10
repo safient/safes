@@ -3,6 +3,10 @@ import { safientLogo } from 'assets';
 import { NavContainer, LogoWrapper, StyledNav, List } from './auth-header.component.styles';
 
 export const Header = () => {
+  const redirect = () => {
+    window.location.href = 'https://docs.safient.io';
+  };
+
   return (
     <NavContainer>
       <LogoWrapper>
@@ -11,14 +15,10 @@ export const Header = () => {
 
       <StyledNav>
         <List>
-          <Text variant='small'>Don't know what Safient does?</Text>
+          <Text variant='small' tx='common.knowAboutSafient' />
         </List>
         <List>
-          <Button
-            variant='ghost'
-            label={{ text: 'Know more', color: 'textLight' }}
-            onClick={() => window.location.href = "https://docs.safient.io"}
-          />
+          <Button variant='ghost' label={{ tx: 'common.knowMore', color: 'textLight' }} onClick={redirect} />
         </List>
       </StyledNav>
     </NavContainer>

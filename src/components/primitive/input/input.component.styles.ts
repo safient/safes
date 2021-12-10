@@ -8,7 +8,7 @@ import { InputComponentProps } from './input.component.props';
 export const InputContainer = styled.fieldset<InputComponentProps>`
   display: inline-flex;
   flex-direction: column;
-  width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
+  width: ${({ wide }) => (wide ? '100%' : '40rem')} !important;
   @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     width: 100% !important;
   }

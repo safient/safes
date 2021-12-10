@@ -13,7 +13,9 @@
     "creator": "Creator",
     "safients": "Safients",
     "or": "OR",
-    "alternativeOption": " You can also continue with"
+    "alternativeOption": "You can also continue with",
+    "knowAboutSafient": "Don't know what Safient does?",
+    "knowMore": "Know more"
   },
   "auth": {
     "getStarted": "Get Started",
