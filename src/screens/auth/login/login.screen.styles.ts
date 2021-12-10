@@ -28,7 +28,7 @@ export const FormContainer = styled.div`
 `;
 
 export const StyledButton = styled(Button)`
-  width: 100% !important;
+  width: 40rem !important;
   margin-top: 3rem !important;
   @media screen and (max-width: ${BreakPoints.small}) {
     width: 100% !important;
