@@ -2,9 +2,9 @@ import Web3Modal from 'web3modal';
 import { AccountService } from './account.service';
 import { ServiceResponse } from '../core/service-response.';
 import { AccountStoreImpl, stores } from '../../store';
-import { Web3Provider } from '@ethersproject/providers';
 import { Service } from '../core/service';
-import { SafientCore } from '@safient/core';
+import { Types } from '@safient/core';
+import { User } from 'models';
 
 export class AccountServiceImpl extends Service implements AccountService {
   readonly web3Modal: Web3Modal;
@@ -19,15 +19,17 @@ export class AccountServiceImpl extends Service implements AccountService {
     });
   }
 
-  async connectAccount(): Promise<ServiceResponse<SafientCore>> {
+  async login(): Promise<ServiceResponse<Types.User | undefined>> {
     try {
-      const injectedProvider = await this.web3Modal.connect();
-      const provider = new Web3Provider(injectedProvider);
-      await this.accountStore.loadAccount(provider);
+      
+      const user = await this.accountStore.safient.loginUser();
+      if (user.status && user.data) {
+          this.accountStore.setWeb3User(user.data);
+        }
 
-      return this.success<SafientCore>(this.accountStore.safient as SafientCore);
+      return this.success<Types.User | undefined>(this.accountStore.web3User);
     } catch (e: any) {
-      return this.error<SafientCore>(e);
+      return this.error<Types.User | undefined>(e);
     }
   }
 }

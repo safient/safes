@@ -1,6 +1,10 @@
 import React from 'react';
-import { Text, Input } from 'components/primitive';
+import { useHistory } from 'react-router-dom';
+
+import { Text, Input, Loader } from 'components/primitive';
 import { Header } from 'components/common/auth-header.component';
+import { RoutePath } from '../../../navigation/route-path';
+import { useServices } from '../../../services';
 import {
   LoginContainer,
   LoginFormContainer,
@@ -14,6 +18,12 @@ import {
 } from './login.screen.styles';
 
 export const LoginScreen = () => {
+
+  const { accountService } = useServices();
+  let history = useHistory();  
+
+  const login = async () => {const account = await accountService.login(); if (account.hasData()) history.push(RoutePath.home)};
+
   return (
     <LoginContainer>
       <Header />
@@ -26,7 +36,7 @@ export const LoginScreen = () => {
           <StyledButton
             variant='primary'
             label={{ tx: 'auth.login' }}
-            onClick={() => 'clicked'}
+            onClick={() => {}}
             color='primaryGradient'
           />
 
@@ -39,7 +49,7 @@ export const LoginScreen = () => {
             <SocialIconsContainer>
               <SocialIcon name='LoginWithGitHub' height={5} width={7} />
               <SocialIcon name='LoginWithGoogle' height={5} width={7} />
-              <SocialIcon name='LoginWithMetaMask' height={5} width={7} />
+              <SocialIcon name='LoginWithMetaMask' height={5} width={7} onClick={login}/>
             </SocialIconsContainer>
           </SocialLoginContainer>
         </FormContainer>

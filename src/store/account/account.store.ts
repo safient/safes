@@ -2,7 +2,7 @@ import { StoreImpl } from '../store/store.impl';
 import { IStore } from '../store';
 import { User } from '../../models';
 import { Web3Provider } from '@ethersproject/providers';
-import { SafientCore } from '@safient/core';
+import { SafientCore, Types  } from '@safient/core';
 
 export interface AccountStore extends StoreImpl, IStore {
   /**
@@ -13,7 +13,7 @@ export interface AccountStore extends StoreImpl, IStore {
   /**
    * User profile details
    */
-  getUser: () => User | undefined;
+  web3User: Types.User | undefined;
 
   /**
    * Checks if the user exists
