@@ -28,6 +28,8 @@ export * from './top-bar/top-bar.component';
 export * from './text/text.component';
 export * from './input/input.component';
 
+export * from './text-area/text-area.component';
+
 export * from './loader/loader.component';
 
 export * from './create-card/create-card.component';
