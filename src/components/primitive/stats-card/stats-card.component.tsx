@@ -1,17 +1,7 @@
-import styled from 'styled-components';
-import { Avatar, Text } from '..';
+import { Avatar, Text } from 'components/primitive';
 import { StatsComponentProps } from './stats-card.component.props';
+import { StatsContainer, CountContainer } from './stats-card.component.styles';
 
-export const StatsContainer = styled.div`
-  display: flex;
-  gap: 1.6rem;
-  width: fit-content;
-`;
-export const CountContainer = styled.span`
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
 export const StatsCard: React.FC<StatsComponentProps> = (props) => {
   const { heading, count, iconName } = props;
 
