@@ -1,12 +1,11 @@
-import { reduce } from 'lodash';
 import styled from 'styled-components';
 import { BreakPoints } from 'utils';
-import { InputComponentProps } from './input.component.props';
+import { TextAreaComponentProps } from './text-area.component.props';
 
 /**
- * Styles for Input Container.
+ * Styles for TextArea Container.
  */
-export const InputContainer = styled.fieldset<InputComponentProps>`
+export const TextAreaContainer = styled.fieldset<TextAreaComponentProps>`
   display: inline-flex;
   flex-direction: column;
 
@@ -16,22 +15,24 @@ export const InputContainer = styled.fieldset<InputComponentProps>`
 `;
 
 /**
- * Styles for Input Field.
+ * Styles for TextArea Field.
  */
-export const StyledInput = styled.input<InputComponentProps>`
+export const StyledTextArea = styled.textarea<TextAreaComponentProps>`
   color: ${({ error, theme: { colors } }) => (error ? colors.error : colors.textLight)};
   font-size: 1.6rem;
   font-weight: 500;
-  padding: 0.5em 1em 0.5em 1em;
+  padding: 0.5em 3.5em 0.5em 1em;
   border-radius: 0.5rem;
   border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
-  outline: none;
+  background-color: ${({ theme: { colors } }) => colors.white};
   box-sizing: border-box;
   width: ${({ wide }) => (wide ? '100%' : '40rem')} !important;
-  height: 5rem;
-  background-color: ${({ theme: { colors } }) => colors.white};
-  transition: border 150ms ease-out;
+  height: 11.1rem;
+  outline: none;
+  resize: none;
+  overflow: hidden;
   -moz-appearance: textfield;
+  transition: border 150ms ease-out;
   text-overflow: ellipsis;
 
   &:focus {
@@ -51,10 +52,10 @@ export const StyledInput = styled.input<InputComponentProps>`
 `;
 
 /**
- * Styles for InputField Wrapper.
+ * Styles for TextAreaField Wrapper.
  */
-export const InputWrapper = styled.div`
-  display: inline-flex;
+export const TextAreaWrapper = styled.div`
+  display: flex;
   position: relative;
 `;
 
@@ -62,7 +63,6 @@ export const InputWrapper = styled.div`
  * This styled will be applied while using Validations
  */
 export const Icon = styled.span`
-  display: inline-block;
   position: absolute;
   height: 4rem;
   width: 4rem;
@@ -71,9 +71,9 @@ export const Icon = styled.span`
 `;
 
 /**
- * Styles for Input Label.
+ * Styles for TextArea Label.
  */
-export const InputLabel = styled.label`
+export const TextAreaLabel = styled.label`
   color: ${({ theme: { colors } }) => colors.textLight};
   font-size: 1.6rem;
   font-weight: 500 !important;
