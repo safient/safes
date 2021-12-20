@@ -9,6 +9,6 @@ export enum RoutePath {
   createSafe = '/create-safe',
   claims = '/claims',
   claimDetails = '/claims/:id',
-  profile = '/profile',
+  account = '/account',
   notFound = '/page-not-found',
 }

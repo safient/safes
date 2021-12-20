@@ -14,9 +14,9 @@ export const navItems: NavbarItem[] = [
     onClick: () => console.log('clicked'),
   },
   {
-    label: { text: 'Profile' },
+    label: { text: 'Account' },
     icon: { name: 'profile' },
-    path: '/profile',
+    path: '/account',
     onClick: () => console.log('clicked'),
   },
 ];

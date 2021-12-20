@@ -14,6 +14,6 @@ export interface RouteQueryList {
   [RouteName.createSafe]: undefined;
   [RouteName.claims]: undefined;
   [RouteName.claimDetails]: undefined;
-  [RouteName.profile]: undefined;
+  [RouteName.account]: undefined;
   [RouteName.notFound]: undefined;
 }

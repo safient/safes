@@ -9,6 +9,6 @@ export enum RouteName {
   createSafe = 'createSafe',
   claims = 'claims',
   claimDetails = 'claimDetails',
-  profile = 'profile',
+  account = 'account',
   notFound = 'notFound',
 }

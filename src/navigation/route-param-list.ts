@@ -12,6 +12,6 @@ export interface RouteParamsList {
   [RouteName.createSafe]: undefined;
   [RouteName.claims]: undefined;
   [RouteName.claimDetails]: { id: string };
-  [RouteName.profile]: undefined;
+  [RouteName.account]: undefined;
   [RouteName.notFound]: undefined;
 }
