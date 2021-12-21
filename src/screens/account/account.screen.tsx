@@ -1,62 +1,45 @@
-import React from 'react';
-import { StatsCard, Text, Input } from 'components/primitive';
-import styled from 'styled-components';
+import { StatsCard, Text, Input, Button, Avatar, IconSvg } from 'components/primitive';
+import {
+  AccountContainer,
+  AccountInfoContainer,
+  AccountInfo,
+  ProfileContainer,
+  Profile,
+  ProfileInfo,
+  StatsCardContainer,
+  AccountSettingsContainer,
+  NotificationContainer,
+  StyledSpan,
+  DefaultSettingsContainer,
+  Card,
+} from './account.screen.styles';
+import Demo from '../../../src/assets/images/demo.png';
 
-const AccountContainer = styled.section`
-  width: 100%;
-
-  padding-left: 7rem;
-  top: 10%;
-  left: 17%;
-  bottom: 0;
-  position: fixed;
-  overflow-y: scroll;
-  overflow-x: hidden;
-`;
-
-const AccountInfoContainer = styled.section``;
-
-const AccountInfo = styled.section`
-  margin-top: 2rem;
-  padding: 4rem;
-  background: white;
-  width: 987px;
-`;
-
-const StatsCardContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-const AccountSettingsContainer = styled.section`
-  margin-top: 5rem;
-`;
-const Card = styled.section`
-  margin-top: 2rem;
-  padding: 4rem;
-  background: white;
-  width: 987px;
-`;
-
-const NotificationContainer = styled.section`
-  display: flex;
-  align-item: center;
-  margin-top: 6rem;
-  gap: 15.2rem;
-`;
-
-const DefaultSettingsContainer = styled.section`
-  margin-top: 6rem;
-`;
-
-export const ProfileScreen = () => {
+export const AccountScreen = () => {
   return (
     <AccountContainer>
       {/* Account */}
       <AccountInfoContainer>
         <Text variant='contentHeader' text='Profile' left />
         <AccountInfo>
-          <div></div>
+          <ProfileContainer>
+            <Profile>
+              <Avatar size='xLarge' flat src={Demo} />
+              <ProfileInfo>
+                <Text variant='contentHeader' color='textLight' text='Homo Sapien' />{' '}
+                {/* <span style={{ display: 'block' }}>
+                  <IconSvg name='checked' />
+                </span> */}
+                <Text variant='small' text='sapien@safient.io' />
+              </ProfileInfo>
+            </Profile>
+            <Button
+              variant='primary'
+              color='primaryGradient'
+              label={{ text: 'Edit Profile' }}
+              onClick={() => 'something'}
+            />
+          </ProfileContainer>
           <StatsCardContainer>
             <StatsCard
               heading={{ text: 'Safes you are Guarding' }}
@@ -80,18 +63,19 @@ export const ProfileScreen = () => {
           <Text variant='contentHeader' text='Notifications' left />
 
           <NotificationContainer>
-            <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '3rem' }}>
+            <StyledSpan>
               <Text variant='content' text='In app notifications ' left />
               <input type='checkbox' name='' id='' />
-            </span>
+            </StyledSpan>
 
-            <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '3rem' }}>
+            <StyledSpan>
               <Text variant='content' text='Email notifications' left />
               <input type='checkbox' name='' id='' />
-            </span>
+            </StyledSpan>
           </NotificationContainer>
         </Card>
       </AccountSettingsContainer>
+
       {/* degault settings */}
       <DefaultSettingsContainer>
         <Card>
