@@ -34,6 +34,8 @@ export * from './loader/loader.component';
 
 export * from './create-card/create-card.component';
 
+export * from './stats-card/stats-card.component';
+
 export * from './badge/badge.component';
 
 export * from 'react-grid-system';
