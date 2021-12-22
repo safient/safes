@@ -1,7 +1,7 @@
 import { ButtonComponentProps } from "../button/button.component.props";
 import { TextComponentProps } from "../text/text.component.props";
 
-export interface ModalComponentProps{
+export interface GenericModalComponentProps{
     /**
      * to determine if modal should show
      */
