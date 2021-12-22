@@ -1,21 +1,16 @@
-export interface InputComponentProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface TextAreaComponentProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /**
-   * Type of the Input
-   */
-  type?: string;
-
-  /**
-   * Label for the Input
+   * Label for the TextArea
    */
   label?: string;
 
   /**
-   * Value of Input Field
+   * Value of TextArea Field
    */
   value?: string | number;
 
   /**
-   * Disables the Input Field
+   * Disables the TextArea Field
    */
   isDisabled?: boolean;
 
