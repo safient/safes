@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BreakPoints } from 'utils';
 
 export const AccountContainer = styled.section`
   width: 100%;
@@ -9,14 +10,39 @@ export const AccountContainer = styled.section`
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    padding: 0 1rem 1rem 1rem;
+    position: static;
+    margin-top: 100px;
+    width: 100vw;
+  }
 `;
 
-export const AccountInfoContainer = styled.section``;
+export const AccountInfoContainer = styled.section`
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    margin-top: 0.1rem;
+  }
+`;
+
+export const AccountInfo = styled.section`
+  margin-top: 2rem;
+  padding: 4rem;
+  background: white;
+  width: 987px;
+  box-shadow: 0px 16px 32px rgba(221, 230, 237, 0.4);
+  border-radius: 5px;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    width: 100%;
+  }
+`;
 
 export const ProfileContainer = styled.section`
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    background: red;
+  }
 `;
 
 export const Profile = styled.div`
@@ -33,29 +59,49 @@ export const ProfileInfo = styled.span`
   margin-top: 0.5rem;
 `;
 
-export const AccountInfo = styled.section`
-  margin-top: 2rem;
-  padding: 4rem;
-  background: white;
-  width: 987px;
-  box-shadow: 0px 16px 32px rgba(221, 230, 237, 0.4);
-  border-radius: 5px;
-`;
-
 export const StatsCardContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 export const AccountSettingsContainer = styled.section`
   margin-top: 5rem;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    margin-top: 1.8rem;
+    width: 100vw;
+  }
 `;
 
-export const StyledSpan = styled.span`
+export const NotificationContainer = styled.section`
+  display: flex;
+  align-item: center;
+  margin-top: 6rem;
+  gap: 15.2rem;
+
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    width: 100vw;
+  }
+`;
+
+export const StyledSpan = styled.div`
   display: inline-flex !important;
   align-items: center;
   justify-content: baseline;
   gap: 3rem;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    display: flex !important;
+    width: 200px !important;
+    justify-content: space-between;
+  }
 `;
 
 export const Card = styled.section`
@@ -65,13 +111,10 @@ export const Card = styled.section`
   width: 987px;
   box-shadow: 0px 16px 32px rgba(221, 230, 237, 0.4);
   border-radius: 5px;
-`;
-
-export const NotificationContainer = styled.section`
-  display: flex;
-  align-item: center;
-  margin-top: 6rem;
-  gap: 15.2rem;
+  @media screen and (max-width: ${BreakPoints.medium}) {
+    padding: 2rem !important;
+    width: 340px;
+  }
 `;
 
 export const DefaultSettingsContainer = styled.section`
