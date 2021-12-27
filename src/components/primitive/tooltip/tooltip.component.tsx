@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTooltip from "react-tooltip";
-import { IconSvg } from "..";
+import { IconSvg, Text } from "..";
 import { TooltipComponentProps } from "./tooltip.component.props";
 
 const Tooltip: React.FunctionComponent<TooltipComponentProps> = (
@@ -14,9 +14,9 @@ const Tooltip: React.FunctionComponent<TooltipComponentProps> = (
 
   return (
     <>
-      <p data-tip="hello world">
+      <Text data-tip={text}>
         {icon ? <IconSvg {...icon} /> : <IconSvg color="primary" name="info" />}
-      </p>
+      </Text>
       <ReactTooltip {...rest}/>
     </>
   );
