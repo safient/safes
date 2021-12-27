@@ -20,7 +20,7 @@ export interface GenericModalComponentProps{
     /**
      * title of the modal
      */
-    title: TextComponentProps
+    title?: TextComponentProps
 
     /**
      * button for submit
@@ -31,4 +31,9 @@ export interface GenericModalComponentProps{
      * button for cancel
      */
     onCancel?: ButtonComponentProps
+
+    /**
+     * hide the buttons and close button
+     */
+    hide?: boolean
 }

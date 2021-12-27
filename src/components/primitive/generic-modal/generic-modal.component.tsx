@@ -44,7 +44,7 @@ const CloseModal = styled.h1`
 const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
   props: GenericModalComponentProps
 ) => {
-  const { show, onClose, title, onSubmit, onCancel, children } = props;
+  const { show, onClose, title, onSubmit, onCancel, children, hide } = props;
 
   const [isOpen, setIsOpen] = useState(show);
   const [opacity, setOpacity] = useState(0);
@@ -78,12 +78,12 @@ const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
         onEscapeKeydown={toggleModal}
         backgroundProps={{ opacity }}
       >
-        <CloseModal onClick={toggleModal}>X</CloseModal>
-        <Box vCenter hCenter paddingTop={2}>
+        {!hide && <CloseModal onClick={toggleModal}>X</CloseModal>}
+        {!!title && <Box vCenter hCenter paddingTop={2}>
           <Text bold {...title} />
-        </Box>
+        </Box>}
         <Box paddingVertical={2}>{children}</Box>
-        <Box row rightAlign paddingTop={2}>
+        {!hide && <Box row rightAlign paddingTop={2}>
           <ModalButton
             label={{ text: "Close", color: "black" }}
             variant="ghost"
@@ -94,7 +94,7 @@ const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
             variant="small"
             onClick={onClose}
           />
-        </Box>
+        </Box>}
       </StyledModal>
     </ModalProvider>
   );
