@@ -22,7 +22,7 @@ export const AccountScreen = () => {
     <AccountContainer>
       {/* Account */}
       <AccountInfoContainer>
-        <Text variant='contentHeader' text='Profile' left />
+        <Text variant='contentHeader' tx='common.profile' left />
         <AccountInfo>
           <ProfileContainer>
             <Profile>
@@ -57,18 +57,18 @@ export const AccountScreen = () => {
 
       {/* Setting */}
       <AccountSettingsContainer>
-        <Text variant='contentHeader' text='Settings' left />
+        <Text variant='contentHeader' tx='accountPage.settings' left />
         <Card>
-          <Text variant='contentHeader' text='Notifications' left />
+          <Text variant='contentHeader' tx='accountPage.notifications' left />
 
           <InputContainer>
             <StyledSpan>
-              <Text variant='content' text='In app notifications ' left />
+              <Text variant='content' tx='accountPage.inAppNotifications' left />
               <input type='checkbox' name='' id='' />
             </StyledSpan>
 
             <StyledSpan>
-              <Text variant='content' text='Email notifications' left />
+              <Text variant='content' tx='accountPage.emailNotifications' left />
               <input type='checkbox' name='' id='' />
             </StyledSpan>
           </InputContainer>
@@ -78,7 +78,7 @@ export const AccountScreen = () => {
       {/* default settings */}
       <DefaultSettingsContainer>
         <Card>
-          <Text variant='contentHeader' text='Default safe configs' left />
+          <Text variant='contentHeader' tx='accountPage.defaultSafeConfigs' left />
           <InputContainer>
             <StyledInput type='text' label='Beneficiary' placeholder='DID of the beneficiary' />
           </InputContainer>

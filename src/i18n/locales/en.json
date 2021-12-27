@@ -23,6 +23,14 @@
     "create": "Create",
     "createAccount": "Create an Account"
   },
+  "accountPage": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "inAppNotifications": "In app notifications",
+    "emailNotifications": "Email notifications",
+    "defaultSafeConfigs": "Default safe configs"
+  },
   "chipInput": {
     "phrasesEntered": "12 Phrases Entered",
     "enterPhrase": "Enter the 12-word seed phrase",
