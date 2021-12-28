@@ -12,7 +12,16 @@ import {
 const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
   props: GenericModalComponentProps
 ) => {
-  const { show, onClose, title, onSubmit, onCancel, children, hide } = props;
+  const {
+    show,
+    onClose,
+    title,
+    onSubmit,
+    onCancel,
+    children,
+    hide,
+    noClose,
+  } = props;
 
   const [isOpen, setIsOpen] = useState(show);
   const [opacity, setOpacity] = useState(0);
@@ -20,8 +29,12 @@ const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
   function toggleModal(e: any) {
     setOpacity(0);
     setIsOpen(!isOpen);
-    onClose();
+    if (onClose) onClose();
   }
+
+  const handleClose = () => {
+    if (onClose) onClose();
+  };
 
   function afterOpen() {
     setTimeout(() => {
@@ -42,8 +55,8 @@ const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
         isOpen={isOpen}
         afterOpen={afterOpen}
         beforeClose={beforeClose}
-        onBackgroundClick={toggleModal}
-        onEscapeKeydown={toggleModal}
+        onBackgroundClick={noClose ? () => {} : toggleModal}
+        onEscapeKeydown={noClose ? () => {} : toggleModal}
         backgroundProps={{ opacity }}
       >
         {!hide && <CloseModal onClick={toggleModal}>X</CloseModal>}
@@ -59,14 +72,14 @@ const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
               <ModalButton
                 label={{ text: "Close", color: "black" }}
                 variant="ghost"
-                onClick={onClose}
+                onClick={handleClose}
               />
             )}
             {!onSubmit && (
               <ModalButton
                 label={{ text: "Continue" }}
                 variant="small"
-                onClick={onClose}
+                onClick={handleClose}
               />
             )}
           </Box>
