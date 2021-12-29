@@ -1,4 +1,4 @@
-import { StatsCard, Text, Button, Avatar } from 'components/primitive';
+import { StatsCard, Text, Button, Avatar, ToggleSwitch } from 'components/primitive';
 import {
   AccountContainer,
   AccountInfoContainer,
@@ -8,11 +8,12 @@ import {
   ProfileInfo,
   StatsCardContainer,
   AccountSettingsContainer,
-  StyledSpan,
+  StyledDiv,
   DefaultSettingsContainer,
   Card,
   StyledInput,
   InputContainer,
+  SwitchContainer,
 } from './account.screen.styles';
 // Todo- remove this after integration
 import Demo from '../../../src/assets/images/demo.png';
@@ -46,11 +47,7 @@ export const AccountScreen = () => {
               iconName={{ name: 'guarding' }}
             />
             <StatsCard heading={{ text: 'Safes Created' }} count={{ text: '02' }} iconName={{ name: 'safes' }} />
-            <StatsCard
-              heading={{ text: 'Inherited Safes' }}
-              count={{ text: '02' }}
-              iconName={{ name: 'inherit' }}
-            />{' '}
+            <StatsCard heading={{ text: 'Inherited Safes' }} count={{ text: '02' }} iconName={{ name: 'inherit' }} />
           </StatsCardContainer>
         </AccountInfo>
       </AccountInfoContainer>
@@ -62,15 +59,19 @@ export const AccountScreen = () => {
           <Text variant='contentHeader' tx='accountPage.notifications' left />
 
           <InputContainer>
-            <StyledSpan>
+            <StyledDiv>
               <Text variant='content' tx='accountPage.inAppNotifications' left />
-              <input type='checkbox' name='' id='' />
-            </StyledSpan>
+              <SwitchContainer>
+                <ToggleSwitch toggleID='inApp' checked={true} onChange={() => 'checked'} />
+              </SwitchContainer>
+            </StyledDiv>
 
-            <StyledSpan>
+            <StyledDiv>
               <Text variant='content' tx='accountPage.emailNotifications' left />
-              <input type='checkbox' name='' id='' />
-            </StyledSpan>
+              <SwitchContainer>
+                <ToggleSwitch toggleID='email' checked={true} onChange={() => 'checked'} />
+              </SwitchContainer>
+            </StyledDiv>
           </InputContainer>
         </Card>
       </AccountSettingsContainer>

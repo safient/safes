@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input } from 'components/primitive';
+import { Input, ToggleSwitch } from 'components/primitive';
 import { BreakPoints } from 'utils';
 
 export const AccountContainer = styled.section`
@@ -112,17 +112,21 @@ export const InputContainer = styled.section`
   }
 `;
 
-export const StyledSpan = styled.div`
-  display: inline-flex !important;
+export const StyledDiv = styled.div`
+  display: flex !important;
   align-items: center;
-  justify-content: baseline;
+  justify-content: center;
   gap: 3rem;
 
   @media screen and (max-width: ${BreakPoints.medium}) {
     display: flex !important;
-    width: 20rem !important;
+    width: 22.5rem !important;
     justify-content: space-between;
   }
+`;
+
+export const SwitchContainer = styled.div`
+  margin-top: -1.3rem;
 `;
 
 export const Card = styled.section`
