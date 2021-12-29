@@ -36,6 +36,8 @@ export * from './create-card/create-card.component';
 
 export * from './stats-card/stats-card.component';
 
+export * from './toggle-switch/toggle-switch.component';
+
 export * from './badge/badge.component';
 
 export * from 'react-grid-system';

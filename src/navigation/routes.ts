@@ -6,7 +6,7 @@ import {
   HomeScreen,
   LoginScreen,
   NotFoundScreen,
-  ProfileScreen,
+  AccountScreen,
   RegisterScreen,
 } from '../screens';
 import { RouteName } from './route-name';
@@ -64,11 +64,11 @@ export const routes: IRoute[] = [
     component: ClaimDetailsScreen,
   },
   {
-    path: RoutePath.profile,
-    name: RouteName.profile,
+    path: RoutePath.account,
+    name: RouteName.account,
     exact: true,
     private: true,
-    component: ProfileScreen,
+    component: AccountScreen,
   },
   {
     path: RoutePath.notFound,
