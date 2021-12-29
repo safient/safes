@@ -26,6 +26,7 @@ export const colors = {
   navLinkActive: palette.blueTransparent,
   applicationBackground: palette.whiteLiac,
   spinnerBorder: palette.greyLighter,
+  toggleSwitchBackground: palette.blueLighter,
 };
 
 export type Colors = typeof colors;
