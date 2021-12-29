@@ -8,6 +8,7 @@ export const palette = {
   aquaBlueLighter: '#b6effb', //border
   blue: '#5452F6', //button backgrounds
   blueLight: 'rgba(84, 82, 246, 0.1)', //alert, icon backgrounds
+  blueLighter: '#6366f1', // Toggle Switch
   blueTransparent: 'rgba(84, 82, 246, 0.1)', // NavLink active color
   green: '#2ba745',
   greenLight: '#49B393', //green text color
