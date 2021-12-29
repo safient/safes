@@ -10,8 +10,10 @@ export const colors = {
   textLighter: palette.greyLighter, //placeholder and borders
   success: palette.green,
   successLight: palette.greenLight, //text
+  successLighter: palette.greenTransparent, // Transparent Backgrounds
   error: palette.red,
   errorLight: palette.redLight, //text
+  errorLighter: palette.redTransparent,
   link: palette.blueLight,
   warning: palette.yellow,
   warningLight: palette.yellowLight, //text
