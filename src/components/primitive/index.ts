@@ -30,13 +30,15 @@ export * from './input/input.component';
 
 export * from './text-area/text-area.component';
 
-export * from './loader/loader.component';
+export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';
 
 export * from './stats-card/stats-card.component';
 
 export * from './toggle-switch/toggle-switch.component';
+
+export * from './generic-modal/generic-modal.component';
 
 export * from './badge/badge.component';
 

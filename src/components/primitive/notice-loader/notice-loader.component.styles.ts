@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components';
-import { Box, Text } from 'components/primitive';
+import { Text } from 'components/primitive';
 import { BreakPoints } from 'utils';
 
 /**
- * KeyFrame Animation
+ * KeyFrame Animation.
  */
 const spin = keyframes`
     0% {
@@ -15,7 +15,7 @@ const spin = keyframes`
 `;
 
 /**
- * Styles for Loading Spinner
+ * Styles for Loading Spinner.
  */
 export const Spinner = styled.div`
   border: 0.4rem solid ${({ theme: { colors } }) => colors.spinnerBorder};
@@ -27,18 +27,20 @@ export const Spinner = styled.div`
 `;
 
 /**
- * Styles for SpinnerContainer
+ * Styles for NoticeLoaderContainer.
  */
-export const SpinnerContainer = styled(Box)`
-  flex: 0 0 20rem !important;
+export const NoticeLoaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
   background: ${({ theme: { colors } }) => colors.white};
-  height: 20rem !important;
-  width: 30rem !important;
+  min-width: 20rem !important;
+  word-wrap: break-word;
   align-items: center;
   justify-content: center;
   align-content: normal !important;
-  border-radius: 0.5rem;
-  box-shadow: ${({ theme: { colors } }) => colors.shadow};
 
   @media screen and (max-width: ${BreakPoints.medium}) {
     align-items: center;
@@ -56,8 +58,22 @@ export const SpinnerContainer = styled(Box)`
 `;
 
 /**
- * Styles for Loader Text
+ * Styles for Loader Text.
  */
 export const LoaderText = styled(Text)`
-  margin-top: 1.4rem;
+  margin-top: 1.5rem;
+`;
+
+/**
+ * Styles for optional Helper Text.
+ */
+export const HelperText = styled(Text)`
+  ${({ text }) =>
+    text &&
+    `
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0 0.9rem;
+    width: 300px;
+  `}
 `;

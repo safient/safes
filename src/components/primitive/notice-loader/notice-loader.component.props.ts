@@ -3,7 +3,8 @@ import { TextComponentProps } from 'components/primitive/text/text.component.pro
 /**
  * Props that are supported by Loader.
  */
-
 export interface LoaderComponentProps {
   label: TextComponentProps;
+  spinner?: boolean;
+  helperText?: string;
 }
