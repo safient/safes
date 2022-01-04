@@ -15,7 +15,8 @@
     "or": "OR",
     "alternativeOption": "You can also continue with",
     "knowAboutSafient": "Don't know what Safient does?",
-    "knowMore": "Know more"
+    "knowMore": "Know more",
+    "loading": "Loading..."
   },
   "auth": {
     "getStarted": "Get Started",
