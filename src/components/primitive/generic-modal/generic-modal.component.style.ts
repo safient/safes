@@ -1,9 +1,8 @@
-import styled from "styled-components";
-import Modal, { BaseModalBackground } from "styled-react-modal";
-import { Button } from "..";
+import styled from 'styled-components';
+import Modal, { BaseModalBackground } from 'styled-react-modal';
+import { Button } from 'components/primitive';
 
 export const FadingBackground = styled(BaseModalBackground)`
-  opacity: ${(props) => props.opacity};
   transition: all 0.3s ease-in-out;
 `;
 
@@ -19,10 +18,10 @@ export const StyledModal = Modal.styled`
   display: flex;
   flex-direction: column;
   background-color: white;
-  opacity: 1;
   padding: 1rem;
   transition : all 0.3s ease-in-out;
   position: relative;
+  border-radius: 0.5rem;
 `;
 
 export const CloseModal = styled.h1`

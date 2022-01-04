@@ -37,9 +37,9 @@ export const LoginScreen = () => {
             </TextContainer>
 
             <SocialIconsContainer>
-              <SocialIcon name='LoginWithGitHub' height={5} width={7} />
-              <SocialIcon name='LoginWithGoogle' height={5} width={7} />
-              <SocialIcon name='LoginWithMetaMask' height={5} width={7} />
+              <SocialIcon name='loginWithGitHub' height={5} width={7} />
+              <SocialIcon name='loginWithGoogle' height={5} width={7} />
+              <SocialIcon name='loginWithMetaMask' height={5} width={7} />
             </SocialIconsContainer>
           </SocialLoginContainer>
         </FormContainer>
