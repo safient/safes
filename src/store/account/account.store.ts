@@ -13,7 +13,7 @@ export interface AccountStore extends StoreImpl, IStore {
   /**
    * User profile details
    */
-  web3User: Types.User | undefined;
+  web3User: Types.User;
 
   /**
    * Checks if the user exists

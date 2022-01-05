@@ -1,8 +1,8 @@
 export class ServiceResponse<T> {
   readonly data?: T;
-  private readonly error?: Error;
+  readonly error?: T;
 
-  constructor({ data, error }: { data?: T; error?: Error }) {
+  constructor({ data, error }: { data?: T; error?: T }) {
     this.data = data;
     this.error = error;
   }
@@ -15,7 +15,4 @@ export class ServiceResponse<T> {
     return !this.hasData();
   }
 
-  getErrorMessage(): string {
-    return this.error?.message ?? "";
-  }
 }

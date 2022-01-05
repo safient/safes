@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ethersproject/bignumber": "^5.5.0",
-    "@ethersproject/providers": "^5.5.0",
-    "@ethersproject/units": "^5.5.0",
+    "@ethersproject/bignumber": "^5.4.4",
+    "@ethersproject/providers": "^5.4.4",
+    "@ethersproject/units": "^5.4.4",
     "@react-tiny-grid/core": "^0.1.7",
     "@safient/core": "^0.1.5-alpha",
     "@testing-library/jest-dom": "^5.11.4",

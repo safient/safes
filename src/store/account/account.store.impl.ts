@@ -15,7 +15,7 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
   address?: string;
   balance?: string;
   safient!: SafientCore;
-  _web3User?: Types.User;
+  _web3User!: Types.User;
 
   constructor() {
     super();
@@ -55,14 +55,13 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
     this.safient = new SafientCore(
       this.signer,
       Enums.NetworkType.localhost,
-      'threadDB',
+      Enums.DatabaseType.threadDB,
       'bjngsmak24m6e5p2ijtcedws2tq',
-      'bn3h6ozdpkmh7tgx3jh5el55cgfaevwxh7mcnnfi',
-      null
+      'bn3h6ozdpkmh7tgx3jh5el55cgfaevwxh7mcnnfi'
     );
   }
 
-  get web3User(): Types.User | undefined {
+  get web3User(): Types.User {
     return this._web3User;
   }
 

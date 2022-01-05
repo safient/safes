@@ -22,7 +22,17 @@ export const LoginScreen = () => {
   const { accountService } = useServices();
   let history = useHistory();  
 
-  const login = async () => {const account = await accountService.login(); if (account.hasData()) history.push(RoutePath.home)};
+  const login = async () => {
+    try {
+    const account = await accountService.login();
+    if (account.hasData())
+    history.push(RoutePath.home);
+  }
+  
+  catch(e) {
+    console.log(e)
+  }
+}
 
   return (
     <LoginContainer>

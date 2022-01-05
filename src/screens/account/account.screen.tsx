@@ -42,25 +42,12 @@ export const AccountScreen = observer(() => {
                   />
                 )}
               </>
-     
         
       </Card>
     </AccountScreenContainer>
   );
 });
 
-window.ethereum &&
-  window.ethereum.on('chainChanged', () => {
-    setTimeout(() => {
-       accountService.login();
-    }, 1);
-  });
 
-window.ethereum &&
-  window.ethereum.on('accountsChanged', () => {
-    setTimeout(() => {
-      accountService.login();
-    }, 1);
-  });
 
 export default AccountScreen;

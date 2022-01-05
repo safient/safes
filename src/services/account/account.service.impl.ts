@@ -19,17 +19,19 @@ export class AccountServiceImpl extends Service implements AccountService {
     });
   }
 
-  async login(): Promise<ServiceResponse<Types.User | undefined>> {
+  async login(): Promise<ServiceResponse<Types.User>> {
     try {
       
       const user = await this.accountStore.safient.loginUser();
-      if (user.status && user.data) {
+      
+      if (user.data) {
           this.accountStore.setWeb3User(user.data);
         }
 
-      return this.success<Types.User | undefined>(this.accountStore.web3User);
+      return this.success<Types.User>(this.accountStore.web3User);
     } catch (e: any) {
-      return this.error<Types.User | undefined>(e);
+
+      return this.error<Types.User>(e.error);
     }
   }
 }
