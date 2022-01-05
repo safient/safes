@@ -1,53 +1,93 @@
-import { useCallback, useEffect, useState } from 'react';
-import { observer } from 'mobx-react-lite';
-import { Card, Text } from '../../components/primitive';
-import { accountService } from '../../services';
+import { StatsCard, Text, Button, Avatar, ToggleSwitch } from 'components/primitive';
+import {
+  AccountContainer,
+  AccountInfoContainer,
+  AccountInfo,
+  ProfileContainer,
+  Profile,
+  ProfileInfo,
+  StatsCardContainer,
+  AccountSettingsContainer,
+  StyledDiv,
+  DefaultSettingsContainer,
+  Card,
+  StyledInput,
+  InputContainer,
+  SwitchContainer,
+} from './account.screen.styles';
+// Todo- remove this after integration
 import { stores } from '../../store';
-import { AccountScreenContainer, Title } from './account.screen.styles';
+import Demo from '../../../src/assets/images/demo.png';
 
-export const AccountScreen = observer(() => {
-  const login = async () => console.log(await accountService.login());
+export const AccountScreen = () => {
 
   return (
-    <AccountScreenContainer>
-      <Title variant='contentHeader' tx='common.account' />
-      <Card>
-            <Text variant='contentHeader' tx='common.profile' />
-            <br />
-            <Text variant='contentHeader' text='Address' />
-            <Text variant='content' text={stores.accountStore.address} />
-            <br />
-            <Text variant='contentHeader' text='Balance' />
-            <Text variant='content' text={stores.accountStore.balance} />
-            <br />
-            <br />
-            <br />
-            <br />
-          
-              <>
-                {stores.accountStore.web3User !== undefined ? (
-                  <>
-                    <Text variant='title' text='Login Details' />
-                    <br />
-                    <Text variant='contentHeader' text='Name' />
-                    <Text variant='content' text={stores.accountStore.web3User?.name} />
-                    <br />
-                    <Text variant='contentHeader' text='Email' />
-                    <Text variant='content' text={stores.accountStore.web3User?.email} />
-                  </>
-                ) : (
-                  <Text
-                    variant='small'
-                    text='Account details not found'
-                  />
-                )}
-              </>
-        
-      </Card>
-    </AccountScreenContainer>
+    <AccountContainer>
+      {/* Account */}
+      <AccountInfoContainer>
+        <Text variant='contentHeader' tx='common.profile' left />
+        <AccountInfo>
+          <ProfileContainer>
+            <Profile>
+              <Avatar size='xLarge' flat src={Demo} />
+              <ProfileInfo>
+                <Text variant='contentHeader' color='textLight' text={ stores.accountStore.web3User?.name } />{' '}
+                <Text variant='small' text={ stores.accountStore.web3User?.email }  />
+              </ProfileInfo>
+            </Profile>
+            <Button
+              variant='primary'
+              color='primaryGradient'
+              label={{ text: 'Edit Profile' }}
+              onClick={() => 'something'}
+            />
+          </ProfileContainer>
+          <StatsCardContainer>
+            <StatsCard
+              heading={{ text: 'Safes you are Guarding' }}
+              count={{ text: stores.accountStore.web3User?.safes.length.toString() }}
+              iconName={{ name: 'guarding' }}
+            />
+            <StatsCard heading={{ text: 'Safes Created' }} count={{ text: stores.accountStore.web3User?.safes.length.toString() }} iconName={{ name: 'safes' }} />
+            <StatsCard heading={{ text: 'Inherited Safes' }} count={{ text: stores.accountStore.web3User?.safes.length.toString() }} iconName={{ name: 'inherit' }} />
+          </StatsCardContainer>
+        </AccountInfo>
+      </AccountInfoContainer>
+
+      {/* Setting */}
+      <AccountSettingsContainer>
+        <Text variant='contentHeader' tx='accountPage.settings' left />
+        <Card>
+          <Text variant='contentHeader' tx='accountPage.notifications' left />
+
+          <InputContainer>
+            <StyledDiv>
+              <Text variant='content' tx='accountPage.inAppNotifications' left />
+              <SwitchContainer>
+                <ToggleSwitch toggleID='inApp' checked={true} onChange={() => 'checked'} />
+              </SwitchContainer>
+            </StyledDiv>
+
+            <StyledDiv>
+              <Text variant='content' tx='accountPage.emailNotifications' left />
+              <SwitchContainer>
+                <ToggleSwitch toggleID='email' checked={true} onChange={() => 'checked'} />
+              </SwitchContainer>
+            </StyledDiv>
+          </InputContainer>
+        </Card>
+      </AccountSettingsContainer>
+
+      {/* default settings */}
+      <DefaultSettingsContainer>
+        <Card>
+          <Text variant='contentHeader' tx='accountPage.defaultSafeConfigs' left />
+          <InputContainer>
+            <StyledInput type='text' label='Beneficiary' placeholder='DID of the beneficiary' />
+          </InputContainer>
+        </Card>
+      </DefaultSettingsContainer>
+    </AccountContainer>
   );
-});
+};
 
-
-
-export default AccountScreen;

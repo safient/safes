@@ -16,13 +16,24 @@
     "or": "OR",
     "alternativeOption": "You can also continue with",
     "knowAboutSafient": "Don't know what Safient does?",
-    "knowMore": "Know more"
+    "knowMore": "Know more",
+    "loading": "Loading...",
+    "signingInLabel": "Signing in ...",
+    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ..."
   },
   "auth": {
     "getStarted": "Get Started",
     "login": "Log In",
     "create": "Create",
     "createAccount": "Create an Account"
+  },
+  "accountPage": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "inAppNotifications": "In app notifications",
+    "emailNotifications": "Email notifications",
+    "defaultSafeConfigs": "Default safe configs"
   },
   "chipInput": {
     "phrasesEntered": "12 Phrases Entered",

@@ -29,7 +29,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	 font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+	font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
 	font: inherit;
 	vertical-align: baseline;
 }

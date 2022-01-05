@@ -38,10 +38,12 @@ export const images = {
   user: require('../assets/icons/user.svg').default,
   error: require('../assets/icons/error.svg').default,
   checkSuccess: require('../assets/icons/checkSuccess.svg').default,
+  checked: require('../assets/icons/checked.svg').default,
   safientAvatar: require('../assets/logo/safient_avatar.png').default,
-  LoginWithGoogle: require('../assets/icons/login-google.svg').default,
-  LoginWithGitHub: require('../assets/icons/login-github.svg').default,
-  LoginWithMetaMask: require('../assets/icons/login-metamask.svg').default,
+  loginWithGoogle: require('../assets/icons/login-google.svg').default,
+  loginWithGitHub: require('../assets/icons/login-github.svg').default,
+  loginWithMetaMask: require('../assets/icons/login-metamask.svg').default,
+  lockLoader: require('../assets/icons/lockLoader.gif').default,
 };
 
 export type Images = typeof images;
