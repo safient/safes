@@ -31,6 +31,7 @@ export const images = {
   metaMask: require('../assets/icons/metamask.svg').default,
   money: require('../assets/icons/money.svg').default,
   notification: require('../assets/icons/notification.svg').default,
+  placeHolderAvatar: require('../assets/images/demo.png').default,
   profile: require('../assets/icons/profile.svg').default,
   safes: require('../assets/icons/safes.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,

@@ -15,9 +15,7 @@ import {
   InputContainer,
   SwitchContainer,
 } from './account.screen.styles';
-// Todo- remove this after integration
 import { stores } from '../../store';
-import Demo from '../../../src/assets/images/demo.png';
 
 export const AccountScreen = () => {
 
@@ -29,7 +27,7 @@ export const AccountScreen = () => {
         <AccountInfo>
           <ProfileContainer>
             <Profile>
-              <Avatar size='xLarge' flat src={Demo} />
+              <Avatar size='xLarge' flat name='placeHolderAvatar' />
               <ProfileInfo>
                 <Text variant='contentHeader' color='textLight' text={ stores.accountStore.web3User?.name } />{' '}
                 <Text variant='small' text={ stores.accountStore.web3User?.email }  />

@@ -6,7 +6,7 @@ export abstract class Service {
     return new ServiceResponse<T>({ data });
   }
 
-  protected error<T>(error: T): ServiceResponse<T> {
+  protected error<T>(error: Error): ServiceResponse<T> {
     return new ServiceResponse<T>({error});
   }
 }
