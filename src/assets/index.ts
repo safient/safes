@@ -34,6 +34,7 @@ import profile from './icons/profile.svg';
 import safes from './icons/safes.svg';
 import twitter from './icons/twitter.svg';
 import upload from './icons/upload.svg';
+import user from './icons/user.svg';
 import safientLogo from './logo/logo.svg';
 import LoginWithGoogle from './icons/login-google.svg';
 import LoginWithGitHub from './icons/login-github.svg';
@@ -77,6 +78,7 @@ export {
   safes,
   twitter,
   upload,
+  user,
   safientLogo,
   safientAvatar,
   LoginWithMetaMask,

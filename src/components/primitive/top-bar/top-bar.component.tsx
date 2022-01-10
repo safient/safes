@@ -10,7 +10,7 @@ export const TopBar = () => {
       </LogoWrapper>
       <BoxGroup row>
         <NotificationIcon name='notification' size='small' />
-        <Avatar name='safientAvatar' size='small' />
+        <Avatar name='user' size='small' />
       </BoxGroup>
     </TopBarContainer>
   );

@@ -15,10 +15,10 @@ import {
   InputContainer,
   SwitchContainer,
 } from './account.screen.styles';
-// Todo- remove this after integration
-import Demo from '../../../src/assets/images/demo.png';
+import { stores } from '../../store';
 
 export const AccountScreen = () => {
+
   return (
     <AccountContainer>
       {/* Account */}
@@ -27,10 +27,10 @@ export const AccountScreen = () => {
         <AccountInfo>
           <ProfileContainer>
             <Profile>
-              <Avatar size='xLarge' flat src={Demo} />
+              <Avatar size='xLarge' flat name='placeHolderAvatar' />
               <ProfileInfo>
-                <Text variant='contentHeader' color='textLight' text='Homo Sapien' />{' '}
-                <Text variant='small' text='sapien@safient.io' />
+                <Text variant='contentHeader' color='textLight' text={ stores.accountStore.web3User?.name } />{' '}
+                <Text variant='small' text={ stores.accountStore.web3User?.email }  />
               </ProfileInfo>
             </Profile>
             <Button
@@ -43,11 +43,11 @@ export const AccountScreen = () => {
           <StatsCardContainer>
             <StatsCard
               heading={{ text: 'Safes you are Guarding' }}
-              count={{ text: '02' }}
+              count={{ text: stores.accountStore.web3User?.safes.length.toString() }}
               iconName={{ name: 'guarding' }}
             />
-            <StatsCard heading={{ text: 'Safes Created' }} count={{ text: '02' }} iconName={{ name: 'safes' }} />
-            <StatsCard heading={{ text: 'Inherited Safes' }} count={{ text: '02' }} iconName={{ name: 'inherit' }} />
+            <StatsCard heading={{ text: 'Safes Created' }} count={{ text: stores.accountStore.web3User?.safes.length.toString() }} iconName={{ name: 'safes' }} />
+            <StatsCard heading={{ text: 'Inherited Safes' }} count={{ text: stores.accountStore.web3User?.safes.length.toString() }} iconName={{ name: 'inherit' }} />
           </StatsCardContainer>
         </AccountInfo>
       </AccountInfoContainer>
@@ -88,3 +88,4 @@ export const AccountScreen = () => {
     </AccountContainer>
   );
 };
+

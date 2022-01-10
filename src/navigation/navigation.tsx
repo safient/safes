@@ -10,8 +10,8 @@ import { routes } from './routes';
 const Navigation = observer(() => {
   const { accountStore } = useStores();
   //TODO - Remove mock after auth integration
-  const isMock: boolean = true;
-  const isLoggedIn: boolean = !!accountStore.getUser() || isMock;
+  const isMock: boolean = false;
+  const isLoggedIn: boolean = !!accountStore.web3User || isMock;
 
   return (
     <Switch>
