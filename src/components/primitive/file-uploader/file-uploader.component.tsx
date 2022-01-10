@@ -59,7 +59,7 @@ const FileUploader: React.FunctionComponent<FileUploaderComponentProps> = (
   };
 
   return (
-    <div>
+    <>
       <Text variant="contentHeader" text="Attach Documents (Optional)" />
       <Container vCenter hCenter marginTop="tiny">
         {!file && (
@@ -76,7 +76,7 @@ const FileUploader: React.FunctionComponent<FileUploaderComponentProps> = (
           </Box>
         )}
       </Container>
-    </div>
+    </>
   );
 };
 
