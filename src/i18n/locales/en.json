@@ -32,6 +32,9 @@
     "emailNotifications": "Email notifications",
     "defaultSafeConfigs": "Default safe configs"
   },
+  "createSafePage": {
+    "createSafe": "Create Safe"
+  },
   "chipInput": {
     "phrasesEntered": "12 Phrases Entered",
     "enterPhrase": "Enter the 12-word seed phrase",

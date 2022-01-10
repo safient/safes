@@ -30,6 +30,8 @@ export * from './input/input.component';
 
 export * from './text-area/text-area.component';
 
+export * from './drop-down/drop-down.component';
+
 export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';

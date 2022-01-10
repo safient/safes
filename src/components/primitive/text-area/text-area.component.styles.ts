@@ -26,7 +26,7 @@ export const StyledTextArea = styled.textarea<TextAreaComponentProps>`
   border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
   background-color: ${({ theme: { colors } }) => colors.white};
   box-sizing: border-box;
-  width: ${({ wide }) => (wide ? '100%' : '40rem')} !important;
+  width: ${({ wide }) => (wide ? '82.0rem' : '40rem')} !important;
   height: 11.1rem;
   outline: none;
   resize: none;
