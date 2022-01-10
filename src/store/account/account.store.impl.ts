@@ -1,83 +1,75 @@
 import { action, makeObservable, observable } from 'mobx';
+import Web3Modal from 'web3modal';
 import { AccountStore } from './account.store';
 import { StoreImpl } from '../store/store.impl';
 import { User } from '../../models';
-import { storageService } from '../../services/core/services';
-import { StorageKey } from '../../services/storage/storage.service';
+import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers';
+import { formatEther } from '@ethersproject/units';
+import { SafientCore, Types, Enums } from '@safient/core';
 
 export class AccountStoreImpl extends StoreImpl implements AccountStore {
-  private token?: string;
-  private userId?: string;
-  private user?: User;
+
+  private web3Provider?: Web3Provider;
+  private signer?: JsonRpcSigner;
+  chainId?: number;
+  address?: string;
+  balance?: string;
+  safient!: SafientCore;
+  _web3User!: Types.User;
 
   constructor() {
     super();
-    this.loadToken();
-    this.loadUserId();
+    this.loadAccount();
 
     makeObservable<AccountStoreImpl, any>(this, {
-      user: observable,
+      web3Provider: observable,
+      signer: observable,
+      chainId: observable,
+      address: observable,
+      balance: observable,
+      _web3User: observable,
       resetStore: action,
-      loadToken: action,
-      loadUserId: action,
-      setUser: action,
       userExists: action,
+      loadAccount: action,
+      setWeb3User: action,
     });
   }
 
   async resetStore() {
-    this.token = '';
-    this.userId = '';
-    this.user = undefined;
-
-    storageService.remove(StorageKey.token);
-    storageService.remove(StorageKey.userId);
   }
 
-  private async loadToken() {
-    const token =
-      (await storageService.get(StorageKey.token)) ?? undefined;
-    this.token = token ?? '';
-  }
+  async loadAccount(): Promise<void> {
 
-  private async loadUserId() {
-    const userId = await storageService.get(StorageKey.userId);
-    this.userId = userId ?? undefined;
-  }
-
-  async setToken(token: string) {
-    this.token = token;
-    await storageService.set(
-      StorageKey.token,
-      token
+    const web3Modal = new Web3Modal({
+      cacheProvider: true,
+      theme: 'light',
+    });
+    const injectedProvider = await web3Modal.connect();
+    this.web3Provider = new Web3Provider(injectedProvider);
+    const network = await this.web3Provider.getNetwork();
+    this.chainId = await network.chainId;
+    this.signer = await this.web3Provider.getSigner();
+    this.address = await this.signer.getAddress();
+    const balance = await this.signer.getBalance();
+    this.balance = formatEther(balance);
+    this.safient = new SafientCore(
+      this.signer,
+      Enums.NetworkType.localhost,
+      Enums.DatabaseType.threadDB,
+      'bjngsmak24m6e5p2ijtcedws2tq',
+      'bn3h6ozdpkmh7tgx3jh5el55cgfaevwxh7mcnnfi'
     );
   }
 
-  async setUserId(id: string) {
-    this.userId = id;
-    await storageService.set(
-      StorageKey.userId,
-      id
-    );
+  get web3User(): Types.User {
+    return this._web3User;
   }
 
-  getToken() {
-    return this.token;
-  }
-
-  setUser(user: User | undefined) {
-    this.user = user;
-  }
-
-  getUserId(): string | undefined {
-    return this.userId;
-  }
-
-  getUser(): User | undefined {
-    return this.user;
-  }
+  setWeb3User(user: Types.User) {
+      this._web3User = user
+   }
 
   userExists(): boolean {
-    return !!this.token && !!this.userId;
+    return !!this._web3User;
   }
 }

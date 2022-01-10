@@ -1,11 +1,16 @@
-import React from 'react';
-import { Text, Input } from 'components/primitive';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { Text, Input, NoticeLoader } from 'components/primitive';
 import { Header } from 'components/common/auth-header.component';
+import { RoutePath } from '../../../navigation/route-path';
+import { useServices } from '../../../services';
+import { stores } from '../../../store';
 import {
   LoginContainer,
   LoginFormContainer,
-  FormContainer,
   LoginText,
+  FormContainer,
   StyledButton,
   SocialLoginContainer,
   TextContainer,
@@ -14,11 +19,32 @@ import {
 } from './login.screen.styles';
 
 export const LoginScreen = () => {
+
+  const { accountService } = useServices();
+  let history = useHistory();  
+  const [signingIn, setSigningIn] = useState(false)
+
+  const login = async () => {
+    try {
+    setSigningIn(true)  
+    const account = await accountService.login();
+    if (account.hasData()) {
+    history.push(RoutePath.home);
+    } 
+    setSigningIn(false)
+  }
+  
+  catch(e) {
+    console.log(e)
+  }
+}
+
   return (
     <LoginContainer>
       <Header />
 
       <LoginFormContainer>
+       { signingIn && <NoticeLoader label={{tx:'common.signingInLabel'}} helperText={{text: "Please sign the signature on MetaMask. This may take a couple of seconds ..."}}/>  }
         <FormContainer>
           <LoginText variant='contentHeader' center tx='auth.getStarted' />
           <Input type='text' label='Enter your Email or DID' placeholder='hello@example.com' />
@@ -26,7 +52,7 @@ export const LoginScreen = () => {
           <StyledButton
             variant='primary'
             label={{ tx: 'auth.login' }}
-            onClick={() => 'clicked'}
+            onClick={() => {}}
             color='primaryGradient'
           />
 
@@ -37,9 +63,9 @@ export const LoginScreen = () => {
             </TextContainer>
 
             <SocialIconsContainer>
-              <SocialIcon name='LoginWithGitHub' height={5} width={7} />
-              <SocialIcon name='LoginWithGoogle' height={5} width={7} />
-              <SocialIcon name='LoginWithMetaMask' height={5} width={7} />
+              <SocialIcon name='loginWithGitHub' height={5} width={7} />
+              <SocialIcon name='loginWithGoogle' height={5} width={7} />
+              <SocialIcon name='loginWithMetaMask' height={5} width={7} onClick={login} />
             </SocialIconsContainer>
           </SocialLoginContainer>
         </FormContainer>
