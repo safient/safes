@@ -23,6 +23,55 @@ export const SafeCreationForm = () => {
     setShowErrors(true);
   };
 
+  const safeCliam = [
+    {
+      id: 1,
+      value: 'Arbitration',
+      option: 'Arbitration',
+    },
+    {
+      id: 2,
+      value: 'Signaling',
+      option: 'Signaling',
+    },
+    {
+      id: 3,
+      value: 'D Day',
+      option: 'D Day',
+    },
+  ];
+
+  const walletStoreType = [
+    {
+      id: 1,
+      value: 'Wallet instructions',
+      option: 'Wallet instructions',
+    },
+    {
+      id: 2,
+      value: 'Wallet secrets',
+      option: 'Wallet secrets',
+    },
+  ];
+
+  const secretStoreType = [
+    {
+      id: 1,
+      value: 'Seed Phrases',
+      option: 'Seed Phrases',
+    },
+    {
+      id: 2,
+      value: 'Private Key',
+      option: 'Private Key',
+    },
+    {
+      id: 3,
+      value: 'Keystore',
+      option: 'Keystore',
+    },
+  ];
+
   return (
     <>
       <FormContainer>
@@ -31,11 +80,21 @@ export const SafeCreationForm = () => {
           <StyledInput type='email' placeholder='johndoe@safient.io' label='Add Beneficiary    ' />
         </FlexContainer>
         <Spacer />
-        <StyledDropDown label='Select the recovery method ' options={[]} onChange={() => 'changed'} />
+        <StyledDropDown label='Select the recovery method ' options={safeCliam} onChange={() => 'changed'} />
         <Spacer />
         <FlexContainer>
-          <StyledDropDown label='Select the wallet store type ' options={[]} onChange={() => 'changed'} wide />
-          <StyledDropDown label='Select the secret store type ' options={[]} onChange={() => 'changed'} wide />
+          <StyledDropDown
+            label='Select the wallet store type '
+            options={walletStoreType}
+            onChange={() => 'changed'}
+            wide
+          />
+          <StyledDropDown
+            label='Select the secret store type '
+            options={secretStoreType}
+            onChange={() => 'changed'}
+            wide
+          />
         </FlexContainer>
         <Spacer />
         <StyledChipInput seedPhraseList={seedPhrases} label='Enter Something' />
