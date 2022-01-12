@@ -13,9 +13,14 @@ import {
   StyledTextArea,
   StyledDropDown,
   StyledButton,
-} from './safe-creation.form.styles';
+} from './safe-creation.container.styles';
+import { CreateSafeController } from '../create-safe-controller';
+import { useRef } from 'react';
+import { observer } from 'mobx-react-lite';
 
-export const SafeCreationForm = () => {
+export const SafeCreationForm = observer(() => {
+
+  const createSafeController = useRef(new CreateSafeController()).current
   const [showErrors, setShowErrors] = useState(false);
   const [seedPhrases, setSeedPhrases] = useState(new SeedPharsesList());
 
@@ -85,16 +90,30 @@ export const SafeCreationForm = () => {
         <FlexContainer>
           <StyledDropDown
             label='Select the wallet store type '
-            options={walletStoreType}
-            onChange={() => 'changed'}
+            options={createSafeController.getWalletStoreTypes()}
+            onChange={(e: any) => createSafeController.setWalletStoreType(e.target.value)}
             wide
           />
-          <StyledDropDown
+          {
+            createSafeController.showSecretStoreType() &&
+            <StyledDropDown
             label='Select the secret store type '
             options={secretStoreType}
             onChange={() => 'changed'}
             wide
           />
+          
+          }
+          {
+            createSafeController.showInstructionsStoreType() &&
+            <StyledDropDown
+            label='Select the instruction store type '
+            options={secretStoreType}
+            onChange={() => 'changed'}
+            wide
+          />
+          
+          }
         </FlexContainer>
         <Spacer />
         <StyledChipInput seedPhraseList={seedPhrases} label='Enter Something' />
@@ -109,4 +128,4 @@ export const SafeCreationForm = () => {
       </ButtonContainer>
     </>
   );
-};
+});

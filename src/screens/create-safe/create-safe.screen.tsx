@@ -1,4 +1,4 @@
-import { SafeCreationForm } from 'components/forms/safe-creation.form';
+import { SafeCreationForm } from 'screens/create-safe/containers/safe-creation.container';
 import { Text } from 'components/primitive';
 import React from 'react';
 import styled from 'styled-components';
