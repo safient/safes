@@ -2,8 +2,10 @@ import React from 'react';
 import { Col, Row } from 'react-grid-system';
 import styled, { useTheme } from 'styled-components';
 import _ from 'lodash';
+import { Oval } from 'react-loader-spinner';
 import { BoxComponentProps } from './box.component.props';
 import { spacing } from '../../../utils';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 export const Box: React.FunctionComponent<BoxComponentProps> = (
   props: BoxComponentProps
@@ -42,6 +44,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
     wrap,
     rightAlign,
     centerAlign,
+    loading,
     style: styleOverride,
     ...rest
   } = props;
@@ -78,8 +81,8 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
     ...(!_.isNil(flex) ? { flex: flex } : {}),
     ...(!_.isNil(borderRadius) ? { borderRadius: `${borderRadius}rem` } : {}),
     ...(!_.isNil(color) ? { backgroundColor: colors[color] } : {}),
-    ...(!_.isNil(hCenter) ? { alignItems: 'center' } : {}),
-    ...(!_.isNil(vCenter) ? { justifyContent: 'center' } : {}),
+    ...(!_.isNil(hCenter || loading) ? { alignItems: 'center' } : {}),
+    ...(!_.isNil(vCenter || loading) ? { justifyContent: 'center' } : {}),
     ...(!_.isNil(height) ? { height: `${height}rem` } : {}),
     ...(!_.isNil(width) ? { width: `${width}rem` } : {}),
     ...(!_.isNil(maxWidth) ? { maxWidth: `${_maxWidth}rem` } : {}),
@@ -144,6 +147,19 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
 
   if (hidden) {
     return <></>;
+  }
+
+  if (loading) {
+    return (
+      <Base style={style} {...rest}>
+        <Oval
+          arialLabel="loading-indicator"
+          height={40}
+          width={40}
+          color={colors.primary}
+        />
+      </Base>
+    );
   }
 
   return (
