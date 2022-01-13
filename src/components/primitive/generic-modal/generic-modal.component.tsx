@@ -1,13 +1,19 @@
-import { useState } from 'react';
-import { ModalProvider } from 'styled-react-modal';
-import { GenericModalComponentProps } from './generic-modal.component.props';
-import { Box, Text } from '..';
-import { FadingBackground, StyledModal, CloseModal, ModalButton } from './generic-modal.component.style';
+import { useState } from "react";
+import { ModalProvider } from "styled-react-modal";
+import { GenericModalComponentProps } from "./generic-modal.component.props";
+import { Box, Text, Button } from "..";
+import {
+  FadingBackground,
+  StyledModal,
+  CloseModal,
+  ModalButton,
+} from "./generic-modal.component.style";
 
-export const GenericModal: React.FunctionComponent<GenericModalComponentProps> = (
-  props: GenericModalComponentProps
-) => {
-  const { show, onClose, title, onSubmit, onCancel, children, hide, noClose } = props;
+export const GenericModal: React.FunctionComponent<
+  GenericModalComponentProps
+> = (props: GenericModalComponentProps) => {
+  const { show, onClose, title, onSubmit, onCancel, children, hide, noClose } =
+    props;
 
   const [isOpen, setIsOpen] = useState(show);
   const [opacity, setOpacity] = useState(0);
@@ -55,9 +61,27 @@ export const GenericModal: React.FunctionComponent<GenericModalComponentProps> =
         {!hide && (
           <Box row rightAlign paddingTop={2}>
             {!onCancel && (
-              <ModalButton label={{ text: 'Close', color: 'black' }} variant='ghost' onClick={handleClose} />
+              <ModalButton
+                label={{ text: "Close", color: "black" }}
+                variant="ghost"
+                onClick={handleClose}
+              />
             )}
-            {!onSubmit && <ModalButton label={{ text: 'Continue' }} variant='small' onClick={handleClose} />}
+            {!!onCancel && (
+              // @ts-ignore
+              <ModalButton {...onCancel} />
+            )}
+            {!onSubmit && (
+              <ModalButton
+                label={{ text: "Continue" }}
+                variant="small"
+                onClick={handleClose}
+              />
+            )}
+            {!!onSubmit && (
+              // @ts-ignore
+              <ModalButton {...onSubmit} />
+            )}
           </Box>
         )}
       </StyledModal>
