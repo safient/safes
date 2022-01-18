@@ -7,6 +7,7 @@
     "profile": "Profile",
     "dashboard": "Dashboard",
     "safes": "Safes",
+    "account": "Account",
     "createSafe": "Create Safe",
     "genericNotes": "Generic Notes",
     "safeRole": "Safe Role",
@@ -16,7 +17,9 @@
     "alternativeOption": "You can also continue with",
     "knowAboutSafient": "Don't know what Safient does?",
     "knowMore": "Know more",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "signingInLabel": "Signing in ...",
+    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ..."
   },
   "auth": {
     "getStarted": "Get Started",

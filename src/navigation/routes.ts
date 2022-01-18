@@ -1,12 +1,12 @@
 import { RouteProps } from 'react-router-dom';
 import {
+  AccountScreen,
   ClaimDetailsScreen,
   ClaimsScreen,
   CreateSafeScreen,
   HomeScreen,
   LoginScreen,
   NotFoundScreen,
-  AccountScreen,
   RegisterScreen,
 } from '../screens';
 import { RouteName } from './route-name';
