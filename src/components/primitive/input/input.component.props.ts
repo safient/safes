@@ -27,5 +27,7 @@ export interface InputComponentProps extends React.InputHTMLAttributes<HTMLInput
   /**
    * Error Message string
    */
-  error?: string;
+  errorMsg?: string;
+
+  error?: boolean;
 }
