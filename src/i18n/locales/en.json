@@ -39,5 +39,18 @@
     "phrasesEntered": "12 Phrases Entered",
     "enterPhrase": "Enter the 12-word seed phrase",
     "loading": "Loading"
+  },
+  "createSafeForm": {
+    "createSafe": "Create Safe",
+    "safeName": "Safe Name",
+    "addBeneficiary": "Add Beneficiary",
+    "selectRecoveryMethod": "Select the recovery method",
+    "selectTheWalletStoreType": "Select the wallet store type",
+    "selectTheInstructionStoreType": "Select the instruction store type",
+    "selectTheSecretStoreType": "Select the secret store type",
+    "enterSeedPhrases": "Enter SeedPhrases",
+    "enterYourPrivateKey": "Enter your Private Key",
+    "secretStore": "Enter Secret Store",
+    "Description": "Description (Optional)"
   }
 }

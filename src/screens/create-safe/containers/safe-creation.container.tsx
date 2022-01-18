@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { t } from 'i18n-js';
 import { SeedPharsesList } from 'models';
-import { ChipInput } from 'components/primitive/chip-input/chip-input.component';
-import { Button, Input, TextArea, DropDown } from 'components/primitive';
+import { observer } from 'mobx-react-lite';
+import { CreateSafeController, SecretStoreType } from '../create-safe-controller';
 import {
   FormContainer,
   FlexContainer,
@@ -13,112 +13,73 @@ import {
   StyledTextArea,
   StyledDropDown,
   StyledButton,
+  WideInput,
 } from './safe-creation.container.styles';
-import { CreateSafeController } from '../create-safe-controller';
-import { useRef } from 'react';
-import { observer } from 'mobx-react-lite';
 
 export const SafeCreationForm = observer(() => {
-
-  const createSafeController = useRef(new CreateSafeController()).current
-  const [showErrors, setShowErrors] = useState(false);
+  const createSafeController = useRef(new CreateSafeController()).current;
   const [seedPhrases, setSeedPhrases] = useState(new SeedPharsesList());
 
   const handleSubmit = () => {
-    setShowErrors(true);
+    // form submit
   };
-
-  const safeCliam = [
-    {
-      id: 1,
-      value: 'Arbitration',
-      option: 'Arbitration',
-    },
-    {
-      id: 2,
-      value: 'Signaling',
-      option: 'Signaling',
-    },
-    {
-      id: 3,
-      value: 'D Day',
-      option: 'D Day',
-    },
-  ];
-
-  const walletStoreType = [
-    {
-      id: 1,
-      value: 'Wallet instructions',
-      option: 'Wallet instructions',
-    },
-    {
-      id: 2,
-      value: 'Wallet secrets',
-      option: 'Wallet secrets',
-    },
-  ];
-
-  const secretStoreType = [
-    {
-      id: 1,
-      value: 'Seed Phrases',
-      option: 'Seed Phrases',
-    },
-    {
-      id: 2,
-      value: 'Private Key',
-      option: 'Private Key',
-    },
-    {
-      id: 3,
-      value: 'Keystore',
-      option: 'Keystore',
-    },
-  ];
 
   return (
     <>
       <FormContainer>
         <FlexContainer>
-          <StyledInput type='text' placeholder='My personal crypto assets' label='Safe Name' />
-          <StyledInput type='email' placeholder='johndoe@safient.io' label='Add Beneficiary    ' />
+          <StyledInput type='text' placeholder='My personal crypto assets' label={t('createSafeForm.safeName')} />
+          <StyledInput type='email' placeholder='johndoe@safient.io' label={t('createSafeForm.addBeneficiary')} />
         </FlexContainer>
         <Spacer />
-        <StyledDropDown label='Select the recovery method ' options={safeCliam} onChange={() => 'changed'} />
+        <StyledDropDown
+          label={t('createSafeForm.selectRecoveryMethod')}
+          options={createSafeController.getRecoveryMethods()}
+          onChange={() => 'changed'}
+        />
         <Spacer />
         <FlexContainer>
           <StyledDropDown
-            label='Select the wallet store type '
+            label={t('createSafeForm.selectTheWalletStoreType')}
             options={createSafeController.getWalletStoreTypes()}
             onChange={(e: any) => createSafeController.setWalletStoreType(e.target.value)}
             wide
           />
-          {
-            createSafeController.showSecretStoreType() &&
+          {createSafeController.showSecretStoreType() && (
             <StyledDropDown
-            label='Select the secret store type '
-            options={secretStoreType}
-            onChange={() => 'changed'}
-            wide
-          />
-          
-          }
-          {
-            createSafeController.showInstructionsStoreType() &&
+              label={t('createSafeForm.selectTheSecretStoreType')}
+              options={createSafeController.getSecretStoreType()}
+              onChange={(e: any) => createSafeController.setSecretStoreType(e.target.value)}
+              wide
+            />
+          )}
+          {createSafeController.showInstructionsStoreType() && (
             <StyledDropDown
-            label='Select the instruction store type '
-            options={secretStoreType}
-            onChange={() => 'changed'}
-            wide
-          />
-          
-          }
+              label={t('createSafeForm.selectTheInstructionStoreType')}
+              options={createSafeController.getSecretStoreType()}
+              onChange={() => 'changed'}
+              wide
+            />
+          )}
         </FlexContainer>
         <Spacer />
-        <StyledChipInput seedPhraseList={seedPhrases} label='Enter Something' />
+
+        {createSafeController.selectedSecretStoreType === SecretStoreType.PrivateKey && (
+          <WideInput type='text' placeholder='Paste your Key' label={t('createSafeForm.enterYourPrivateKey')} />
+        )}
+        {createSafeController.selectedSecretStoreType === SecretStoreType.KeyStore && (
+          <WideInput type='text' placeholder='Enter Secret store' label={t('createSafeForm.secretStore')} />
+        )}
+        {createSafeController.selectedSecretStoreType === SecretStoreType.SeedPhrases && (
+          <StyledChipInput seedPhraseList={seedPhrases} label={t('createSafeForm.enterSeedPhrases')} />
+        )}
+
         <Spacer />
-        <StyledTextArea label='Description (Optional)' placeholder='Add optional details about the safe' wide />
+        <StyledTextArea
+          label={t('createSafeForm.Description')}
+          placeholder='Add optional details about the safe'
+          wide
+        />
         <Spacer />
         <Spacer />
       </FormContainer>

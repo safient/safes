@@ -61,6 +61,13 @@ export const StyledInput = styled(Input)`
   }
 `;
 
+export const WideInput = styled(Input)`
+  width: 82rem !important;
+  @media screen and (max-width: ${BreakPoints.small}) {
+    width: 30rem !important;
+  }
+`;
+
 export const StyledChipInput = styled(ChipInput)`
   @media screen and (max-width: ${BreakPoints.small}) {
     width: 30rem !important;

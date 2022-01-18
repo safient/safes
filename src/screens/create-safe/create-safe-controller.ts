@@ -1,60 +1,73 @@
-import _ from "lodash";
-import { action, makeObservable, observable, runInAction } from "mobx";
+import _ from 'lodash';
+import { action, makeObservable, observable } from 'mobx';
 
-
-enum RecoveryMethod {
-
-    Arbitration = 'Arbitration',
-    Signaling =  'Signaling',
-    DDay = 'DDay'
+export enum RecoveryMethod {
+  Arbitration = 'Arbitration',
+  Signaling = 'Signaling',
+  DDay = 'DDay',
 }
 
-enum WalletStoreType {
+export enum WalletStoreType {
+  Secrets = 'Secrets',
+  Instructions = 'Instructions',
+}
 
-    Secrets =  'Secrets',
-    Instructions = 'Instructions',
-    
+export enum SecretStoreType {
+  SeedPhrases = 'Seed Phrases',
+  PrivateKey = 'Private Key',
+  KeyStore = 'Keystore',
 }
 
 export class CreateSafeController {
-    
+  selectedWalletStoreType: WalletStoreType;
+  selectedSecretStoreType: SecretStoreType;
 
-    selectedWalletStoreType: WalletStoreType;
+  constructor() {
+    this.selectedWalletStoreType = WalletStoreType.Secrets;
+    this.selectedSecretStoreType = SecretStoreType.SeedPhrases;
+    makeObservable(this, {
+      selectedWalletStoreType: observable,
+      selectedSecretStoreType: observable,
+      setWalletStoreType: action,
+      setSecretStoreType: action,
+    });
+  }
 
-    constructor() {
-        this.selectedWalletStoreType = WalletStoreType.Secrets;
-        makeObservable(this, {
-            selectedWalletStoreType: observable,
-            setWalletStoreType: action
-        })
-    }
+  getRecoveryMethods(): { value: string; option: string }[] {
+    return _.map(RecoveryMethod, (RecoveryMethod) => ({
+      value: RecoveryMethod,
+      option: RecoveryMethod,
+    }));
+  }
 
-    getWalletStoreTypes(): {value: string, option: string}[]  {
+  getSecretStoreType(): { value: string; option: string }[] {
+    return _.map(SecretStoreType, (SecretStoreType) => ({
+      value: SecretStoreType,
+      option: SecretStoreType,
+    }));
+  }
 
-        return _.map(WalletStoreType,(walletType)=> ({
-            value: walletType,
-            option: walletType,
-        }))
-    }
+  getWalletStoreTypes(): { value: string; option: string }[] {
+    return _.map(WalletStoreType, (walletType) => ({
+      value: walletType,
+      option: walletType,
+    }));
+  }
 
-    setWalletStoreType(value: WalletStoreType): void {
+  setWalletStoreType(value: WalletStoreType): void {
+    // runInAction(()=>{this.selectedWalletStoreType = value;})
+    this.selectedWalletStoreType = value;
+  }
 
-        // runInAction(()=>{this.selectedWalletStoreType = value;})
-        this.selectedWalletStoreType = value;
-    }
-    
+  setSecretStoreType(value: SecretStoreType): void {
+    this.selectedSecretStoreType = value;
+  }
 
-    showSecretStoreType(): boolean {
+  showSecretStoreType(): boolean {
+    return this.selectedWalletStoreType === WalletStoreType.Secrets;
+  }
 
-        return this.selectedWalletStoreType === WalletStoreType.Secrets;
-    }
-
-    showInstructionsStoreType(): boolean {
-
-        return this.selectedWalletStoreType === WalletStoreType.Instructions;
-    }
-
-
-    
-
+  showInstructionsStoreType(): boolean {
+    return this.selectedWalletStoreType === WalletStoreType.Instructions;
+  }
 }
