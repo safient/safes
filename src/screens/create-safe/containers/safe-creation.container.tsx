@@ -23,6 +23,7 @@ export const SafeCreationForm = observer(() => {
 
   const [safeName, setSafeName] = useState('');
   const [email, setEmail] = useState('');
+
   const [description, setDescription] = useState('');
   const [showError, setShowError] = useState(false);
 
@@ -44,18 +45,18 @@ export const SafeCreationForm = observer(() => {
         <FlexContainer>
           <StyledInput
             type='text'
-            placeholder='My personal crypto assets'
+            placeholder={t('createSafeForm.placeHolders.safeName')}
             label={t('createSafeForm.safeName')}
-            errorMsg='Invalid SafeName'
+            errorMsg={t('createSafeForm.FormValidation.inValidSafeName')}
             onChange={(e: any) => setSafeName(e.target.value)}
             error={showError && !FormValidator.isStringValid(safeName)}
           />
           <StyledInput
             type='email'
-            placeholder='johndoe@safient.io'
+            placeholder={t('createSafeForm.placeHolders.email')}
             label={t('createSafeForm.addBeneficiary')}
             onChange={(e: any) => setEmail(e.target.value)}
-            errorMsg='Enter a Valid Email'
+            errorMsg={t('createSafeForm.FormValidation.inValidEmail')}
             error={showError && !FormValidator.isEmailValid(email)}
           />
         </FlexContainer>
@@ -93,10 +94,18 @@ export const SafeCreationForm = observer(() => {
         <Spacer />
 
         {createSafeController.selectedSecretStoreType === SecretStoreType.PrivateKey && (
-          <WideInput type='text' placeholder='Paste your Key' label={t('createSafeForm.enterYourPrivateKey')} />
+          <WideInput
+            type='text'
+            placeholder={t('createSafeForm.placeHolders.privateKey')}
+            label={t('createSafeForm.enterYourPrivateKey')}
+          />
         )}
         {createSafeController.selectedSecretStoreType === SecretStoreType.KeyStore && (
-          <WideInput type='text' placeholder='Enter Secret store' label={t('createSafeForm.secretStore')} />
+          <WideInput
+            type='text'
+            placeholder={t('createSafeForm.placeHolders.secretStore')}
+            label={t('createSafeForm.secretStore')}
+          />
         )}
         {createSafeController.selectedSecretStoreType === SecretStoreType.SeedPhrases && (
           <StyledChipInput seedPhraseList={seedPhrases} label={t('createSafeForm.enterSeedPhrases')} />
@@ -105,8 +114,8 @@ export const SafeCreationForm = observer(() => {
         <Spacer />
         <StyledTextArea
           label={t('createSafeForm.description')}
-          placeholder='Add optional details about the safe'
-          errorMsg='Invalid Description'
+          placeholder={t('createSafeForm.placeHolders.description')}
+          errorMsg={t('createSafeForm.FormValidation.inValidDescription')}
           error={showError && !FormValidator.isStringValid(description)}
           wide
         />

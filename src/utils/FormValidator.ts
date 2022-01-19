@@ -1,6 +1,6 @@
 export class FormValidator {
   /**
-   * Checks if the email is valid
+   * Checks if the email is valid.
    */
   static isEmailValid(email: string): boolean {
     const emailRegEx =
@@ -9,7 +9,7 @@ export class FormValidator {
   }
 
   /**
-   * Checks if the Input String is valid
+   * Checks if the Input String is valid.
    */
   static isStringValid(str: string): boolean {
     const stringRegEx = /^[a-z ]+$/i;

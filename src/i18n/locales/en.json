@@ -60,7 +60,13 @@
       "email": "johndoe@safient.io",
       "seedPhrases": "Enter the 12-word seed phrase",
       "privateKey": "Paste your key",
-      "secretStore": "Enter Secret Store"
+      "secretStore": "Enter Secret Store",
+      "description": "Add optional details about safe"
+    },
+    "FormValidation": {
+      "inValidSafeName": "Invalid Safe Name",
+      "inValidEmail": "Enter a Valid Email",
+      "inValidDescription": "Entera Valid Description"
     }
   }
 }
