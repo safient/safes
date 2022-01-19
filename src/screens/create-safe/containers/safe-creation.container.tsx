@@ -115,8 +115,6 @@ export const SafeCreationForm = observer(() => {
         <StyledTextArea
           label={t('createSafeForm.description')}
           placeholder={t('createSafeForm.placeHolders.description')}
-          errorMsg={t('createSafeForm.FormValidation.inValidDescription')}
-          error={showError && !FormValidator.isStringValid(description)}
           wide
         />
         <Spacer />
