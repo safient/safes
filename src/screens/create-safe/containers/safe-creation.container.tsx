@@ -76,7 +76,7 @@ export const SafeCreationForm = observer(() => {
 
         <Spacer />
         <StyledTextArea
-          label={t('createSafeForm.Description')}
+          label={t('createSafeForm.description')}
           placeholder='Add optional details about the safe'
           wide
         />

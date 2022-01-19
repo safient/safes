@@ -51,9 +51,16 @@
     "selectTheWalletStoreType": "Select the wallet store type",
     "selectTheInstructionStoreType": "Select the instruction store type",
     "selectTheSecretStoreType": "Select the secret store type",
-    "enterSeedPhrases": "Enter SeedPhrases",
+    "enterSeedPhrases": "Enter Seed Phrases",
     "enterYourPrivateKey": "Enter your Private Key",
     "secretStore": "Enter Secret Store",
-    "Description": "Description (Optional)"
+    "description": "Description (Optional)",
+    "placeHolders": {
+      "safeName": "My personal crypto assets",
+      "email": "johndoe@safient.io",
+      "seedPhrases": "Enter the 12-word seed phrase",
+      "privateKey": "Paste your key",
+      "secretStore": "Enter Secret Store"
+    }
   }
 }

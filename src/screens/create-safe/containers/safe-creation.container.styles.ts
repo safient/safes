@@ -35,7 +35,7 @@ export const FlexContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  background: ${({ theme: { colors } }) => colors.applicationBackground};
+  background: ${({ theme: { colors } }) => colors.bottomAccent};
   display: flex !important;
   justify-content: flex-end;
   gap: 30px;
