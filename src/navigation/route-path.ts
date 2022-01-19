@@ -10,5 +10,6 @@ export enum RoutePath {
   claims = '/claims',
   claimDetails = '/claims/:id',
   account = '/account',
+  safeOverView = '/safe-overview',
   notFound = '/page-not-found',
 }
