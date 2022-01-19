@@ -10,22 +10,20 @@ import {
 } from './text-area.component.styles';
 import { TextAreaComponentProps } from './text-area.component.props';
 
-export const TextArea = ({ value, label, isDisabled, error, ...rest }: TextAreaComponentProps) => {
+export const TextArea = ({ value, label, isDisabled, error, errorMsg, ...rest }: TextAreaComponentProps) => {
   return (
     <TextAreaContainer>
       <TextAreaLabel>{label}</TextAreaLabel>
       <TextAreaWrapper>
         <StyledTextArea autoFocus value={value} error={error} {...rest} />
-        {error && (
-          <Icon>
-            <IconSvg name='error' size='medium' />
-          </Icon>
-        )}
       </TextAreaWrapper>
       {error && (
         <ErrorMessageContainer>
-          <Text variant='small' color='error'>
-            {error}
+          <Icon>
+            <IconSvg name='error' size='medium' />
+          </Icon>
+          <Text variant='small' color='error' paddingLeft={2.4}>
+            {errorMsg}
           </Text>
         </ErrorMessageContainer>
       )}

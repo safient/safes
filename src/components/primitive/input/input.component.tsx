@@ -16,12 +16,8 @@ export const Input = ({ value, type = 'text', label, isDisabled, error, errorMsg
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
         <StyledInput autoFocus value={value} type={type} error={error} {...rest} />
-        {/* {error && (
-          <Icon>
-            <IconSvg name='error' size='medium' />
-          </Icon>
-        )} */}
       </InputWrapper>
+
       {error && (
         <ErrorMessageContainer>
           <Icon>

@@ -29,5 +29,8 @@ export interface InputComponentProps extends React.InputHTMLAttributes<HTMLInput
    */
   errorMsg?: string;
 
+  /**
+   * Flag that activates during form validation
+   */
   error?: boolean;
 }

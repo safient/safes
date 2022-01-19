@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
+import { observer } from 'mobx-react-lite';
 import { t } from 'i18n-js';
 import { SeedPharsesList } from 'models';
-import { observer } from 'mobx-react-lite';
+import { FormValidator } from 'utils/FormValidator';
 import { CreateSafeController, SecretStoreType } from '../create-safe-controller';
 import {
   FormContainer,
@@ -20,16 +21,43 @@ export const SafeCreationForm = observer(() => {
   const createSafeController = useRef(new CreateSafeController()).current;
   const [seedPhrases, setSeedPhrases] = useState(new SeedPharsesList());
 
+  const [safeName, setSafeName] = useState('');
+  const [email, setEmail] = useState('');
+  const [description, setDescription] = useState('');
+  const [showError, setShowError] = useState(false);
+
   const handleSubmit = () => {
-    // form submit
+    if (isFormValid()) {
+      // form submit
+    } else {
+      setShowError(true);
+    }
+  };
+
+  const isFormValid = () => {
+    return FormValidator.isStringValid(safeName) && FormValidator.isEmailValid(email);
   };
 
   return (
     <>
       <FormContainer>
         <FlexContainer>
-          <StyledInput type='text' placeholder='My personal crypto assets' label={t('createSafeForm.safeName')} />
-          <StyledInput type='email' placeholder='johndoe@safient.io' label={t('createSafeForm.addBeneficiary')} />
+          <StyledInput
+            type='text'
+            placeholder='My personal crypto assets'
+            label={t('createSafeForm.safeName')}
+            errorMsg='Invalid SafeName'
+            onChange={(e: any) => setSafeName(e.target.value)}
+            error={showError && !FormValidator.isStringValid(safeName)}
+          />
+          <StyledInput
+            type='email'
+            placeholder='johndoe@safient.io'
+            label={t('createSafeForm.addBeneficiary')}
+            onChange={(e: any) => setEmail(e.target.value)}
+            errorMsg='Enter a Valid Email'
+            error={showError && !FormValidator.isEmailValid(email)}
+          />
         </FlexContainer>
         <Spacer />
         <StyledDropDown
@@ -78,6 +106,8 @@ export const SafeCreationForm = observer(() => {
         <StyledTextArea
           label={t('createSafeForm.Description')}
           placeholder='Add optional details about the safe'
+          errorMsg='Invalid Description'
+          error={showError && !FormValidator.isStringValid(description)}
           wide
         />
         <Spacer />
@@ -85,7 +115,7 @@ export const SafeCreationForm = observer(() => {
       </FormContainer>
       <ButtonContainer>
         <StyledButton label={{ text: 'Cancel', color: 'textLighter' }} variant='ghost' onClick={() => ''} />
-        <StyledButton label={{ text: 'Continue' }} variant='primary' color='primaryGradient' onClick={handleSubmit} />
+        <StyledButton label={{ text: 'Create' }} variant='primary' color='primaryGradient' onClick={handleSubmit} />
       </ButtonContainer>
     </>
   );
