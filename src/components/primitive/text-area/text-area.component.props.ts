@@ -22,5 +22,10 @@ export interface TextAreaComponentProps extends React.TextareaHTMLAttributes<HTM
   /**
    * Error Message string
    */
-  error?: string;
+  errorMsg?: string;
+
+  /**
+   * Flag that activates during form validation
+   */
+  error?: boolean;
 }
