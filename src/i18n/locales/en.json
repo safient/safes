@@ -42,6 +42,10 @@
   },
   "safeOverViewPage": {
     "guardians": "Guardians",
-    "dangerZone": "Danger Zone"
+    "dangerZone": "Danger Zone",
+    "deleteYourSafe": "Delete your Safe",
+    "deleteSafe": "Delete Safe",
+    "updateYourSafe": "Update Your Safe",
+    "updateSafe": "Update Safe"
   }
 }

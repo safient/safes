@@ -1,21 +1,19 @@
 import styled from 'styled-components';
-import { Button } from 'components/primitive';
+import { Box, Button } from 'components/primitive';
 
-export const StyledRow = styled.span`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center !important;
+export const StyledRow = styled(Box)`
   gap: 1.2rem;
-
   margin-bottom: 2.4rem !important;
+
   &:last-child {
     margin-bottom: 0 !important;
   }
 `;
 
 export const DangerZoneButton = styled(Button)`
-  width: 170px;
-  height: 50px;
+  width: 17rem;
+  height: 5rem;
   border: none !important;
-  padding-left: 20px !important;
+  padding-left: 2rem !important;
+  background: ${({ theme: { colors } }) => colors.applicationBackground} !important;
 `;
