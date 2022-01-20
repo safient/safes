@@ -40,6 +40,6 @@ export * from './toggle-switch/toggle-switch.component';
 
 export * from './generic-modal/generic-modal.component';
 
-export * from './badge/badge.component';
+export * from './label/label.component';
 
 export * from 'react-grid-system';
