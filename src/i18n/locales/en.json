@@ -19,7 +19,9 @@
     "knowMore": "Know more",
     "loading": "Loading...",
     "signingInLabel": "Signing in ...",
-    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ..."
+    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ...",
+    "cryptoSafe": "Crypto safe",
+    "genericSafe": "Generic safe"
   },
   "auth": {
     "getStarted": "Get Started",
