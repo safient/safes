@@ -41,5 +41,13 @@
     "phrasesEntered": "12 Phrases Entered",
     "enterPhrase": "Enter the 12-word seed phrase",
     "loading": "Loading"
+  },
+  "safeOverViewPage": {
+    "guardians": "Guardians",
+    "dangerZone": "Danger Zone",
+    "deleteYourSafe": "Delete your Safe",
+    "deleteSafe": "Delete Safe",
+    "updateYourSafe": "Update Your Safe",
+    "updateSafe": "Update Safe"
   }
 }

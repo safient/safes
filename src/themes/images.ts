@@ -38,6 +38,7 @@ export const images = {
   upload: require('../assets/icons/upload.svg').default,
   user: require('../assets/icons/user.svg').default,
   error: require('../assets/icons/error.svg').default,
+  delete: require('../assets/icons/delete.svg').default,
   checkSuccess: require('../assets/icons/checkSuccess.svg').default,
   checked: require('../assets/icons/checked.svg').default,
   safientAvatar: require('../assets/logo/safient_avatar.png').default,

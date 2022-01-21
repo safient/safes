@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { Box, Text } from 'components/primitive';
 
 /**
- * Base styles for Badge Component.
+ * Base styles for Label Component.
  */
-export const BaseBadge = styled(Box)`
+export const BaseLabel = styled(Box)`
   height: 3.3rem !important;
   width: fit-content;
   padding: 1.2rem 0.6rem !important;
@@ -15,23 +15,23 @@ export const BaseBadge = styled(Box)`
 `;
 
 /**
- * Style for SuccessBadge.
+ * Style for SuccessLabel.
  */
-export const SuccessBadge = styled(BaseBadge)`
+export const SuccessLabel = styled(BaseLabel)`
   background-color: ${({ theme: { colors } }) => colors.successLighter} !important;
 `;
 
 /**
- * Style for DangerBadge.
+ * Style for DangerLabel.
  */
-export const DangerBadge = styled(BaseBadge)`
+export const DangerLabel = styled(BaseLabel)`
   background-color: ${({ theme: { colors } }) => colors.errorLighter} !important;
 `;
 
 /**
- * Default styles for BadgeText.
+ * Default styles for BadgeLabel.
  */
-export const BadgeText = styled(Text)`
+export const LabelText = styled(Text)`
   color: ${({ theme: { colors } }) => colors.successLight};
   font-size: 1.4rem;
 `;

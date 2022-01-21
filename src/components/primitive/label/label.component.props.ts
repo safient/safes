@@ -1,5 +1,4 @@
 import { TextComponentProps } from 'components/primitive/text/text.component.props';
-import { BoxComponentProps } from 'components/primitive/box/box.component.props';
 
 /**
  * Different Variants of Badge Component
@@ -9,11 +8,11 @@ export enum Variant {
   danger = 'danger',
 }
 
-export interface BadgeComponentProps extends BoxComponentProps {
+export interface LabelComponentProps {
   /**
    * label for Text Component
    */
-  label: TextComponentProps;
+  labelText: TextComponentProps;
 
   /**
    * option to use diffent variants. Success is the default variant.
