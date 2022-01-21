@@ -153,7 +153,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
     return (
       <Base style={style} {...rest}>
         <Oval
-          arialLabel="loading-indicator"
+          ariaLabel="loading-indicator"
           height={40}
           width={40}
           color={colors.primary}
