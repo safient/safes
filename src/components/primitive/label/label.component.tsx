@@ -1,8 +1,8 @@
-import { BadgeComponentProps, Variant } from './badge.component.props';
-import { BadgeText, DangerBadge, SuccessBadge } from './badge.component.styles';
+import { LabelComponentProps, Variant } from './label.component.props';
+import { LabelText, SuccessLabel, DangerLabel } from './label.component.styles';
 
-export const Badge: React.FC<BadgeComponentProps> = (props) => {
-  const { variant, label, ...rest } = props;
+export const Label: React.FC<LabelComponentProps> = (props) => {
+  const { variant, labelText, ...rest } = props;
 
   const textColor = variant === 'danger' ? 'errorLight' : 'successLight';
 
@@ -11,15 +11,15 @@ export const Badge: React.FC<BadgeComponentProps> = (props) => {
 
     switch (variant) {
       case Variant.success:
-        badgeComponent = SuccessBadge;
+        badgeComponent = SuccessLabel;
         break;
 
       case Variant.danger:
-        badgeComponent = DangerBadge;
+        badgeComponent = DangerLabel;
         break;
 
       default:
-        badgeComponent = SuccessBadge;
+        badgeComponent = SuccessLabel;
     }
 
     return badgeComponent;
@@ -30,7 +30,7 @@ export const Badge: React.FC<BadgeComponentProps> = (props) => {
   return (
     // @ts-ignore - No overload matched this call.
     <StyledBadgeComponent row vCenter hCenter {...rest}>
-      <BadgeText color={textColor} {...label} />
+      <LabelText color={textColor} {...labelText} />
     </StyledBadgeComponent>
   );
 };

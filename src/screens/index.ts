@@ -5,4 +5,5 @@ export * from './home/home.screen';
 export * from './auth/login/login.screen';
 export * from './auth/register/register.screen';
 export * from './account/account.screen';
+export * from './safe-overview/safe-overview.screen';
 export * from './not-found/not-found.screen';
