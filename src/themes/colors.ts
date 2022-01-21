@@ -27,6 +27,7 @@ export const colors = {
   applicationBackground: palette.whiteLiac,
   spinnerBorder: palette.greyLighter,
   toggleSwitchBackground: palette.blueLighter,
+  lightGray: palette.lightGray,
 };
 
 export type Colors = typeof colors;

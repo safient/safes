@@ -45,6 +45,8 @@ export const images = {
   loginWithGitHub: require('../assets/icons/login-github.svg').default,
   loginWithMetaMask: require('../assets/icons/login-metamask.svg').default,
   lockLoader: require('../assets/icons/lockLoader.gif').default,
+  key: require('../assets/icons/key.svg').default,
+  signature: require('../assets/icons/signature.svg').default,
 };
 
 export type Images = typeof images;
