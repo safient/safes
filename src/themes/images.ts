@@ -34,6 +34,7 @@ export const images = {
   placeHolderAvatar: require('../assets/images/demo.png').default,
   profile: require('../assets/icons/profile.svg').default,
   safes: require('../assets/icons/safes.svg').default,
+  safeFee: require('../assets/icons/safe-fee.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
   user: require('../assets/icons/user.svg').default,
