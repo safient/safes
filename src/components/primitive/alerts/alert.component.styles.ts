@@ -1,73 +1,25 @@
 import styled from 'styled-components';
-import { FONT_SIZE } from '../../../utils/typography';
-import { styledAlertProps } from './alert.component.props';
+import { Box } from '../box/box.component';
+import { AlertComponentProps } from './alert.component.props';
 
-const handelVariants = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryText}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryText}`;
-    case 'success':
-      return `${theme.colors.alertSuccessText}`;
-    case 'warning':
-      return ` ${theme.colors.alertWarningText}`;
-    case 'error':
-      return ` ${theme.colors.alertErrorText}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoText}`;
-    default:
-      return `${theme.colors.alertPrimaryText}`;
-  }
-};
-
-const handelBackground = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryBackground}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryBackground}`;
-    case 'success':
-      return `${theme.colors.alertSuccessBackground}`;
-    case 'warning':
-      return ` ${theme.colors.alertWarningBackground}`;
-    case 'error':
-      return ` ${theme.colors.alertErrorBackground}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoBackground}`;
-    default:
-      return `${theme.colors.alertPrimaryBackground}`;
-  }
-};
-
-const handelBorders = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryBorder}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryBorder}`;
-    case 'success':
-      return `${theme.colors.alertSuccessBorder}`;
-    case 'warning':
-      return ` ${theme.colors.alertWarningBorder}`;
-    case 'error':
-      return ` ${theme.colors.alertErrorBorder}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoBorder}`;
-    default:
-      return `${theme.colors.alertPrimaryBorder}`;
-  }
-};
-
-const AlertContainer = styled.div<any | styledAlertProps>`
-  max-width: 55rem;
-  color: ${({ theme, variant }) => handelVariants(variant, theme)};
-  background-color: ${({ variant, theme }) => handelBackground(variant, theme)};
-  border: 1px solid ${({ variant, theme }) => handelBorders(variant, theme)};
+export const Base = styled(Box)<AlertComponentProps>`
+  max-width: 55rem !important;
+  flex: 0 !important;
+  background: ${({ theme: { colors } }) => colors.success};
+  color: ${({ theme: { colors } }) => colors.primary} !important;
+  padding: 2rem !important ;
   border-radius: 0.5rem;
-  font-size: ${FONT_SIZE.regular};
-  font-weight: 500;
-  padding: 1.8rem;
+  gap: 1rem;
 `;
 
-export { AlertContainer };
+export const SuccessAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.successLightest};
+`;
+
+export const ErrorAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.errorLightest};
+`;
+
+export const WarningAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.warningLightest};
+`;

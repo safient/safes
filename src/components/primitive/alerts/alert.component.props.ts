@@ -1,20 +1,23 @@
-interface AlertProps {
-  variant?: string | any;
-  children?: React.ReactNode | never;
+import { IconProps } from 'components/primitive';
+import { TextComponentProps } from 'components/primitive/text/text.component.props';
+
+export enum Variant {
+  primary = 'primary',
+  success = 'success',
+  warning = 'warning',
+  error = 'error',
 }
 
-interface styledAlertProps extends AlertProps {
-  maxWidth: number;
-  border: string;
-  borderRadius: number;
-  fontWeight?: number;
-  color?: string;
-  backgroundColor?: string;
-  fontSize?: string;
-  variant?: string | any;
-  theme?: any;
-  padding: string;
-  children?: React.ReactNode | never;
+export enum TextColors {
+  primary = 'primary',
+  success = 'successLight',
+  warning = 'warningLight',
+  error = 'error',
 }
 
-export type { styledAlertProps, AlertProps };
+export interface AlertComponentProps {
+  label: TextComponentProps;
+  icon?: IconProps;
+  variant: keyof typeof Variant;
+  textColor?: keyof typeof TextColors;
+}

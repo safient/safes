@@ -11,12 +11,15 @@ export const colors = {
   success: palette.green,
   successLight: palette.greenLight, //text
   successLighter: palette.greenTransparent, // Transparent Backgrounds
+  successLightest: palette.greenLighter, // alert background
   error: palette.red,
   errorLight: palette.redLight, //text
   errorLighter: palette.redTransparent,
+  errorLightest: palette.redLighter, // alert background
   link: palette.blueLight,
   warning: palette.yellow,
   warningLight: palette.yellowLight, //text
+  warningLightest: palette.yellowLighter, // alerr background
   shadow: palette.shadow,
   modalBackdrop: palette.grayTransparent,
   border: palette.grey,

@@ -35,6 +35,7 @@ export const images = {
   profile: require('../assets/icons/profile.svg').default,
   safes: require('../assets/icons/safes.svg').default,
   safeFee: require('../assets/icons/safe-fee.svg').default,
+  safeAllowed: require('../assets/icons/safe-allowed.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
   user: require('../assets/icons/user.svg').default,
