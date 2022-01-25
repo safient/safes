@@ -9,11 +9,11 @@ const handelVariants = (variant: string, theme: any) => {
     case 'secondary':
       return `${theme.colors.alertSecondaryText}`;
     case 'success':
-      return `${theme.colors.alertSuccessText}`;
+      return `${theme.colors.success}`;
     case 'warning':
-      return ` ${theme.colors.alertWarningText}`;
+      return ` ${theme.colors.warning}`;
     case 'error':
-      return ` ${theme.colors.alertErrorText}`;
+      return ` ${theme.colors.error}`;
     case 'info':
       return ` ${theme.colors.alertInfoText}`;
     default:
@@ -28,11 +28,11 @@ const handelBackground = (variant: string, theme: any) => {
     case 'secondary':
       return `${theme.colors.alertSecondaryBackground}`;
     case 'success':
-      return `${theme.colors.alertSuccessBackground}`;
+      return `${theme.colors.successLighter}`;
     case 'warning':
-      return ` ${theme.colors.alertWarningBackground}`;
+      return ` ${theme.colors.warningLight}`;
     case 'error':
-      return ` ${theme.colors.alertErrorBackground}`;
+      return ` ${theme.colors.errorLighter}`;
     case 'info':
       return ` ${theme.colors.alertInfoBackground}`;
     default:

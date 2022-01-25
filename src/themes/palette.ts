@@ -20,7 +20,7 @@ export const palette = {
   yellowLight: '#664d03', //for text
   yellowLighter: '#fff3cd', //alert bg
   yellowLightest: '#ffecb5', //border
-  red: '#dc3545',
+  red: '#FFA288',
   redLight: '#FFA288', //text color on alert bg
   redLighter: '#f8d7da', // alert bg
   redLightest: '#f5c2c7', //borders
