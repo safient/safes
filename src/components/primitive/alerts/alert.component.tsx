@@ -1,6 +1,5 @@
 import { Text, IconSvg } from 'components/primitive';
 import { AlertComponentProps, TextColors, Variant } from './alert.component.props';
-
 import { getVariant, getColor } from './alert.component.utils';
 
 export const Alert: React.FC<AlertComponentProps> = (props) => {

@@ -1,6 +1,12 @@
 import { Variant, TextColors } from './alert.component.props';
 import { WarningAlert, ErrorAlert, SuccessAlert } from './alert.component.styles';
 
+/**
+ *
+ * @param variant
+ * @returns style based on Variant passed by user.
+ */
+
 export const getVariant = (variant: Variant = Variant.success) => {
   let AlertComponent;
 
@@ -20,6 +26,11 @@ export const getVariant = (variant: Variant = Variant.success) => {
   return AlertComponent;
 };
 
+/**
+ *
+ * @param variant
+ * @returns Text color based on variant.
+ */
 export const getColor = (variant: TextColors = TextColors.success) => {
   let color;
 
