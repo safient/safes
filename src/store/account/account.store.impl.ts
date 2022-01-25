@@ -28,8 +28,9 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
       address: observable,
       balance: observable,
       _web3User: observable,
+      userExists: observable,
+      userSignedIn: observable,
       resetStore: action,
-      userExists: action,
       loadAccount: action,
       setWeb3User: action,
     });
@@ -66,10 +67,16 @@ export class AccountStoreImpl extends StoreImpl implements AccountStore {
   }
 
   setWeb3User(user: Types.User) {
+    console.log('setting')
       this._web3User = user
    }
 
-  userExists(): boolean {
+  userSignedIn(): boolean {
     return !!this._web3User;
+  }
+
+
+  userExists(): boolean {
+    return this.errorCode !== 10;
   }
 }
