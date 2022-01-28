@@ -1,5 +1,5 @@
-import { Variant, TextColors } from './alert.component.props';
-import { WarningAlert, ErrorAlert, SuccessAlert } from './alert.component.styles';
+import { Variant, TextColors, IconName } from './alert.component.props';
+import { WarningAlert, ErrorAlert, SuccessAlert, InfoAlert } from './alert.component.styles';
 
 /**
  *
@@ -8,43 +8,32 @@ import { WarningAlert, ErrorAlert, SuccessAlert } from './alert.component.styles
  */
 
 export const getVariant = (variant: Variant = Variant.success) => {
-  let AlertComponent;
+  let alertComponent, textColor, iconName;
 
   switch (variant) {
     case Variant.warning:
-      AlertComponent = WarningAlert;
+      alertComponent = WarningAlert;
+      textColor = TextColors.warning;
+      iconName = IconName.warning;
       break;
 
     case Variant.error:
-      AlertComponent = ErrorAlert;
+      alertComponent = ErrorAlert;
+      textColor = TextColors.error;
+      iconName = IconName.error;
+      break;
+
+    case Variant.info:
+      alertComponent = InfoAlert;
+      textColor = TextColors.info;
+      iconName = IconName.info;
       break;
 
     default:
-      AlertComponent = SuccessAlert;
+      alertComponent = SuccessAlert;
+      textColor = TextColors.success;
+      iconName = IconName.success;
   }
 
-  return AlertComponent;
-};
-
-/**
- *
- * @param variant
- * @returns Text color based on variant.
- */
-export const getColor = (variant: TextColors = TextColors.success) => {
-  let color;
-
-  switch (variant) {
-    case TextColors.warning:
-      color = TextColors.warning;
-      break;
-
-    case TextColors.error:
-      color = TextColors.error;
-      break;
-
-    default:
-      color = TextColors.success;
-  }
-  return color;
+  return { alertComponent, iconName, textColor };
 };

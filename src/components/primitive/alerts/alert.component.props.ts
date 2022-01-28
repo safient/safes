@@ -1,4 +1,3 @@
-import { IconProps } from 'components/primitive';
 import { TextComponentProps } from 'components/primitive/text/text.component.props';
 
 /**
@@ -8,6 +7,7 @@ export enum Variant {
   success = 'success',
   warning = 'warning',
   error = 'error',
+  info = 'info',
 }
 
 /**
@@ -16,7 +16,15 @@ export enum Variant {
 export enum TextColors {
   success = 'successLight',
   warning = 'warningLight',
-  error = 'error',
+  error = 'errorLight',
+  info = 'infoLight',
+}
+
+export enum IconName {
+  success = 'successAlert',
+  warning = 'warningAlert',
+  error = 'errorAlert',
+  info = 'infoAlert',
 }
 
 /**
@@ -24,7 +32,7 @@ export enum TextColors {
  */
 export interface AlertComponentProps {
   label: TextComponentProps;
-  icon?: IconProps;
+  icon?: boolean;
   variant: keyof typeof Variant;
   textColor?: keyof typeof TextColors;
 }

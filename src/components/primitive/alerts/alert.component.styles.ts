@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Box } from 'components/primitive';
+import { Box, Text } from 'components/primitive';
 import { AlertComponentProps } from './alert.component.props';
 
 /**
@@ -13,13 +13,14 @@ export const Base = styled(Box)<AlertComponentProps>`
   padding: 2rem !important ;
   border-radius: 0.5rem;
   gap: 1rem;
+  flex-wrap: nowrap !important;
 `;
 
 /**
  * Styles for success variant
  */
 export const SuccessAlert = styled(Base)`
-  background: ${({ theme: { colors } }) => colors.successLightest};
+  background: ${({ theme: { colors } }) => colors.successLighter};
 `;
 
 /**
@@ -34,4 +35,18 @@ export const ErrorAlert = styled(Base)`
  */
 export const WarningAlert = styled(Base)`
   background: ${({ theme: { colors } }) => colors.warningLightest};
+`;
+
+/**
+ * Styles for Info variant
+ */
+export const InfoAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.infoLightest};
+`;
+
+/**
+ * Styles for Alert Text
+ */
+export const AlertText = styled(Text)`
+  line-height: 1.5;
 `;
