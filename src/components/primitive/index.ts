@@ -1,3 +1,6 @@
+export * from './access-safe/access-safe.component';
+export * from './access-safe/access-safe.component.props';
+
 export * from './alerts/alert.component';
 
 export * from './box/box.component';
