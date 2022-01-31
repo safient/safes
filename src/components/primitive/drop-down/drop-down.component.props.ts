@@ -1,3 +1,4 @@
+import { TooltipComponentProps } from './../tooltip/tooltip.component.props';
 export interface DropDownOptions {
   /**
    * Used as Key while mapping through the lists
@@ -17,7 +18,7 @@ export interface DropDownOptions {
   /**
    * Options in the DropDown
    */
-  option: string;
+  label: string;
 }
 
 export interface DropDownComponentProps {
@@ -29,12 +30,12 @@ export interface DropDownComponentProps {
   /**
    * Value of selected item
    */
-  value?: string | number;
+  value?: string | number | null;
 
   /**
-   * Options for Dropdown
+   * Options for Dropdown - https://react-select.com/typescript#unknown
    */
-  options?: DropDownOptions[];
+  options?: DropDownOptions[] | unknown;
 
   /**
    * Sets the width to 100% if its true
@@ -51,8 +52,12 @@ export interface DropDownComponentProps {
    */
   children?: React.ReactNode;
 
+  placeholder: string;
+
   /**
    * onChange Handler
    */
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+
+  info?: string;
 }
