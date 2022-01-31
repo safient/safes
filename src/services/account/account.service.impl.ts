@@ -36,7 +36,7 @@ export class AccountServiceImpl extends Service implements AccountService {
   async register(name: string, email: string): Promise<ServiceResponse<Types.User>> {
     try {
       
-      const user = await this.accountStore.safient.createUser(name, email, 0, this.accountStore.address!, false);
+      const user = await this.accountStore.safient.createUser(name, email, 0, this.accountStore.address, false);
 
       if (user.data) {
         this.accountStore.setWeb3User(user.data);

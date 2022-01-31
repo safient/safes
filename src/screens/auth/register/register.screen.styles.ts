@@ -55,7 +55,6 @@ export const TextContainer = styled(Box)`
 
 export const StyledInput = styled(Input)`
 @media screen and (max-width: ${BreakPoints.small}) {
-  background: ${({ theme }) => theme.colors.success};
   flex-direction: column;
   margin-top: 2rem;
   gap: 2rem;
@@ -74,7 +73,6 @@ export const TermsContainer = styled(Box)`
   gap: 1.6rem;
 
   @media screen and (max-width: ${BreakPoints.small}) {
-    background: ${({ theme }) => theme.colors.success};
     flex-direction: column;
     margin-top: 2rem;
     gap: 2rem;
