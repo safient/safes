@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { t } from 'i18n-js';
 import { Text, Input, Box, Alert } from "components/primitive";
 import { observer } from "mobx-react-lite";
 
 import { Header } from "components/common/auth-header.component";
 import {
-  LoginContainer,
-  LoginFormContainer,
-  LoginText,
+  RegistrationContainer,
+  RegistrationFormContainer,
+  RegistrationText,
   FormContainer,
   StyledButton,
   TermsContainer,
   StyledCheckbox,
-  StyledLink,
+  LinkText,
+  RegistrationFormBox,
+  StyledInput,
 } from "./register.screen.styles";
 import { useServices } from "services";
 import { useStores } from "store";
@@ -24,7 +27,6 @@ export const RegisterScreen = observer(() => {
   const { accountService } = useServices();
   const { accountStore } = useStores();
   let history = useHistory();
-  const [registering, setRegistering] = useState(false);
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -46,18 +48,16 @@ export const RegisterScreen = observer(() => {
   };
 
   return (
-    <LoginContainer>
+    <RegistrationContainer>
       <Header />
 
-      <LoginFormContainer>
+      <RegistrationFormContainer>
         <FormContainer>
-          <Alert variant="error">
-            We couldn't find your account. Please register here.
-          </Alert>
-          <LoginText variant="contentHeader" center tx="auth.createAccount" />
+          <Alert icon variant="warning" label={{tx: 'auth.registerAlert'}}/>
+          <RegistrationText variant="contentHeader" center tx="auth.createAccount" />
 
-          <Box style={{ gap: "2.6rem" }}>
-            <Input
+          <RegistrationFormBox>
+            <StyledInput
               type="text"
               label="Enter your Full Name"
               placeholder="John Doe"
@@ -65,24 +65,23 @@ export const RegisterScreen = observer(() => {
                 setFullName(e.target.value);
               }}
             />
-            <Input
+            <StyledInput
               type="text"
               label="Enter your Email"
               placeholder="johndoe@example.com"
               onChange={(e: any) => setEmail(e.target.value)}
             />
-          </Box>
-
-          <TermsContainer>
+            
+          </RegistrationFormBox>
+          <TermsContainer row>
             <StyledCheckbox type="checkbox" />
-            <Text variant="content">
-              By clicking, you agree to{" "}
-              <StyledLink to={"safient.io"}>Safient's Terms </StyledLink>
-              of Use &{" "}
-              <StyledLink to={"safient.io"}> Privacy Policy.</StyledLink>
+            <Text>
+              By clicking, you agree to the
+              <LinkText onClick={()=>window.location.href = 'https://resources.safient.io/terms'}> {t("auth.terms")} </LinkText>
+              &
+              <LinkText onClick={()=>window.location.href = 'https://resources.safient.io/terms'}> {t("auth.privacy")} </LinkText>
             </Text>
           </TermsContainer>
-
           <StyledButton
             variant="primary"
             loading={accountStore.fetching}
@@ -91,7 +90,7 @@ export const RegisterScreen = observer(() => {
             color="primaryGradient"
           />
         </FormContainer>
-      </LoginFormContainer>
-    </LoginContainer>
+      </RegistrationFormContainer>
+    </RegistrationContainer>
   );
 });

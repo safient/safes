@@ -18,12 +18,12 @@ export interface AccountStore extends StoreImpl, IStore {
   /**
    * Checks if the user exists after log In
    */
-  userExists: () => boolean;
+  userExists: boolean;
 
    /**
    * Checks if the user is signed In
    */
-  userSignedIn: () => boolean;
+  userSignedIn: boolean;
 
   loadAccount: (web3Provider: Web3Provider) => void;
 }

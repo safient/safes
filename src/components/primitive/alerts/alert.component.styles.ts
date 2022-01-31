@@ -1,73 +1,52 @@
 import styled from 'styled-components';
-import { FONT_SIZE } from '../../../utils/typography';
-import { styledAlertProps } from './alert.component.props';
+import { Box, Text } from 'components/primitive';
+import { AlertComponentProps } from './alert.component.props';
 
-const handelVariants = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryText}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryText}`;
-    case 'success':
-      return `${theme.colors.success}`;
-    case 'warning':
-      return ` ${theme.colors.warning}`;
-    case 'error':
-      return ` ${theme.colors.error}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoText}`;
-    default:
-      return `${theme.colors.alertPrimaryText}`;
-  }
-};
-
-const handelBackground = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryBackground}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryBackground}`;
-    case 'success':
-      return `${theme.colors.successLighter}`;
-    case 'warning':
-      return ` ${theme.colors.warningLight}`;
-    case 'error':
-      return ` ${theme.colors.errorLighter}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoBackground}`;
-    default:
-      return `${theme.colors.alertPrimaryBackground}`;
-  }
-};
-
-const handelBorders = (variant: string, theme: any) => {
-  switch (variant) {
-    case 'primary':
-      return `${theme.colors.alertPrimaryBorder}`;
-    case 'secondary':
-      return `${theme.colors.alertSecondaryBorder}`;
-    case 'success':
-      return `${theme.colors.alertSuccessBorder}`;
-    case 'warning':
-      return ` ${theme.colors.alertWarningBorder}`;
-    case 'error':
-      return ` ${theme.colors.alertErrorBorder}`;
-    case 'info':
-      return ` ${theme.colors.alertInfoBorder}`;
-    default:
-      return `${theme.colors.alertPrimaryBorder}`;
-  }
-};
-
-const AlertContainer = styled.div<any | styledAlertProps>`
-  max-width: 55rem;
-  color: ${({ theme, variant }) => handelVariants(variant, theme)};
-  background-color: ${({ variant, theme }) => handelBackground(variant, theme)};
-  border: 1px solid ${({ variant, theme }) => handelBorders(variant, theme)};
+/**
+ * Base style which can be inherited.
+ */
+export const Base = styled(Box)<AlertComponentProps>`
+  max-width: 55rem !important;
+  flex: 0 !important;
+  background: ${({ theme: { colors } }) => colors.success};
+  color: ${({ theme: { colors } }) => colors.primary} !important;
+  padding: 2rem !important ;
   border-radius: 0.5rem;
-  font-size: ${FONT_SIZE.regular};
-  font-weight: 500;
-  padding: 1.8rem;
+  gap: 1rem;
+  flex-wrap: nowrap !important;
 `;
 
-export { AlertContainer };
+/**
+ * Styles for success variant
+ */
+export const SuccessAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.successLighter};
+`;
+
+/**
+ * Styles for Error variant
+ */
+export const ErrorAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.errorLightest};
+`;
+
+/**
+ * Styles for Warning variant
+ */
+export const WarningAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.warningLightest};
+`;
+
+/**
+ * Styles for Info variant
+ */
+export const InfoAlert = styled(Base)`
+  background: ${({ theme: { colors } }) => colors.infoLightest};
+`;
+
+/**
+ * Styles for Alert Text
+ */
+export const AlertText = styled(Text)`
+  line-height: 1.5;
+`;

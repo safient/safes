@@ -11,8 +11,8 @@ const Navigation = observer(() => {
   const { accountStore } = useStores();
   //TODO - Remove mock after auth integration
   const isMock: boolean = false;
-  let isSignedIn: boolean = accountStore.userSignedIn() || isMock;
-  let isNewUser: boolean = !accountStore.userExists() || isMock;
+  let isSignedIn: boolean = accountStore.userSignedIn || isMock;
+  let isNewUser: boolean = !accountStore.userExists || isMock;
 
   return (
     <Switch>
