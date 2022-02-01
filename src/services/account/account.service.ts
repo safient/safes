@@ -6,4 +6,6 @@ export interface AccountService {
    * Opens a web3modal and allows the user to connect account
    */
   login(): Promise<ServiceResponse<Types.User>>;
+
+  register(name: string, email: string): Promise<ServiceResponse<Types.User>>;
 }

@@ -27,7 +27,10 @@
     "getStarted": "Get Started",
     "login": "Log In",
     "create": "Create",
-    "createAccount": "Create an Account"
+    "createAccount": "Create an Account",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "registerAlert": "We couldn't find your account. Please register here"
   },
   "accountPage": {
     "profile": "Profile",
@@ -48,6 +51,9 @@
     "deleteYourSafe": "Delete your Safe",
     "deleteSafe": "Delete Safe",
     "updateYourSafe": "Update Your Safe",
-    "updateSafe": "Update Safe"
+    "updateSafe": "Update Safe",
+    "safeFeeDetails": "Safe fee details",
+    "feeDeposited": "Fee Deposited",
+    "payMore": "Pay More"
   }
 }

@@ -27,15 +27,16 @@ export * from './navbar/navbar.component';
 export * from './navbar/navbar.component.props';
 
 export * from './top-bar/top-bar.component';
+export * from './drop-down/drop-down.component';
 
 export * from './text/text.component';
-export * from './input/input.component';
-
 export * from './text-area/text-area.component';
 
+export * from './input/input.component';
 export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';
+export * from './alerts/alert.component';
 
 export * from './stats-card/stats-card.component';
 
