@@ -42,7 +42,7 @@ export const Button: React.FunctionComponent<ButtonComponentProps> = (props: But
           <IconSvg {...icon} />
         </IconWrapper>
       )}
-      {loading ? <Spinner /> : <ButtonText {...label} />}
+      {loading && <Spinner />} <ButtonText  {...label} /> 
     </StyledButtonComponent>
   );
 };

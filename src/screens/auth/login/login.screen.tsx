@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { Text, Input, NoticeLoader } from 'components/primitive';
 import { Header } from 'components/common/auth-header.component';
 import { RoutePath } from '../../../navigation/route-path';
-import { useServices } from '../../../services';
-import { stores } from '../../../store';
+import { useServices } from 'services';
+import { useStores } from 'store';
 import {
   LoginContainer,
   LoginFormContainer,
@@ -21,6 +21,7 @@ import {
 export const LoginScreen = () => {
 
   const { accountService } = useServices();
+  const { accountStore } = useStores();
   let history = useHistory();  
   const [signingIn, setSigningIn] = useState(false)
 
@@ -30,7 +31,11 @@ export const LoginScreen = () => {
     const account = await accountService.login();
     if (account.hasData()) {
     history.push(RoutePath.home);
-    } 
+    } else {
+
+    accountStore.setError(account.getErrorMessage(), account.getErrorCode())
+    history.push(RoutePath.register);
+    }
     setSigningIn(false)
   }
   

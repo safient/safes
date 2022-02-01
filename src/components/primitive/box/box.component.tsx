@@ -143,7 +143,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
 
   const Layout: any = row ? Row : Col;
 
-  const Base = styled(Layout)<BoxComponentProps>``;
+  // const Base = styled(Layout)<BoxComponentProps>``;
 
   if (hidden) {
     return <></>;
@@ -163,8 +163,8 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
   }
 
   return (
-    <Base style={style} {...rest}>
+    <Layout style={style} {...rest}>
       {children}
-    </Base>
+    </Layout>
   );
 };
