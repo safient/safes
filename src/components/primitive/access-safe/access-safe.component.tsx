@@ -49,7 +49,7 @@ export const AccessSafe: React.FC<AccessSafeComponentProps> = (
   const { items, pageIndex } = props;
 
   const currentItem = items[pageIndex];
-  const { title, subHeading, description, image, previousButton, nextButton } =
+  const { title, subHeader, description, image, previousButton, nextButton } =
     currentItem;
 
   return (
@@ -72,7 +72,7 @@ export const AccessSafe: React.FC<AccessSafeComponentProps> = (
         {image && <Image height={7} width={7} {...image} />}
         <SubContainer>
           <Card hCenter>
-            <Text variant="contentHeader" {...subHeading} />
+            <Text variant="contentHeader" {...subHeader} />
           </Card>
           <Card hCenter>
             <Text variant="content" {...description} />

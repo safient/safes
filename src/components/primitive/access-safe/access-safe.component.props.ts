@@ -16,7 +16,7 @@ interface AccessSafeItem {
   /**
    * sub heading for the access safe item
    */
-  subHeading?: TextComponentProps;
+  subHeader?: TextComponentProps;
 
   /**
    * description for the access safe item
