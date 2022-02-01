@@ -41,6 +41,7 @@ export const routes: IRoute[] = [
     path: RoutePath.register,
     name: RouteName.register,
     exact: true,
+    private: true,
     component: RegisterScreen,
   },
   {

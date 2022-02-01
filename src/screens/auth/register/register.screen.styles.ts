@@ -1,26 +1,31 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Button, Text } from 'components/primitive';
+import { Box, Button, Input, Text } from 'components/primitive';
 import { BreakPoints } from 'utils';
 
-export const LoginContainer = styled.section`
+export const RegistrationContainer = styled.section`
   width: 100%;
   height: 100vh;
   overflow: hidden;
 `;
 
-export const LoginFormContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+export const RegistrationFormContainer = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+`;
+
+export const RegistrationFormBox = styled(Box)`
+  gap: 2.6rem; 
 `;
 
 export const FormContainer = styled.div`
   background-color: ${({ theme: { colors } }) => colors.white};
-  width: 53.4rem;
+  // width: 53.4rem;
   padding: 5rem 8rem 5rem 8rem;
+  align-items: center;
   margin-top: -8rem;
   @media screen and (max-width: ${BreakPoints.small}) {
     margin-top: -10rem;
@@ -37,44 +42,49 @@ export const StyledButton = styled(Button)`
   }
 `;
 
-export const LoginText = styled(Text)`
+export const RegistrationText = styled(Text)`
   margin-bottom: 6rem;
 `;
 
-export const SocialLoginContainer = styled.div`
-  margin-top: 4rem;
-`;
-
-export const SocialIconsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  margin-top: 3rem;
-`;
-
-export const TextContainer = styled.div`
+export const TextContainer = styled(Box)`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+`;
+
+
+export const StyledInput = styled(Input)`
+@media screen and (max-width: ${BreakPoints.small}) {
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 2rem;
+  width: 100% !important;
+}
 `;
 
 export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
   margin-top: 0.5rem;
 `;
 
-export const TermsContainer = styled.section`
+export const TermsContainer = styled(Box)`
   display: flex;
-  margin-top: 3rem;
+  flex: flex-wrap;
+  margin-top: 3rem !important;
   gap: 1.6rem;
+
+  @media screen and (max-width: ${BreakPoints.small}) {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    width: 100% !important;
+  }
 `;
 
-export const StyledLink = styled(Link)`
-  line-height: 1.8;
-  &:focus,
+export const LinkText = styled.span`
+  text-decoration: underline;
   &:hover,
-  &:visited,
-  &:link,
   &:active {
+    cursor: pointer;
     color: ${({ theme }) => theme.colors.textLight};
   }
 `;
