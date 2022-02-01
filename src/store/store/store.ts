@@ -12,6 +12,8 @@ export interface Store {
    */
   error: string
 
+  errorCode: number
+
   /**
    * Sets fetching property as per given flag and resets the error if fetching is enabled
    * @param flag Value

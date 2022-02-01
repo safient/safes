@@ -27,7 +27,10 @@
     "getStarted": "Get Started",
     "login": "Log In",
     "create": "Create",
-    "createAccount": "Create an Account"
+    "createAccount": "Create an Account",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "registerAlert": "We couldn't find your account. Please register here"
   },
   "accountPage": {
     "profile": "Profile",
