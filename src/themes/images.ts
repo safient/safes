@@ -5,6 +5,7 @@ export const images = {
   hamburgerMenu: require('../assets/icons/hamburger_menu.svg').default,
   add: require('../assets/icons/add.svg').default,
   arrowUp: require('../assets/icons/arrow_up.svg').default,
+  bitcoin: require('../assets/icons/bitcoin.svg').default,
   calender: require('../assets/icons/calender.svg').default,
   check: require('../assets/icons/check.svg').default,
   checkActive: require('../assets/icons/check_active.svg').default,
