@@ -47,3 +47,6 @@ export * from './generic-modal/generic-modal.component';
 export * from './label/label.component';
 
 export * from 'react-grid-system';
+
+export * from './side-panel/side-panel.component';
+export * from './side-panel/side-panel.component.props';
