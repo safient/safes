@@ -167,4 +167,9 @@ export interface BoxComponentProps extends ColProps, RowProps {
     justify content space-between for the box
    */
   spaceBetween?: boolean;
+
+  /**
+   * Flex- gap property
+   */
+  gap?: number;
 }

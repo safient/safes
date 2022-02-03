@@ -42,4 +42,6 @@ export * from './generic-modal/generic-modal.component';
 
 export * from './label/label.component';
 
+export * from './tooltip/tooltip.component';
+
 export * from 'react-grid-system';
