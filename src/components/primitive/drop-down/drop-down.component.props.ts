@@ -1,4 +1,3 @@
-import { TooltipComponentProps } from './../tooltip/tooltip.component.props';
 export interface DropDownOptions {
   /**
    * Used as Key while mapping through the lists
@@ -16,19 +15,19 @@ export interface DropDownOptions {
   value: string;
 
   /**
-   * Options in the DropDown
+   * label in dropdown object.
    */
   label: string;
 }
 
 export interface DropDownComponentProps {
   /**
-   * Label for the Dropdown
+   * Label for the Dropdown.
    */
   label?: string;
 
   /**
-   * Value of selected item
+   * Value of selected item.
    */
   value?: string | number | null;
 
@@ -38,26 +37,33 @@ export interface DropDownComponentProps {
   options?: DropDownOptions[] | unknown;
 
   /**
-   * Sets the width to 100% if its true
+   * Sets the width to 100% if its true.
    */
   wide?: boolean;
 
   /**
-   * Error Message string
+   * Error Message string.
    */
   error?: string;
 
   /**
-   * Children Component
+   * Children Component.
    */
   children?: React.ReactNode;
+
+  /**
+   * Place Holer Text.
+   */
 
   placeholder: string;
 
   /**
-   * onChange Handler
+   * Tooltip Text.
+   */
+  info?: string;
+
+  /**
+   * onChange Handler.
    */
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-
-  info?: string;
 }

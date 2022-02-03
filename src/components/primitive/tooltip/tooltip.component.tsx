@@ -3,8 +3,8 @@ import ReactTooltip from 'react-tooltip';
 import { IconSvg, Text } from '..';
 import { TooltipComponentProps } from './tooltip.component.props';
 
-const Tooltip: React.FunctionComponent<TooltipComponentProps> = (props: TooltipComponentProps) => {
-  const { icon, text, ...rest } = props;
+export const Tooltip: React.FunctionComponent<TooltipComponentProps> = (props: TooltipComponentProps) => {
+  const { icon, text } = props;
 
   return (
     <>
@@ -15,10 +15,3 @@ const Tooltip: React.FunctionComponent<TooltipComponentProps> = (props: TooltipC
     </>
   );
 };
-
-export default Tooltip;
-// {icon ? <IconSvg {...icon} /> : <IconSvg color='primary' name='info' />}
-{
-  /* <p data-tip='hello world'>Tooltip</p>
-      <ReactTooltip /> */
-}
