@@ -30,6 +30,7 @@ export const colors = {
   borderLightest: palette.greyLightest,
   navLinkActive: palette.royalBlueTransparent,
   applicationBackground: palette.whiteLiac,
+  bottomAccent: palette.offWhite, // used in Modal window and form.
   spinnerBorder: palette.greyLighter,
   toggleSwitchBackground: palette.royalBlueLighter,
   lightGray: palette.lightGray,
