@@ -14,11 +14,11 @@ export const SafeCard: React.FC<SafeCardProps> = (props) => {
 
       <MetaInfo row marginTop={2} color='bottomAccent' padding={2.2} align={'center'}>
         <Box>
-          <Text variant='small' tx='common.createSafe' />
+          <Text variant='small' tx='common.safeRole' />
           <Text variant='contentHeader' color='textDark' text={roleName} />
         </Box>
         <Box align={'center'} padding={1}>
-          <Text variant='small' text='Safiens' />
+          <Text variant='small' tx='common.safiens' />
           <Box height={3.2} marginTop={0.8} align={'center'} marginLeft={3.4}>
             <AvatarGroup avatars={avatars} />
           </Box>
