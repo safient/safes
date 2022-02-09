@@ -1,8 +1,6 @@
 export * from './access-safe/access-safe.component';
 export * from './access-safe/access-safe.component.props';
 
-export * from './alerts/alert.component';
-
 export * from './box/box.component';
 export * from './box/box.component.props';
 
@@ -45,6 +43,8 @@ export * from './toggle-switch/toggle-switch.component';
 export * from './generic-modal/generic-modal.component';
 
 export * from './label/label.component';
+
+export * from './tooltip/tooltip.component';
 
 export * from 'react-grid-system';
 
