@@ -1,4 +1,5 @@
-export * from './alerts/alert.component';
+export * from './access-safe/access-safe.component';
+export * from './access-safe/access-safe.component.props';
 
 export * from './box/box.component';
 export * from './box/box.component.props';
@@ -24,17 +25,19 @@ export * from './navbar/navbar.component';
 export * from './navbar/navbar.component.props';
 
 export * from './top-bar/top-bar.component';
+export * from './drop-down/drop-down.component';
 
 export * from './text/text.component';
-export * from './input/input.component';
-
 export * from './text-area/text-area.component';
 
 export * from './drop-down/drop-down.component';
 
+export * from './input/input.component';
+
 export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';
+export * from './alerts/alert.component';
 
 export * from './stats-card/stats-card.component';
 
@@ -44,4 +47,9 @@ export * from './generic-modal/generic-modal.component';
 
 export * from './badge/badge.component';
 
+export * from './tooltip/tooltip.component';
+
 export * from 'react-grid-system';
+
+export * from './side-panel/side-panel.component';
+export * from './side-panel/side-panel.component.props';
