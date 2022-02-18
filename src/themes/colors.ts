@@ -24,10 +24,11 @@ export const colors = {
   borderLighter: palette.greyLighter,
   borderLightest: palette.greyLightest,
   navLinkActive: palette.blueTransparent,
-  bottomAccent: palette.offWhite, // used with model, form bottom
+  bottomAccent: palette.offWhite, // used with Modal, form bottom
   applicationBackground: palette.whiteLiac,
   spinnerBorder: palette.greyLighter,
   toggleSwitchBackground: palette.blueLighter,
+  lightGray: palette.lightGray,
 };
 
 export type Colors = typeof colors;

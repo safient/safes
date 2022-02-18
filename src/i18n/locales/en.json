@@ -19,7 +19,11 @@
     "knowMore": "Know more",
     "loading": "Loading...",
     "signingInLabel": "Signing in ...",
-    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ..."
+    "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ...",
+    "cryptoSafe": "Crypto safe",
+    "genericSafe": "Generic safe",
+    "cancel": "Cancel",
+    "create": "Create"
   },
   "auth": {
     "getStarted": "Get Started",
@@ -67,6 +71,17 @@
       "inValidSafeName": "Invalid Safe Name",
       "inValidEmail": "Enter a Valid Email",
       "inValidDescription": "Entera Valid Description"
+    },
+    "safeOverViewPage": {
+      "guardians": "Guardians",
+      "dangerZone": "Danger Zone",
+      "deleteYourSafe": "Delete your Safe",
+      "deleteSafe": "Delete Safe",
+      "updateYourSafe": "Update Your Safe",
+      "updateSafe": "Update Safe",
+      "safeFeeDetails": "Safe fee details",
+      "feeDeposited": "Fee Deposited",
+      "payMore": "Pay More"
     }
   }
 }

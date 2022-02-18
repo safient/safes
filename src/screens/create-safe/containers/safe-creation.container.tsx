@@ -7,15 +7,14 @@ import { CreateSafeController, SecretStoreType } from '../create-safe-controller
 import {
   FormContainer,
   FlexContainer,
-  Spacer,
   ButtonContainer,
   StyledInput,
   StyledChipInput,
   StyledTextArea,
-  StyledDropDown,
   StyledButton,
   WideInput,
 } from './safe-creation.container.styles';
+import { Box, DropDown } from 'components/primitive';
 
 export const SafeCreationForm = observer(() => {
   const createSafeController = useRef(new CreateSafeController()).current;
@@ -41,8 +40,8 @@ export const SafeCreationForm = observer(() => {
 
   return (
     <>
-      <FormContainer>
-        <FlexContainer>
+      <FormContainer color='white' width={90.1} borderRadius={0.5}>
+        <FlexContainer gap={2.2} marginBottom={2}>
           <StyledInput
             type='text'
             placeholder={t('createSafeForm.placeHolders.safeName')}
@@ -51,6 +50,7 @@ export const SafeCreationForm = observer(() => {
             onChange={(e: any) => setSafeName(e.target.value)}
             error={showError && !FormValidator.isStringValid(safeName)}
           />
+
           <StyledInput
             type='email'
             placeholder={t('createSafeForm.placeHolders.email')}
@@ -60,38 +60,48 @@ export const SafeCreationForm = observer(() => {
             error={showError && !FormValidator.isEmailValid(email)}
           />
         </FlexContainer>
-        <Spacer />
-        <StyledDropDown
-          label={t('createSafeForm.selectRecoveryMethod')}
-          options={createSafeController.getRecoveryMethods()}
-          onChange={() => 'changed'}
-        />
-        <Spacer />
-        <FlexContainer>
-          <StyledDropDown
-            label={t('createSafeForm.selectTheWalletStoreType')}
-            options={createSafeController.getWalletStoreTypes()}
-            onChange={(e: any) => createSafeController.setWalletStoreType(e.target.value)}
-            wide
+
+        <Box marginBottom={2}>
+          <DropDown
+            label={t('createSafeForm.selectRecoveryMethod')}
+            options={createSafeController.getRecoveryMethods()}
+            onChange={(value: any) => createSafeController.setRecoveryMethod(value.value)}
+            placeholder={createSafeController.selectedRecoveryMethod}
           />
+        </Box>
+
+        <FlexContainer row gap={2.2} marginBottom={2}>
+          <Box maxWidth={40}>
+            <DropDown
+              label={t('createSafeForm.selectTheWalletStoreType')}
+              options={createSafeController.getWalletStoreTypes()}
+              onChange={(value: any) => createSafeController.setWalletStoreType(value.value)}
+              placeholder={createSafeController.selectedSecretStoreType}
+            />
+          </Box>
+
           {createSafeController.showSecretStoreType() && (
-            <StyledDropDown
-              label={t('createSafeForm.selectTheSecretStoreType')}
-              options={createSafeController.getSecretStoreType()}
-              onChange={(e: any) => createSafeController.setSecretStoreType(e.target.value)}
-              wide
-            />
+            <Box maxWidth={40}>
+              <DropDown
+                label={t('createSafeForm.selectTheSecretStoreType')}
+                options={createSafeController.getSecretStoreType()}
+                onChange={(value: any) => createSafeController.setSecretStoreType(value.value)}
+                placeholder={createSafeController.selectedWalletStoreType}
+              />
+            </Box>
           )}
+
           {createSafeController.showInstructionsStoreType() && (
-            <StyledDropDown
-              label={t('createSafeForm.selectTheInstructionStoreType')}
-              options={createSafeController.getSecretStoreType()}
-              onChange={() => 'changed'}
-              wide
-            />
+            <Box maxWidth={40}>
+              <DropDown
+                label={t('createSafeForm.selectTheInstructionStoreType')}
+                options={createSafeController.getSecretStoreType()}
+                onChange={(value: any) => createSafeController.setSecretStoreType(value.value)}
+                placeholder={''}
+              />
+            </Box>
           )}
         </FlexContainer>
-        <Spacer />
 
         {createSafeController.selectedSecretStoreType === SecretStoreType.PrivateKey && (
           <WideInput
@@ -111,18 +121,23 @@ export const SafeCreationForm = observer(() => {
           <StyledChipInput seedPhraseList={seedPhrases} label={t('createSafeForm.enterSeedPhrases')} />
         )}
 
-        <Spacer />
-        <StyledTextArea
-          label={t('createSafeForm.description')}
-          placeholder={t('createSafeForm.placeHolders.description')}
-          wide
-        />
-        <Spacer />
-        <Spacer />
+        <Box marginTop={2}>
+          <StyledTextArea
+            label={t('createSafeForm.description')}
+            placeholder={t('createSafeForm.placeHolders.description')}
+            wide
+          />
+        </Box>
       </FormContainer>
-      <ButtonContainer>
-        <StyledButton label={{ text: 'Cancel', color: 'textLighter' }} variant='ghost' onClick={() => ''} />
-        <StyledButton label={{ text: 'Create' }} variant='primary' color='primaryGradient' onClick={handleSubmit} />
+
+      <ButtonContainer row justify={'end'} gap={3} color='bottomAccent' marginBottom={8} width={90.1}>
+        <StyledButton label={{ tx: 'common.cancel', color: 'textLighter' }} variant='ghost' onClick={() => ''} />
+        <StyledButton
+          label={{ tx: 'common.create' }}
+          variant='primary'
+          color='primaryGradient'
+          onClick={handleSubmit}
+        />
       </ButtonContainer>
     </>
   );

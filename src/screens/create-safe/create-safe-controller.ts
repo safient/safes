@@ -21,41 +21,47 @@ export enum SecretStoreType {
 export class CreateSafeController {
   selectedWalletStoreType: WalletStoreType;
   selectedSecretStoreType: SecretStoreType;
-
+  selectedRecoveryMethod: RecoveryMethod;
   constructor() {
     this.selectedWalletStoreType = WalletStoreType.Secrets;
     this.selectedSecretStoreType = SecretStoreType.SeedPhrases;
+    this.selectedRecoveryMethod = RecoveryMethod.Arbitration;
     makeObservable(this, {
       selectedWalletStoreType: observable,
       selectedSecretStoreType: observable,
+      selectedRecoveryMethod: observable,
+      setRecoveryMethod: action,
       setWalletStoreType: action,
       setSecretStoreType: action,
     });
   }
 
-  getRecoveryMethods(): { value: string; option: string }[] {
+  getRecoveryMethods(): { value: string; label: string }[] {
     return _.map(RecoveryMethod, (RecoveryMethod) => ({
       value: RecoveryMethod,
-      option: RecoveryMethod,
+      label: RecoveryMethod,
     }));
   }
 
-  getSecretStoreType(): { value: string; option: string }[] {
+  getSecretStoreType(): { value: string; label: string }[] {
     return _.map(SecretStoreType, (SecretStoreType) => ({
       value: SecretStoreType,
-      option: SecretStoreType,
+      label: SecretStoreType,
     }));
   }
 
-  getWalletStoreTypes(): { value: string; option: string }[] {
+  getWalletStoreTypes(): { value: string; label: string }[] {
     return _.map(WalletStoreType, (walletType) => ({
       value: walletType,
-      option: walletType,
+      label: walletType,
     }));
+  }
+
+  setRecoveryMethod(value: RecoveryMethod): void {
+    this.selectedRecoveryMethod = value;
   }
 
   setWalletStoreType(value: WalletStoreType): void {
-    // runInAction(()=>{this.selectedWalletStoreType = value;})
     this.selectedWalletStoreType = value;
   }
 
