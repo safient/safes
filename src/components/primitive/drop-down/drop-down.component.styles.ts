@@ -28,8 +28,21 @@ export const StyledLabel = styled.label`
 `;
 
 /**
+ * This styled will be applied while using Validations
+ */
+export const Icon = styled.span`
+  display: inline-block;
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  top: 0.3rem;
+  /* left: 36.5rem; */
+`;
+
+/**
  * Error message container
  */
 export const ErrorMessageContainer = styled.fieldset`
   margin: 0.4rem 0 0.4rem 0;
+  position: relative;
 `;

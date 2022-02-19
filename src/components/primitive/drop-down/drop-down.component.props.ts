@@ -44,9 +44,15 @@ export interface DropDownComponentProps {
   /**
    * Error Message string.
    */
-  error?: string;
+  errorMsg?: string;
 
   /**
+   * Flag that activates during form validation
+   */
+  error?: boolean;
+
+  /**
+
    * Children Component.
    */
   children?: React.ReactNode;

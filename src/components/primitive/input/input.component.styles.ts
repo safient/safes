@@ -1,4 +1,3 @@
-import { reduce } from 'lodash';
 import styled from 'styled-components';
 import { BreakPoints } from 'utils';
 import { InputComponentProps } from './input.component.props';
@@ -55,7 +54,6 @@ export const StyledInput = styled.input<InputComponentProps>`
  */
 export const InputWrapper = styled.div`
   display: inline-flex;
-  position: relative;
 `;
 
 /**
@@ -66,8 +64,7 @@ export const Icon = styled.span`
   position: absolute;
   height: 4rem;
   width: 4rem;
-  top: 1.5rem;
-  left: 36.5rem;
+  top: 0.3rem;
 `;
 
 /**
@@ -85,4 +82,5 @@ export const InputLabel = styled.label`
  */
 export const ErrorMessageContainer = styled.fieldset`
   margin: 0.4rem 0 0.4rem 0;
+  position: relative;
 `;

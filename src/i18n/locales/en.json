@@ -21,7 +21,9 @@
     "signingInLabel": "Signing in ...",
     "signingInText": "Please sign the signature on MetaMask. This may take a couple of seconds ...",
     "cryptoSafe": "Crypto safe",
-    "genericSafe": "Generic safe"
+    "genericSafe": "Generic safe",
+    "cancel": "Cancel",
+    "create": "Create"
   },
   "auth": {
     "getStarted": "Get Started",
@@ -40,20 +42,49 @@
     "emailNotifications": "Email notifications",
     "defaultSafeConfigs": "Default safe configs"
   },
+  "createSafePage": {
+    "createSafe": "Create Safe"
+  },
   "chipInput": {
     "phrasesEntered": "12 Phrases Entered",
     "enterPhrase": "Enter the 12-word seed phrase",
     "loading": "Loading"
   },
-  "safeOverViewPage": {
-    "guardians": "Guardians",
-    "dangerZone": "Danger Zone",
-    "deleteYourSafe": "Delete your Safe",
-    "deleteSafe": "Delete Safe",
-    "updateYourSafe": "Update Your Safe",
-    "updateSafe": "Update Safe",
-    "safeFeeDetails": "Safe fee details",
-    "feeDeposited": "Fee Deposited",
-    "payMore": "Pay More"
+  "createSafeForm": {
+    "createSafe": "Create Safe",
+    "safeName": "Safe Name",
+    "addBeneficiary": "Add Beneficiary",
+    "selectRecoveryMethod": "Select the recovery method",
+    "selectTheWalletStoreType": "Select the wallet store type",
+    "selectTheInstructionStoreType": "Select the instruction store type",
+    "selectTheSecretStoreType": "Select the secret store type",
+    "enterSeedPhrases": "Enter Seed Phrases",
+    "enterYourPrivateKey": "Enter your Private Key",
+    "secretStore": "Enter Secret Store",
+    "description": "Description (Optional)",
+    "placeHolders": {
+      "safeName": "My personal crypto assets",
+      "email": "johndoe@safient.io",
+      "seedPhrases": "Enter the 12-word seed phrase",
+      "privateKey": "Paste your key",
+      "secretStore": "Enter Secret Store",
+      "description": "Add optional details about safe"
+    },
+    "FormValidation": {
+      "inValidSafeName": "Invalid Safe Name",
+      "inValidEmail": "Enter a Valid Email",
+      "inValidDescription": "Entera Valid Description"
+    },
+    "safeOverViewPage": {
+      "guardians": "Guardians",
+      "dangerZone": "Danger Zone",
+      "deleteYourSafe": "Delete your Safe",
+      "deleteSafe": "Delete Safe",
+      "updateYourSafe": "Update Your Safe",
+      "updateSafe": "Update Safe",
+      "safeFeeDetails": "Safe fee details",
+      "feeDeposited": "Fee Deposited",
+      "payMore": "Pay More"
+    }
   }
 }

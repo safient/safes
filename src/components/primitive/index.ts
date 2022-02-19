@@ -30,7 +30,10 @@ export * from './drop-down/drop-down.component';
 export * from './text/text.component';
 export * from './text-area/text-area.component';
 
+export * from './drop-down/drop-down.component';
+
 export * from './input/input.component';
+
 export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';
@@ -42,7 +45,7 @@ export * from './toggle-switch/toggle-switch.component';
 
 export * from './generic-modal/generic-modal.component';
 
-export * from './label/label.component';
+export * from './badge/badge.component';
 
 export * from './tooltip/tooltip.component';
 

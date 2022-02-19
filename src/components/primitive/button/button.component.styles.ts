@@ -27,7 +27,7 @@ export const PrimaryButton = styled(BaseButton)<ButtonComponentProps>`
  * Styles for Ghost Button.
  */
 export const GhostButton = styled(BaseButton)<ButtonComponentProps>`
-  border: 2px solid ${({ theme: { colors } }) => colors.borderLighter} !important;
+  border: 2px solid ${({ theme: { colors } }) => colors.borderLightest} !important;
   background-color: transparent;
 `;
 

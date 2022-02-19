@@ -1,5 +1,11 @@
-import React from 'react';
+import { SafeCreationForm } from 'screens/create-safe/containers/safe-creation.container';
+import { SafeFormContainer, FormHeading } from './create-safe.screen.styles';
 
 export function CreateSafeScreen() {
-  return <div>create safe screen</div>;
+  return (
+    <SafeFormContainer>
+      <FormHeading variant='contentHeader' tx='createSafePage.createSafe' left />
+      <SafeCreationForm />
+    </SafeFormContainer>
+  );
 }

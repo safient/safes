@@ -35,12 +35,10 @@ export const images = {
   placeHolderAvatar: require('../assets/images/demo.png').default,
   profile: require('../assets/icons/profile.svg').default,
   safes: require('../assets/icons/safes.svg').default,
-  safeFee: require('../assets/icons/safe-fee.svg').default,
   twitter: require('../assets/icons/twitter.svg').default,
   upload: require('../assets/icons/upload.svg').default,
   user: require('../assets/icons/user.svg').default,
   error: require('../assets/icons/error.svg').default,
-  delete: require('../assets/icons/delete.svg').default,
   checkSuccess: require('../assets/icons/checkSuccess.svg').default,
   checked: require('../assets/icons/checked.svg').default,
   successAlert: require('../assets/icons/success-alert.svg').default,
@@ -52,8 +50,6 @@ export const images = {
   loginWithGitHub: require('../assets/icons/login-github.svg').default,
   loginWithMetaMask: require('../assets/icons/login-metamask.svg').default,
   lockLoader: require('../assets/icons/lockLoader.gif').default,
-  key: require('../assets/icons/key.svg').default,
-  signature: require('../assets/icons/signature.svg').default,
 };
 
 export type Images = typeof images;

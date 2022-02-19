@@ -10,6 +10,5 @@ export enum RouteName {
   claims = 'claims',
   claimDetails = 'claimDetails',
   account = 'account',
-  safeOverView = 'safeOverView',
   notFound = 'notFound',
 }

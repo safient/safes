@@ -16,10 +16,10 @@ export const Container = styled(Box)<{ length: number }>`
   border-radius: 0.5rem;
   border: 1px solid ${({ error, theme: { colors } }: any) => (error ? colors.error : colors.borderLightest)} !important;
   border-radius: 0.5rem;
-  width: 822px !important;
+  width: 82.2rem !important;
   height: ${({ length }) => (length === 0 ? '10rem' : length > 6 ? '18rem' : '13rem')} !important;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: ${BreakPoints.medium}) {
     height: ${({ length }) => (length === 0 ? '10rem' : `${length * 5 + 11}rem`)} !important;
   }
 `;

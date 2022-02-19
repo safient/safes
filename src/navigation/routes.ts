@@ -8,7 +8,6 @@ import {
   LoginScreen,
   NotFoundScreen,
   RegisterScreen,
-  SafeOverView,
 } from '../screens';
 import { RouteName } from './route-name';
 import { RoutePath } from './route-path';
@@ -71,13 +70,6 @@ export const routes: IRoute[] = [
     exact: true,
     private: true,
     component: AccountScreen,
-  },
-  {
-    path: RoutePath.safeOverView,
-    name: RouteName.safeOverView,
-    exact: true,
-    private: true,
-    component: SafeOverView,
   },
   {
     path: RoutePath.notFound,
