@@ -4,6 +4,7 @@ import styled, { useTheme } from 'styled-components';
 import _ from 'lodash';
 import { BoxComponentProps } from './box.component.props';
 import { spacing } from '../../../utils';
+import { Spinner } from 'components/primitive';
 
 export const Box: React.FunctionComponent<BoxComponentProps> = (props: BoxComponentProps) => {
   const { colors } = useTheme();
@@ -41,6 +42,7 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (props: BoxCompon
     wrap,
     rightAlign,
     centerAlign,
+    loading,
     style: styleOverride,
     ...rest
   } = props;
@@ -74,8 +76,8 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (props: BoxCompon
     ...(!_.isNil(flex) ? { flex: flex } : {}),
     ...(!_.isNil(borderRadius) ? { borderRadius: `${borderRadius}rem` } : {}),
     ...(!_.isNil(color) ? { backgroundColor: colors[color] } : {}),
-    ...(!_.isNil(hCenter) ? { alignItems: 'center' } : {}),
-    ...(!_.isNil(vCenter) ? { justifyContent: 'center' } : {}),
+    ...(!_.isNil(hCenter || loading) ? { alignItems: 'center' } : {}),
+    ...(!_.isNil(vCenter || loading) ? { justifyContent: 'center' } : {}),
     ...(!_.isNil(height) ? { height: `${height}rem` } : {}),
     ...(!_.isNil(width) ? { width: `${width}rem` } : {}),
     ...(!_.isNil(maxWidth) ? { maxWidth: `${_maxWidth}rem` } : {}),
@@ -122,6 +124,14 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (props: BoxCompon
 
   if (hidden) {
     return <></>;
+  }
+
+  if (loading) {
+    return (
+      <Layout style={style} {...rest}>
+        <Spinner />
+      </Layout>
+    );
   }
 
   return (

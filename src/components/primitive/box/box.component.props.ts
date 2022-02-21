@@ -169,7 +169,11 @@ export interface BoxComponentProps extends ColProps, RowProps {
   spaceBetween?: boolean;
 
   /**
-   * Flex- gap property
+    optional prop to check the loading state
+   */
+  loading?: boolean;
+  /**
+    Flex- gap property
    */
   gap?: number;
 }
