@@ -45,3 +45,5 @@ export * from 'react-grid-system';
 
 export * from './side-panel/side-panel.component';
 export * from './side-panel/side-panel.component.props';
+
+export * from './spinner/spinner.component';

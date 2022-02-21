@@ -2,14 +2,11 @@ import React from 'react';
 import { Col, Row } from 'react-grid-system';
 import styled, { useTheme } from 'styled-components';
 import _ from 'lodash';
-import { Oval } from 'react-loader-spinner';
 import { BoxComponentProps } from './box.component.props';
 import { spacing } from '../../../utils';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import { Spinner } from 'components/primitive';
 
-export const Box: React.FunctionComponent<BoxComponentProps> = (
-  props: BoxComponentProps
-) => {
+export const Box: React.FunctionComponent<BoxComponentProps> = (props: BoxComponentProps) => {
   const { colors } = useTheme();
 
   const {
@@ -67,12 +64,8 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
   const _maxWidth = maxWidth ?? width;
 
   // bottom align and right align cssProperties based on the flex direction
-  const _bottomAlign = row
-    ? { alignItems: 'flex-end' }
-    : { justifyContent: 'flex-end' };
-  const _rightAlign = row
-    ? { justifyContent: 'flex-end' }
-    : { alignItems: 'flex-end' };
+  const _bottomAlign = row ? { alignItems: 'flex-end' } : { justifyContent: 'flex-end' };
+  const _rightAlign = row ? { justifyContent: 'flex-end' } : { alignItems: 'flex-end' };
 
   const style: React.CSSProperties = {
     display: 'flex',
@@ -90,52 +83,34 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
     ...(!_.isNil(wrap) ? { flexWrap: 'wrap' } : {}),
 
     ...{
-      marginTop: _.isNumber(marginTopValue)
-        ? `${marginTopValue}rem`
-        : `${spacing[marginTopValue]}rem`,
+      marginTop: _.isNumber(marginTopValue) ? `${marginTopValue}rem` : `${spacing[marginTopValue]}rem`,
     }, //margin top
     ...{
-      marginBottom: _.isNumber(marginBottomValue)
-        ? `${marginBottomValue}rem`
-        : `${spacing[marginBottomValue]}rem`,
+      marginBottom: _.isNumber(marginBottomValue) ? `${marginBottomValue}rem` : `${spacing[marginBottomValue]}rem`,
     }, //margin bottom
     ...{
-      marginLeft: _.isNumber(marginLeftValue)
-        ? `${marginLeftValue}rem`
-        : `${spacing[marginLeftValue]}rem`,
+      marginLeft: _.isNumber(marginLeftValue) ? `${marginLeftValue}rem` : `${spacing[marginLeftValue]}rem`,
     }, //margin left
     ...{
-      marginRight: _.isNumber(marginRightValue)
-        ? `${marginRightValue}rem`
-        : `${spacing[marginRightValue]}rem`,
+      marginRight: _.isNumber(marginRightValue) ? `${marginRightValue}rem` : `${spacing[marginRightValue]}rem`,
     }, //margin right
 
     ...{
-      paddingTop: _.isNumber(paddingTopValue)
-        ? `${paddingTopValue}rem`
-        : `${spacing[paddingTopValue]}rem`,
+      paddingTop: _.isNumber(paddingTopValue) ? `${paddingTopValue}rem` : `${spacing[paddingTopValue]}rem`,
     }, //padding top
     ...{
-      paddingBottom: _.isNumber(paddingBottomValue)
-        ? `${paddingBottomValue}rem`
-        : `${spacing[paddingBottomValue]}rem`,
+      paddingBottom: _.isNumber(paddingBottomValue) ? `${paddingBottomValue}rem` : `${spacing[paddingBottomValue]}rem`,
     }, //padding bottom
     ...{
-      paddingLeft: _.isNumber(paddingLeftValue)
-        ? `${paddingLeftValue}rem`
-        : `${spacing[paddingLeftValue]}rem`,
+      paddingLeft: _.isNumber(paddingLeftValue) ? `${paddingLeftValue}rem` : `${spacing[paddingLeftValue]}rem`,
     }, //padding left
     ...{
-      paddingRight: _.isNumber(paddingRightValue)
-        ? `${paddingRightValue}rem`
-        : `${spacing[paddingRightValue]}rem`,
+      paddingRight: _.isNumber(paddingRightValue) ? `${paddingRightValue}rem` : `${spacing[paddingRightValue]}rem`,
     }, //padding right
 
     ...(!!bottom ? _bottomAlign : {}),
     ...(!!rightAlign ? _rightAlign : {}),
-    ...(!!centerAlign
-      ? { justifyContent: 'center', alignItems: 'center' }
-      : {}),
+    ...(!!centerAlign ? { justifyContent: 'center', alignItems: 'center' } : {}),
 
     ...(!!spaceBetween ? { justifyContent: 'space-between' } : {}),
     ...styleOverride,
@@ -151,14 +126,9 @@ export const Box: React.FunctionComponent<BoxComponentProps> = (
 
   if (loading) {
     return (
-      <Base style={style} {...rest}>
-        <Oval
-          ariaLabel="loading-indicator"
-          height={40}
-          width={40}
-          color={colors.primary}
-        />
-      </Base>
+      <Layout style={style} {...rest}>
+        <Spinner />
+      </Layout>
     );
   }
 
