@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Modal, { BaseModalBackground } from "styled-react-modal";
-import { Button } from "components/primitive";
+import styled from 'styled-components';
+import Modal, { BaseModalBackground } from 'styled-react-modal';
+import { Button } from 'components/primitive';
 
 export const FadingBackground = styled(BaseModalBackground)`
   transition: all 0.3s ease-in-out;
@@ -14,7 +14,7 @@ export const ModalButton = styled(Button)`
 `;
 
 export const StyledModal = Modal.styled`
-  max-width: 90rem;
+  max-width: 60rem;
   display: flex;
   flex-direction: column;
   background-color: white;

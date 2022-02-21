@@ -1,3 +1,6 @@
+export * from './access-safe/access-safe.component';
+export * from './access-safe/access-safe.component.props';
+
 export * from './box/box.component';
 export * from './box/box.component.props';
 
@@ -27,7 +30,10 @@ export * from './drop-down/drop-down.component';
 export * from './text/text.component';
 export * from './text-area/text-area.component';
 
+export * from './drop-down/drop-down.component';
+
 export * from './input/input.component';
+
 export * from './notice-loader/notice-loader.component';
 
 export * from './create-card/create-card.component';
@@ -39,7 +45,9 @@ export * from './toggle-switch/toggle-switch.component';
 
 export * from './generic-modal/generic-modal.component';
 
-export * from './label/label.component';
+export * from './badge/badge.component';
+
+export * from './tooltip/tooltip.component';
 
 export * from 'react-grid-system';
 

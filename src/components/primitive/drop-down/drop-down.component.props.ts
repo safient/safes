@@ -15,44 +15,61 @@ export interface DropDownOptions {
   value: string;
 
   /**
-   * Options in the DropDown
+   * label in dropdown object.
    */
-  option: string;
+  label: string;
 }
 
 export interface DropDownComponentProps {
   /**
-   * Label for the Dropdown
+   * Label for the Dropdown.
    */
   label?: string;
 
   /**
-   * Value of selected item
+   * Value of selected item.
    */
-  value?: string | number;
+  value?: string | number | null;
 
   /**
-   * Options for Dropdown
+   * Options for Dropdown - https://react-select.com/typescript#unknown
    */
-  options?: DropDownOptions[];
+  options?: DropDownOptions[] | unknown;
 
   /**
-   * Sets the width to 100% if its true
+   * Sets the width to 100% if its true.
    */
   wide?: boolean;
 
   /**
-   * Error Message string
+   * Error Message string.
    */
-  error?: string;
+  errorMsg?: string;
 
   /**
-   * Children Component
+   * Flag that activates during form validation
+   */
+  error?: boolean;
+
+  /**
+
+   * Children Component.
    */
   children?: React.ReactNode;
 
   /**
-   * onChange Handler
+   * Place Holer Text.
+   */
+
+  placeholder: string;
+
+  /**
+   * Tooltip Text.
+   */
+  info?: string;
+
+  /**
+   * onChange Handler.
    */
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
