@@ -5,9 +5,11 @@ export const colors = {
   black: palette.black,
   primary: palette.royalBlue,
   primaryGradient: palette.blueIndigoGradient,
+  primaryBrightGradient: palette.brightBlueIndigoGradient,
+  primaryDisabled: palette.blueLightest,
   textDark: palette.grey,
   textLight: palette.greyLight,
-  textLighter: palette.greyLighter, //placeholder and borders
+  textLighter: palette.greyLighter, //placeholder and borders,
   success: palette.green,
   successLight: palette.greenLight, //text
   successLighter: palette.greenTransparent, // Transparent Backgrounds
@@ -34,6 +36,7 @@ export const colors = {
   spinnerBorder: palette.greyLighter,
   toggleSwitchBackground: palette.royalBlueLighter,
   lightGray: palette.lightGray,
+  shimmer: palette.silverLight, //used in shimmer effect.
 };
 
 export type Colors = typeof colors;

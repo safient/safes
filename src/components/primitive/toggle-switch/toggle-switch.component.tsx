@@ -1,18 +1,22 @@
+import Toggle from 'react-toggle';
 import { ToggleSwitchComponentProps } from './toggle-switch.component.props';
-import { ToggleSwitchContainer, StyledInput, Switch } from './toggle-switch.component.styles';
-
+import { ToggleSwitchContainer } from './toggle-switch.component.styles';
+import 'react-toggle/style.css';
 export const ToggleSwitch: React.FC<ToggleSwitchComponentProps> = (props) => {
   const { toggleID, checked, onChange } = props;
 
   return (
     <ToggleSwitchContainer>
-      <Switch>
-        <StyledInput type='checkbox' id={toggleID} checked={checked} onChange={onChange} />
-        <label className='label' htmlFor={toggleID}>
-          <span className='inner' />
-          <span className='switch' />
-        </label>
-      </Switch>
+      <Toggle
+        id={toggleID}
+        className='custom-classname'
+        defaultChecked={checked}
+        onChange={onChange}
+        icons={{
+          checked: null,
+          unchecked: null,
+        }}
+      />
     </ToggleSwitchContainer>
   );
 };
