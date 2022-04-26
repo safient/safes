@@ -15,7 +15,7 @@ export const Input = ({ value, type = 'text', label, isDisabled, error, errorMsg
     <InputContainer>
       <InputLabel>{label}</InputLabel>
       <InputWrapper>
-        <StyledInput autoFocus value={value} type={type} error={error} {...rest} />
+        <StyledInput value={value} type={type} error={error} {...rest} />
       </InputWrapper>
 
       {error && (

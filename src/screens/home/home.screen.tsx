@@ -11,6 +11,11 @@ export const HomeScreen: React.FC = () => {
           <IconSvg name='add' size='xLarge' />
           <SafeText variant='content' tx='common.createSafe' />
         </SafeCard>
+
+        <SafeCard hCenter vCenter loading>
+          <IconSvg name='add' size='xLarge' />
+          <SafeText variant='content' tx='common.createSafe' />
+        </SafeCard>
       </CardsContainer>
     </HomeScreenContainer>
   );

@@ -8,7 +8,7 @@ import { InputComponentProps } from './input.component.props';
 export const InputContainer = styled.fieldset<InputComponentProps>`
   display: inline-flex;
   flex-direction: column;
-
+  width: 100% !important;
   @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     width: 100% !important;
   }
@@ -26,22 +26,19 @@ export const StyledInput = styled.input<InputComponentProps>`
   border: 1px solid ${({ error, theme: { colors } }) => (error ? colors.error : colors.borderLightest)} !important;
   outline: none;
   box-sizing: border-box;
-  width: ${({ wide }) => (wide ? '100%' : '40rem')} !important;
+  min-width: ${({ wide }) => (wide ? '50%' : '100%')} !important;
   height: 5rem;
   background-color: ${({ theme: { colors } }) => colors.white};
   transition: border 150ms ease-out;
   -moz-appearance: textfield;
   text-overflow: ellipsis;
-
   &:focus {
-    border-color: ${({ theme: { colors } }) => colors.primary};
+    border-color: ${({ theme: { colors } }) => colors.primary} !important;
     background-color: ${({ theme: { colors } }) => colors.white};
   }
-
   &:disabled {
     cursor: not-allowed;
   }
-
   &::placeholder {
     font-weight: 400;
     font-size: 1.6rem;

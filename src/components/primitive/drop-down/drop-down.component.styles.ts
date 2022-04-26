@@ -10,7 +10,6 @@ export const DropdownWrapper = styled.div<DropDownComponentProps>`
   width: ${({ wide }) => (wide ? '40rem' : '100%')} !important;
   flex-flow: column;
   justify-content: flex-start;
-
   @media screen and (max-width: ${BreakPoints.medium}) and (max-width: ${BreakPoints.small}) {
     width: 100% !important;
   }
@@ -45,4 +44,19 @@ export const Icon = styled.span`
 export const ErrorMessageContainer = styled.fieldset`
   margin: 0.4rem 0 0.4rem 0;
   position: relative;
+`;
+
+/**
+ * Over-riding default styles on react-select package.
+ */
+
+export const StyledDropdown = styled.div`
+  color: ${({ theme: { colors } }) => colors.textLight};
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border 150ms ease-out;
+  -moz-appearance: textfield;
+  text-overflow: ellipsis;
 `;

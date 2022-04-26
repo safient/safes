@@ -13,7 +13,7 @@ export const palette = {
 
   blueLight: '#46A1CB', // info alert text
   blueLighter: '#e5f6fd', // info alert bg
-
+  blueLightest: '#AFC0FD', //disabled states
   green: '#2ba745',
   greenLight: '#49B393', //green text color
   greenLighter: '#edf7ed', //alert bg
@@ -36,7 +36,9 @@ export const palette = {
   grayTransparent: 'rgba(98, 108, 116, 0.4)', //model backdrop
   shadow: ' 0px 16px 32px rgba(221, 230, 237, 0.4)',
   blueIndigoGradient: 'linear-gradient(89.58deg, #44BCF0 -19.85%, #818CF8 54.07%, #A099FF 120.75%)',
+  brightBlueIndigoGradient: 'linear-gradient(89.58deg, #AFE7FF -19.85%, #B5BBF5 54.07%, #9088FF 120.75%)',
   lightGray: '#eeeefe',
+  silverLight: '#e1e1e1',
 };
 
 export type Palette = typeof palette;
